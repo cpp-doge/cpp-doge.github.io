@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/posts/what-is-a-data-type/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>What Is A Data Type</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">What Is A Data Type</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#before-you-begin">Before You Begin</a></li>
+    <li><a href="#computer-memory">Computer Memory</a>
+      <ul>
+        <li><a href="#transistors">Transistors</a></li>
+        <li><a href="#bytes">Bytes</a></li>
+        <li><a href="#how-much-can-we-count">How Much Can We Count</a></li>
+        <li><a href="#how-much-memory-can-we-use">How Much Memory Can We Use</a></li>
+      </ul>
+    </li>
+    <li><a href="#different-strokes-for-different-folks">Different Strokes For Different Folks</a>
+      <ul>
+        <li><a href="#negative-numbers">Negative Numbers</a></li>
+        <li><a href="#floating-point-numbers">Floating Point Numbers</a></li>
+        <li><a href="#plain-text">Plain Text</a></li>
+        <li><a href="#unicode">Unicode</a></li>
+      </ul>
+    </li>
+    <li><a href="#big-egg-little-egg">Big Egg Little Egg</a>
+      <ul>
+        <li><a href="#omg-where-does-it-end">OMG Where Does It End</a></li>
+        <li><a href="#yes-theres-more">Yes There&rsquo;s More</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-is-a-data-type">What Is A Data Type</a>
+      <ul>
+        <li><a href="#no-really-what-is-a-data-type">No Really What Is A Data Type</a></li>
+        <li><a href="#some-simple-examples">Some Simple Examples</a></li>
+        <li><a href="#text-data-types">Text Data Types</a></li>
+        <li><a href="#your-own-data-types">Your Own Data Types</a></li>
+        <li><a href="#why-write-your-own">Why Write Your Own</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-end">The End</a></li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><h2 id="before-you-begin">Before You Begin</h2>
+<p>See: <a href="/posts/how-binary-works/">How Binary Works</a></p>
+<h2 id="computer-memory">Computer Memory</h2>
+<p>Computers store information in memory as binary numbers.</p>
+<h3 id="transistors">Transistors</h3>
+<p>Transistors are good at turning on and off. This
+can easily be used represent a one or a zero.</p>
+<p>The information in your computer is managed by a bunch
+of transitors. You can think of it like being one
+bit per transistor, meaning each transistor can
+represent either a zero or a one. It&rsquo;s usually more
+complicated, but you can think of it like this.</p>
+<p>Transistors can then be combined into larger binary
+numbers the same way we combine regular human digits into
+larger base ten numbers.</p>
+<h3 id="bytes">Bytes</h3>
+<p>Your computer hardware organizes your computer memory
+into small chunks called bytes. A byte is just the
+smallest group of transistors that can be <em>chewed</em>
+on at the same time, pun intended.</p>
+<p>Your computer memory is layed out in a flat linear
+sequence of bytes. You can do stuff with more than
+one byte at a time, but not with less than one byte
+at a time.</p>
+<p>A byte is 8 bits on most normal computers, iPhones
+Android Phones, Smart TVs etc, but is sometimes different
+in other places. Arduino uses 12 bits per byte.</p>
+<p>You can probably assume that bytes are always 8 bits.</p>
+<h3 id="how-much-can-we-count">How Much Can We Count</h3>
+<p>People use tools like this &ldquo;Tally Counter&rdquo; to count things, maybe like
+people passing through a ticket gate to a football game.</p>
+<p><img width="600" alt="Tally Counter" src="https://upload.wikimedia.org/wikipedia/commons/7/75/Tally_counter.jpg"></p>
+<p>This tally counter only has four digits, so how many things
+can we count until we run out of digits?</p>
+<p>Well, we can count <code>9999</code> things before the digits reset
+back to zero.</p>
+<p>Memory in a computer has a similar limitation. We can
+count as many things as we have binary digits, and then
+the number will reset or &ldquo;roll over&rdquo; to zero.</p>
+<h3 id="how-much-memory-can-we-use">How Much Memory Can We Use</h3>
+<p>Memory in a computer is limited. Many people have a lot
+of RAM in their computers these days, but wouldn&rsquo;t most
+of us still want more?</p>
+<p>We sometimes place extraordinary demands on computers
+with video games, artificial intelligence, websites used
+by billions of people, video editing, photo editing,
+music production, 3D modeling and more.</p>
+<p>How much memory do we need to store a single number?
+Why use more memory than we really need to for only
+a single number?</p>
+<p>The answer is that these things have mostly already
+been chosen for you. You generally have the choice
+between four bytes per number or eight bytes per
+number. This corresponds to 32-bits per number and
+64-bits per number. You have likely already heard these
+numbers talked about elsewhere.</p>
+<p>Notice that, as with the tally counter above, this
+means we have a limited number of digits so we
+can only count a limited number things.</p>
+<h4 id="how-big-are-we-talking">How Big Are We Talking</h4>
+<p>How big of a number can I store with 32-bits</p>
+<ul>
+<li>Up to about four billion or 4,000,000,000</li>
+<li>To be precise we can count up to 4,294,967,295</li>
+<li>After that the number will roll back over to zero, like the tally counter</li>
+</ul>
+<p>How big of a number can I store with 64-bits</p>
+<ul>
+<li>Up to about eighteen quintillion or 18,000,000,000,000,000,000</li>
+<li>To be precise we can count up to 18,446,744,073,709,551,615</li>
+<li>After that the number will roll back over to zero, like the tally counter</li>
+</ul>
+<h4 id="those-are-some-weird-numbers">Those Are Some Weird Numbers</h4>
+<p>Yep.</p>
+<p>Digits in a computer are binary, so how many things we
+can count is different than if those digits were our familiar
+human base ten system.</p>
+<h4 id="what-should-i-use">What Should I Use</h4>
+<p>Ask yourself</p>
+<ul>
+<li>Do I need more than a few quintillion things in my computer program?</li>
+<li>If not then an eight byte 64-bit number is probably fine</li>
+</ul>
+<p>Then ask yourself</p>
+<ul>
+<li>Do I need more than a few billion things in my computer program?</li>
+<li>If not then a four byte 32-bit number is probably fine</li>
+</ul>
+<p>A billion things is probably more than enough for most people
+on most days.</p>
+<h2 id="different-strokes-for-different-folks">Different Strokes For Different Folks</h2>
+<h3 id="negative-numbers">Negative Numbers</h3>
+<p>So far we have only talked about positive integers, sometimes
+called the natural numbers or the counting numbers.</p>
+<p>Negative numbers are also a thing and we also need a way
+to treat some ones and zeros as a negative number as well
+as a positive number.</p>
+<p>There is a clever trick for this called Two&rsquo;s Complement.</p>
+<p>I cannot do this topic justice, but this video can.</p>
+<div style="padding-left:40px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/lKTsv6iVxV4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p>You can come back to this later, it&rsquo;s a bit more complicated than
+we need to worry about for now, the next sections will help
+demonstrate the basic idea that what we store in memory is
+different depending on how we look at it.</p>
+<h3 id="floating-point-numbers">Floating Point Numbers</h3>
+<p>Real numbers are numbers that have a fractional or decimal
+part. So far we have only talked about integers. A key
+important difference that we now come to is how we use
+the computer&rsquo;s memory and what that memory means.</p>
+<p>Real numbers can be stored using 32-bits each or 64-bits
+each. As with integers, either of the these is likely far more
+memory per number than most people will ever need.</p>
+<p>There is a <strong>VERY IMPORTANT DIFFERENCE</strong> however, which is
+the binary digits mean <strong>DIFFERENT THINGS</strong> for a real
+number inside a computer than they do for an integer
+inside a computer.</p>
+<p>Floating point numbers are too much to cover here, but
+the short simple answer is that we take a chunk of
+memory, let&rsquo;s say four bytes, and then we split that
+conceptually so that some of the digits represent
+the number and some of those digits represent where
+the decimal point is.</p>
+<p>Let&rsquo;s invent a hypothetical 32-bit binary number
+for example purposes.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">01000000010010001111010111000011
+</span></span></code></pre></div><p>Let&rsquo;s conceptually view this as four bytes of
+data because that&rsquo;s how it lives in the computer.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">01000000 01001000 11110101 11000011
+</span></span></code></pre></div><p>If we treat this number as a floating point number
+instead of an integer then we might look at it like this</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">     This is the number part
+</span></span><span class="line"><span class="cl">                |
+</span></span><span class="line"><span class="cl">                |                 This is the decimal place
+</span></span><span class="line"><span class="cl">                |                           |
+</span></span><span class="line"><span class="cl">     -----------|------------               |
+</span></span><span class="line"><span class="cl">    /                        \           ---|--
+</span></span><span class="line"><span class="cl">   /                          \         /      \
+</span></span><span class="line"><span class="cl">  /                            \       /        \
+</span></span><span class="line"><span class="cl"> /                              \     /          \
+</span></span><span class="line"><span class="cl">|                                |   |            |
+</span></span><span class="line"><span class="cl">|                                |   |            |
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   01000000  01001000  11110101         11000011
+</span></span></code></pre></div><p>Exactly what this looks like may vary from
+computer to computer.</p>
+<p>When we treat our binary number like this then
+this number happens to be 3.14 or approximately
+Pi in my computer.</p>
+<p>However, if we treat it like a regular integer
+then it&rsquo;s actually 1,078,523,331! That&rsquo;s a big
+difference between about three and about a billion!</p>
+<h4 id="more-floating-point-stuff">More Floating Point Stuff</h4>
+<p>This topic is pretty darn complex and challenging.
+I only want to demonstrate the general idea that
+some binary digits in memory may represent
+very different things, a point I will further
+belabor in the next section.</p>
+<p>If you want more, check out this video.</p>
+<div style="padding-left:40px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/PZRI1IfStY0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p>If you&rsquo;re really masochistic you might enjoy the
+Wikpedia article on <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">Floating Point</a> numbers.</p>
+<h3 id="plain-text">Plain Text</h3>
+<p>Well, we can store numbers in the computer. That&rsquo;s
+good, we need numbers for things like video games
+and online shopping.</p>
+<p>What about regular normal ish human language?</p>
+<p>Well, the computer <em>only stores numbers</em>, binary
+numbers. How can we store some text?</p>
+<p>The answer is to pretend that each number in the
+computer represents a letter of the alphabet.</p>
+<p>This is where we get ASCII. ASCII is an official
+standard that associates numbers to letters.</p>
+<p>Confusingly, the digits we normally use, themselves
+are mapped to other numbers in ASCII and those
+other numbers are different than the digits themselves!</p>
+<p>Take a look a which numbers are mapped
+to which letters in the <a href="https://www.asciitable.com/">ASCII Table</a>.</p>
+<p>For example, in ASCII, the number <code>65</code> represents
+the capital letter <code>A</code>, the first letter of the
+alphabet. The number <code>51</code> actually represents
+the numeral digit <code>3</code>! What!? Why isn&rsquo;t <code>3</code>
+actually <code>3</code>!?</p>
+<p><img src="https://media.tenor.com/ZmHeuUmF6xAAAAAC/math-is-math-incredibles.gif" alt="Math"></p>
+<p>That&rsquo;s just how it is, so you pretty much
+just get to live with it for now, sorry.</p>
+<h4 id="a-plain-text-example">A Plain Text Example</h4>
+<p>Let&rsquo;s say we have five bytes of memory, and
+in those bytes we have the binary number.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">10010001100101110110011011001101111
+</span></span></code></pre></div><p>Let&rsquo;s conceptualize this as five separate bytes</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">1001000 1100101 1101100 1101100 1101111
+</span></span></code></pre></div><p>So what do these bytes mean? Well if we treat them
+as ASCII text then each byte is a single number
+that represents an ASCII character from the
+ASCII Table.</p>
+<p>Let&rsquo;s figure out what these numbers mean.</p>
+<ul>
+<li><code>1001000</code> in binary = <code>72</code> in base ten</li>
+<li><code>1100101</code> in binary = <code>101</code> in base ten</li>
+<li><code>1101100</code> in binary = <code>108</code> in base ten</li>
+<li><code>1101100</code> in binary = <code>108</code> in base ten a second time</li>
+<li><code>1101111</code> in binary = <code>111</code> in base ten</li>
+</ul>
+<p>If we look up these numbers in the <a href="https://www.asciitable.com/">ASCII Table</a>
+we find that</p>
+<ul>
+<li><code>72</code> = <code>'H'</code></li>
+<li><code>101</code> = <code>'e'</code></li>
+<li><code>108</code> = <code>'l'</code></li>
+<li><code>108</code> = <code>'l'</code> a second time</li>
+<li><code>111</code> = <code>'o'</code></li>
+</ul>
+<p>So these bytes, when treated as ASCII text
+mean <code>Hello</code>.</p>
+<p>However, if we treat these bytes as an integer
+number instead we get the number 19,540,948,591!
+I dare say that the word <code>Hello</code> and the number
+about ninteen billion are very different things!</p>
+<h3 id="unicode">Unicode</h3>
+<p>You wanna know something that&rsquo;ll really bake your noodle?</p>
+<p><a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/" target="_blank">Learn About Unicode</a></p>
+<p><img src="https://media.tenor.com/arD918HsQDAAAAAC/wilsonscap-c1vilwars.gif" alt="Ahhh"></p>
+<h2 id="big-egg-little-egg">Big Egg Little Egg</h2>
+<h3 id="omg-where-does-it-end">OMG Where Does It End</h3>
+<p><img src="https://media.tenor.com/vX_V-QyMo6oAAAAC/no-way-crying.gif" alt="End"></p>
+<h3 id="yes-theres-more">Yes There&rsquo;s More</h3>
+<p>Endian. Endian-ness. Endianness? It&rsquo;s a thing.</p>
+<p>Do you eat your hard boiled eggs from the big end first
+or the little end first? Wars have been fought over less.</p>
+<p>Find out here</p>
+<div style="padding-left:40px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/NcaiHcBvDR4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h2 id="what-is-a-data-type">What Is A Data Type</h2>
+<p>Ok, so let&rsquo;s review</p>
+<ul>
+<li>A byte is the smallest chunk of memory we can use</li>
+<li>We can use four byte numbers or eight byte numbers</li>
+<li>We can pretend some bytes are text instead of numbers</li>
+<li>How we view the bytes completely changes what the data is!</li>
+</ul>
+<p>This is where we find a real need to start talking
+about the concept of a <em>Data Type</em>.</p>
+<h3 id="no-really-what-is-a-data-type">No Really What Is A Data Type</h3>
+<p>A <em>Data Type</em>, simply put, describes what is
+in some memory. Is it a number, if so what kind of number?
+Is it some text? If so, what kind of text, is it ASCII? Is
+it Unicode? If so, which kind of Unicode?</p>
+<p>For this reason, we have <em>Data Types</em>. A data type
+basically just says what is in some memory, and maybe
+also says something about how much memory is used.</p>
+<h3 id="some-simple-examples">Some Simple Examples</h3>
+<p>For example in C++</p>
+<ul>
+<li>The <code>int</code> data type means a 32-bit integer, one that can be negative</li>
+<li>The <code>long</code> data type means a 64-bit integer, one that can be negative</li>
+<li>The <code>unsigned int</code> data type means a 32-bit integer, one that can ONLY be positive</li>
+<li>The <code>unsigned long</code> data type means a 64-bit integer, one that can ONLY be positive</li>
+<li>The <code>float</code> data type means a 32-bit decimal number</li>
+<li>The <code>double</code> data type means a 64-bit decimal number, or double the size of a float, hence the name</li>
+</ul>
+<p>This may not always be perfectly true, but let&rsquo;s roll with it for now.</p>
+<h3 id="text-data-types">Text Data Types</h3>
+<p>In the world of regular human language, like some English
+language text, we have the <code>char</code> data type which is a single
+byte of memory that represents some alphabet character.</p>
+<p>We can store as many chars in a row as we want or need, we are
+not limited to four byte or eight byte chunks. We
+could store the entire works of Shakespear this way.</p>
+<h3 id="your-own-data-types">Your Own Data Types</h3>
+<p>C++ lets you create your own custom data types by writing
+classes.</p>
+<p>We can also use a bunch of the classes that are
+already written for us that come from the C++ standard
+library.</p>
+<p>These classes let us do things like easily deal with
+text, do advanced math like with complex numbers, read
+and write files, take user input, print stuff to the
+screen, check the current date and time and much more!</p>
+<p>These classes, are themselves, data types! WOW!</p>
+<h3 id="why-write-your-own">Why Write Your Own</h3>
+<p>Why would you want to write your own data type? That&rsquo;s
+a good question.</p>
+<p>Some data you have might consist of a large chunk of memory
+like a bunch of integers or real numbers that form
+something bigger when considered as a whole. You might
+also have some text and numbers that belong together.</p>
+<p>Examples might be</p>
+<ul>
+<li>A vacation photo</li>
+<li>A wedding video</li>
+<li>A wheel on a self driving car</li>
+<li>A 3D video game model</li>
+<li>Some music like a song</li>
+<li>Some audio like a podcast</li>
+<li>A candlestick price on the stock market</li>
+<li>A planet in a physics simulation</li>
+<li>A molecule in a chemistry simulation</li>
+<li>A database connection</li>
+<li>A network packet</li>
+</ul>
+<h2 id="the-end">The End</h2>
+<p>Actually. This is only the beginning.</p>
+<p>There is a lot more to learn about programming and
+data types, especially making your own.</p>
+<p>Good luck!</p>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 Phone Doggo
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

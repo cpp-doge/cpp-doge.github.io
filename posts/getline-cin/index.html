@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/posts/getline-cin/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>Getline And Cin</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">Getline And Cin</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#does-noob-a-bamboozle">Does Noob A Bamboozle</a>
+      <ul>
+        <li><a href="#the-problem">The Problem</a></li>
+        <li><a href="#the-solution">The Solution</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><h2 id="does-noob-a-bamboozle">Does Noob A Bamboozle</h2>
+<p>Using <code>getline()</code> together with <code>cin &gt;&gt;</code> is a sharp corner.</p>
+<p>This guide will help you figure that out.</p>
+<h3 id="the-problem">The Problem</h3>
+<p>When you use <code>&gt;&gt;</code> to get input from a stream, then
+the stream does not consume whitespace after your input.</p>
+<p>This means for example that if you <code>cin &gt;&gt;</code> up to  the end of the
+line, then the subsequent newline <code>\n</code> character will still remain
+in the stream.</p>
+<p>This will cause <code>getline()</code> to return an empty string because
+it sees a newline and immediately returns, doing nothing.</p>
+<p><strong>main.cpp</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;sstream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stringstream</span> <span class="n">in</span><span class="p">{</span><span class="s">&#34;42</span><span class="se">\n</span><span class="s">George&#34;</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">in</span> <span class="o">&gt;&gt;</span> <span class="n">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">getline</span><span class="p">(</span><span class="n">in</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Value = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Name = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>This program produces the following result.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Value = 42
+</span></span><span class="line"><span class="cl">Name =
+</span></span></code></pre></div><p>Well, that&rsquo;s not we want, the name is empty!</p>
+<aside class="post-note info"><p>INFO</p><p>
+<p>The stream in this example is not exactly <code>cin</code> but it works
+in the same way and then we don&rsquo;t need to actually provide
+user input to try the program.</p>
+</p></aside>
+<h3 id="the-solution">The Solution</h3>
+<p>The solution is simple, just call <code>.ignore()</code> on your stream
+after you read with <code>&gt;&gt;</code> and before you call <code>getline()</code>.</p>
+<p><strong>main.cpp</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;sstream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stringstream</span> <span class="n">in</span><span class="p">{</span><span class="s">&#34;42</span><span class="se">\n</span><span class="s">George&#34;</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">in</span> <span class="o">&gt;&gt;</span> <span class="n">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">in</span><span class="p">.</span><span class="n">ignore</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">getline</span><span class="p">(</span><span class="n">in</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Value = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Name = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Now the program produces the result we were probably wanting</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Value = 42
+</span></span><span class="line"><span class="cl">Name = George
+</span></span></code></pre></div><p>You can control some stuff about how <code>.ignore()</code> behaves, like
+which characters it should ignore and how many of them.</p>
+<p>For example we can ignore five tabs with</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">cin</span><span class="p">.</span><span class="n">ignore</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="sc">&#39;\t&#39;</span><span class="p">);</span>
+</span></span></code></pre></div><p>See the documentation for <a href="https://en.cppreference.com/w/cpp/io/basic_istream/ignore">istream ignore</a>
+for more information.</p>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 Phone Doggo
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/posts/how-binary-works/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>How Binary Works</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">How Binary Works</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#binary-numbers">Binary Numbers</a></li>
+    <li><a href="#what-is-a-number-system">What Is A Number System</a>
+      <ul>
+        <li><a href="#what-is-a-base">What Is A Base</a></li>
+        <li><a href="#im-the-only-tigger">I&rsquo;m The Only Tigger</a></li>
+        <li><a href="#what-are-digits">What Are Digits</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-problem--the-goal">The Problem &amp; The Goal</a></li>
+    <li><a href="#solving-the-problem">Solving The Problem</a>
+      <ul>
+        <li><a href="#bigger-numbers">Bigger Numbers</a></li>
+        <li><a href="#breaking-it-down">Breaking It Down</a></li>
+        <li><a href="#adding-it-up">Adding It Up</a></li>
+      </ul>
+    </li>
+    <li><a href="#solving-binary-numbers">Solving Binary Numbers</a>
+      <ul>
+        <li><a href="#binary-digits">Binary Digits</a></li>
+        <li><a href="#binary-conversion">Binary Conversion</a></li>
+        <li><a href="#breakdown-the-places">Breakdown The Places</a></li>
+        <li><a href="#put-humpty-back-together">Put Humpty Back Together</a></li>
+      </ul>
+    </li>
+    <li><a href="#decimal-to-binary">Decimal To Binary</a></li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><h2 id="binary-numbers">Binary Numbers</h2>
+<p>How do they work!?</p>
+<p><img src="https://media.tenor.com/gRjRUZyT4ggAAAAC/fucking-magnets-how-do-they-work-reaction.gif" alt="Magnets"></p>
+<h2 id="what-is-a-number-system">What Is A Number System</h2>
+<h3 id="what-is-a-base">What Is A Base</h3>
+<p>The base of your number system is how many digits you have.</p>
+<p>We doggos use a beef hotdog number system.</p>
+<p>No, wait&hellip; we use a base ten number system.</p>
+<p>What does that actually mean though?</p>
+<h3 id="im-the-only-tigger">I&rsquo;m The Only Tigger</h3>
+<p>We have been using base ten for so long in our normal lives, like
+at the grocery store or when talking about footbal scores, that
+it just feels natural and normal to most people.</p>
+<p>However, different cultures in history have used different
+number systems, like the ancient Mayan&rsquo;s supposedly used
+a base 60 number system! WOW!</p>
+<h3 id="what-are-digits">What Are Digits</h3>
+<p>A digit, like a letter of the alphabet, is a little
+squiggly line symbol that people drew on rocks and
+paper thousands of years ago, so now we&rsquo;re mostly
+stuck with them.</p>
+<p>Digits represent numbers.</p>
+<p>We have ten digits, zero through nine. These
+represent the numbers, you guessed it, zero through nine.</p>
+<ul>
+<li>0 (this is actually the first digit)</li>
+<li>1 (this is actually the second digit)</li>
+<li>2 (this is actually the third digit)</li>
+<li>3 (this is actually the fourth digit)</li>
+<li>4 (this is actually the fifth digit)</li>
+<li>5 (this is actually the sixth digit)</li>
+<li>6 (this is actually the seventh digit)</li>
+<li>7 (this is actually the eighth digit)</li>
+<li>8 (this is actually the ninth digit)</li>
+<li>9 (this is actually the tenth digit)</li>
+</ul>
+<p>Or you might prefer to start at one since
+starting at zero can be a little bit confusing
+if you are not used to computer numbers yet.</p>
+<p>It&rsquo;s a little less confusing also because
+now the numbers and their place names
+line up, where 1 is first, 2 is second etc..</p>
+<ul>
+<li>1 (this is the first digit)</li>
+<li>2 (this is the second digit)</li>
+<li>3 (this is the third digit)</li>
+<li>4 (this is the fourth digit)</li>
+<li>5 (this is the fifth digit)</li>
+<li>6 (this is the sixth digit)</li>
+<li>7 (this is the seventh digit)</li>
+<li>8 (this is the eighth digit)</li>
+<li>9 (this is the ninth digit)</li>
+<li>0 (this is the tenth digit)</li>
+</ul>
+<p>Unfortunately for you, dear doggo, is that most computers
+start numbering at zero. <em>Sad Confusion Noises</em></p>
+<h2 id="the-problem--the-goal">The Problem &amp; The Goal</h2>
+<p>Numbers in different base systems mean something different.</p>
+<p>For example, the number <code>123</code> does not mean the same thing
+in base ten as the number <code>123</code> in base 60.</p>
+<p>So <code>123</code> is NOT EQUAL to <code>123</code>!? What!?</p>
+<p><img src="https://media.tenor.com/NT9RvzuAPPMAAAAC/funny-face-funny-guy.gif" alt="Weird"></p>
+<p>To solve this we need to convert between bases.</p>
+<p>How do we convert from base to base? For example, how
+do we convert a number from base ten to base 60?</p>
+<p>We seek a math formula that will allow us to do this.</p>
+<p>Arriving at this math formula and understanding it
+is the goal.</p>
+<h2 id="solving-the-problem">Solving The Problem</h2>
+<h3 id="bigger-numbers">Bigger Numbers</h3>
+<p>How we we talk about and write down numbers bigger than
+ten if we only have ten digits?</p>
+<p>The answer is number systems. We put a bunch of digits
+in a row, and then we add and multiply.</p>
+<h3 id="breaking-it-down">Breaking It Down</h3>
+<p>Large numbers as you know them have &ldquo;places&rdquo;. Each place
+is a multiple of the base. In regular human numbers
+each place is a multiple of ten.</p>
+<p>We write a number such as &ldquo;five hundred thirty seven&rdquo;
+like <code>537</code>, but what does that mean?</p>
+<p>To do more analysis, split this number into places
+and give them their place names.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">          this is the ones place
+</span></span><span class="line"><span class="cl">                               |
+</span></span><span class="line"><span class="cl">       this is the tens place  |
+</span></span><span class="line"><span class="cl">                            |  |
+</span></span><span class="line"><span class="cl">this is the hundreds place  |  |
+</span></span><span class="line"><span class="cl">                         |  |  |
+</span></span><span class="line"><span class="cl">                         |  |  |
+</span></span><span class="line"><span class="cl">                         v  v  v
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                         5  3  7
+</span></span></code></pre></div><p>Why is this useful?</p>
+<p>Understanding what this actually means and how it&rsquo;s useful
+gets into doing some basic gradeschool arithmetic.</p>
+<h3 id="adding-it-up">Adding It Up</h3>
+<p>We have chopped this number in to places. Now what?</p>
+<p>Here Are The Rules:</p>
+<ul>
+<li>Take each place</li>
+<li>Multiply the number in that place by its place value</li>
+<li>Add the results</li>
+</ul>
+<p>So</p>
+<ul>
+<li>Multiply by one for the ones place</li>
+<li>Multiply by ten for the tens place</li>
+<li>Multiply by one hundred for the hundreds place</li>
+</ul>
+<p>Then we add all these results together to get our
+final number.</p>
+<p>Breaking down this example number <code>537</code> we have</p>
+<ul>
+<li>A <code>7</code> in the ones place</li>
+<li>A <code>3</code> in the tens place</li>
+<li>A <code>5</code> in the hundreds place</li>
+</ul>
+<p>We multiply each number by its place</p>
+<ul>
+<li>A <code>7</code> in the ones place, multiplied by one</li>
+<li>A <code>3</code> in the tens place, multiplied by ten</li>
+<li>A <code>5</code> in the hundreds place, multiplied by one hundred</li>
+</ul>
+<p>Finally we add up the results.</p>
+<p>We can write this down as a basic math equation and we
+get something like this.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">537 = (5 * 100) + (3 * 10) + (7 * 1)
+</span></span></code></pre></div><p>We can think of this as saying there are</p>
+<ul>
+<li>five hundreds</li>
+<li>three tens</li>
+<li>seven ones</li>
+<li>all added together</li>
+</ul>
+<p>We can check our work to see if this is true</p>
+<ul>
+<li><code>5 * 100 = 500</code></li>
+<li><code>3 * 10 = 30</code></li>
+<li><code>7 * 1 = 7</code></li>
+</ul>
+<p>If we add these up using a calculator</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">500 + 30 + 7
+</span></span></code></pre></div><p>We get the number <code>537</code>.</p>
+<p>This may seem strange and pointless, but it will matter
+when we talk about the numbers that computers use,
+binary numbers.</p>
+<h2 id="solving-binary-numbers">Solving Binary Numbers</h2>
+<p>Binary is a base two number system. The word binary basically
+means two. A bicycle is named that because <code>bi</code> means two and
+a bicycle has two wheels.</p>
+<h3 id="binary-digits">Binary Digits</h3>
+<p>Unlike our familiar human numbers, binary only has two digits,
+zero and one. Bi means two, so we can only have two numbers
+in our number system.</p>
+<ul>
+<li>0 (this is the first digit)</li>
+<li>1 (this is the second digit)</li>
+</ul>
+<p>This has a strange problem from before where the numbering and
+digit names are off by one. You could think about it like
+this instead.</p>
+<ul>
+<li>1 (this is the first digit)</li>
+<li>0 (this is the second digit)</li>
+</ul>
+<p>But that doesn&rsquo;t help much either because zero doesn&rsquo;t really
+match to the idea of being second. Oh well.</p>
+<p>Anyway, binary has two digits, zero and one, that&rsquo;s it.</p>
+<p>Each digit means what it does in our natural base ten
+system, but of course there are only two digits available.</p>
+<h3 id="binary-conversion">Binary Conversion</h3>
+<p>Numbers are stored in binary in a computer. The base of
+the numbers used by the computer is not the same as what
+we normally use as humans.</p>
+<p>If we want to know which &ldquo;human&rdquo; number is stored in a
+computer, we need to look at the binary number, and
+translate the binary digits into a regular normal human
+base ten decimal number.</p>
+<p>To do this, we use the formula we looked at from before,
+except we change the base.</p>
+<p>In human numbers our base is 10. In binary numbers, the
+base is two, so each place is a multiple of two.</p>
+<p>Let&rsquo;s consider a simple binary number in a computer like</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">1101
+</span></span></code></pre></div><p>Well, this number does not mean one thousand, one hundred
+and one, because it&rsquo;s a binary number in a computer.</p>
+<p>So how do we figure out how much this actually is
+as a number we&rsquo;re actually familiar with?</p>
+<h3 id="breakdown-the-places">Breakdown The Places</h3>
+<p>Let&rsquo;s break down the places of this number</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">                  this is the ones place
+</span></span><span class="line"><span class="cl">                                       |
+</span></span><span class="line"><span class="cl">               this is the twos place  |
+</span></span><span class="line"><span class="cl">                                    |  |
+</span></span><span class="line"><span class="cl">        this is the fours place  |  |  |
+</span></span><span class="line"><span class="cl">                                 |  |  |
+</span></span><span class="line"><span class="cl">    this is the eights place  |  |  |  |
+</span></span><span class="line"><span class="cl">                              |  |  |  |
+</span></span><span class="line"><span class="cl">                              v  v  v  v
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                              1  1  0  1
+</span></span></code></pre></div><p>Wait, these are different than before, why these places?</p>
+<p>We get these places because the base is two so
+each place is a multiple of two.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">  the ones place = 1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  the twos place = 1 * 2 = 2
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> the fours place = 1 * 2 * 2 = 4
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">the eights place = 1 * 2 * 2 * 2 = 8
+</span></span></code></pre></div><p>These are actually powers of the base, where the power
+of the first place starts at zero and increases by
+one for each place.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">  the ones place = 2^0 = 1 (the zero power of two)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  the twos place = 2^1 = 2 (the first power of two)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> the fours place = 2^2 = 4 (the second power of two)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">the eights place = 2^3 = 8 (the third power of two)
+</span></span></code></pre></div><h3 id="put-humpty-back-together">Put Humpty Back Together</h3>
+<p>Using this new perspective, we can write the equation
+for our binary number like this</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">(1 * 8) + (1 * 4) + (0 * 2) + (1 * 1)
+</span></span></code></pre></div><p>As before, we might conceptualize this by saying out
+loud, verbally, that there are</p>
+<ul>
+<li>One eights</li>
+<li>One fours</li>
+<li>Zero twos</li>
+<li>One ones</li>
+<li>all added together.</li>
+</ul>
+<p>So if we do the math we get</p>
+<ul>
+<li>1 * 8 = 8</li>
+<li>1 * 4 = 4</li>
+<li>0 * 2 = 0</li>
+<li>1 * 1 = 1</li>
+</ul>
+<p>Add these all together with a calculator and we get</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">8 + 4 + 1 = 13
+</span></span></code></pre></div><p>So the binary number <code>1101</code> actually means the number thirteen
+as we are normally familiar with it.</p>
+<aside class="post-note info"><p>INFO</p><p>
+<p>notice that this is the same as</p>
+<p><code>(1 * 2^3) + (1 * 2^2) + (0 * 2^1) + (1 * 2^0)</code></p>
+<p>which is just expressing the places as their powers.</p>
+<p>This may not seem super useful, but it&rsquo;s convenient
+especially when writing a computer program to do
+these kinds of conversions.</p>
+</p></aside>
+<h2 id="decimal-to-binary">Decimal To Binary</h2>
+<p>This is left as an exercise for the reader.</p>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 Phone Doggo
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

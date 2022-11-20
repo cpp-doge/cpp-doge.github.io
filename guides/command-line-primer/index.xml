@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Command Line Primer on Doge Codes</title>
+    <link>https://cpp-doge.github.io/guides/command-line-primer/</link>
+    <description>Recent content in Command Line Primer on Doge Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://cpp-doge.github.io/guides/command-line-primer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1 - What Is The CLI</title>
+      <link>https://cpp-doge.github.io/guides/command-line-primer/what-is-the-command-line/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/command-line-primer/what-is-the-command-line/</guid>
+      <description>What Is The Command Line The command line is usually a black screen or window into which you can enter and run plain text commands.
+This means you need to know about the commands that are available and how to run them. There are no buttons, no icons and no menus you can use to navigate.
+Long ago the command prompt was the only way to use your computer.
+Photo Sai Kiran Anagani</description>
+    </item>
+    
+    <item>
+      <title>2 - About File Paths</title>
+      <link>https://cpp-doge.github.io/guides/command-line-primer/about-file-paths/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/command-line-primer/about-file-paths/</guid>
+      <description>Files &amp;amp; Folders Long ago, we used to store information on bits of dead trees on our desks and in boxes. No more.
+Photo by Maksym Kaharlytskyi
+You have files on your computer. You probably have things like photos, music, videos, spreadsheets, video game saves and many other possible kinds of files.
+Your files are organized in folders, much like a traditional old school filing cabinet. One major difference is that folders on a computer can have many other folders and files inside them where usually a physical filing cabinet does not typically have folders inside of other folders (but it could, who knows!</description>
+    </item>
+    
+    <item>
+      <title>3 - CLI Basics</title>
+      <link>https://cpp-doge.github.io/guides/command-line-primer/command-line-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/command-line-primer/command-line-basics/</guid>
+      <description>Photo Sai Kiran Anagani
+The Command Prompt When you open your terminal, you will be greeted with your shell prompt.
+Bash In Bash it looks something like this
+elmo@doge:~$ INFO
+The little squiggle ~ is special, it is short for your local user directory.
+PowerShell In PowerShell it looks something like this
+C:\Users\elmo&amp;gt; The prompt usually shows you some information about your computer and where you are, like your username and the path to the current working directory.</description>
+    </item>
+    
+    <item>
+      <title>4 - Intermediate CLI</title>
+      <link>https://cpp-doge.github.io/guides/command-line-primer/command-line-intermediate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/command-line-primer/command-line-intermediate/</guid>
+      <description>Photo Sai Kiran Anagani
+Scripting You can write programs using the programming language of your shell, usually called your shell scripting language.
+These programs can do almost anything.
+Some ideas for things you could do
+Backup your vacation photos Backup your game saves Run different Minecraft versions with different mods Launch a video game with a high priority for better performance Compile and run a program you wrote Compile and run a program someone else wrote Manage a Git repository Rename hundreds of files at once Resize, rotate, crop and blur hundreds of images at once Aliases Aliases are a way to make common commands shorter, easier and faster to type and run.</description>
+    </item>
+    
+    <item>
+      <title>5 - About Environment Variables</title>
+      <link>https://cpp-doge.github.io/guides/command-line-primer/about-environment-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/command-line-primer/about-environment-variables/</guid>
+      <description>Photo Sai Kiran Anagani
+Environment Variables An environment variable is a way to save some info in a place where your programs can always get to it.
+You can set environment variables so that all programs have them or only for one program at a time.
+Syntax Environment variables look like regular variables in your shell scripting language.
+Bash environment variables begin with $ and the name, so for example $HELLO could be an environment variable in Bash.</description>
+    </item>
+    
+    <item>
+      <title>6 - Advanced CLI</title>
+      <link>https://cpp-doge.github.io/guides/command-line-primer/command-line-advanced/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/command-line-primer/command-line-advanced/</guid>
+      <description>Photo Sai Kiran Anagani
+Basic Boolean Tests You can use basic boolean tests. This mostly works based on whether another command succeeds or not.
+Bash The Test command is the special character [.
+The Test command on Linux lets you check if something is true or not.
+The test command contains what should hopefully be mostly familiar expressions and ends with ], like this
+[ &amp;#34;hello&amp;#34; == &amp;#34;world&amp;#34; ] This checks to see if hello is the same as world.</description>
+    </item>
+    
+    <item>
+      <title>7 - Customize</title>
+      <link>https://cpp-doge.github.io/guides/command-line-primer/configuring-your-shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/command-line-primer/configuring-your-shell/</guid>
+      <description>Photo Sai Kiran Anagani
+Configuring Your Shell Most shells let you customize your settings through the use of special startup files. Your startup file is just a shell script that runs each time you open your shell.
+The Startup File The Bash startup file lives in $HOME/.bashrc. The rc suffix means run control and is a historical thing from Linux systems.
+The PowerShell 7 startup file lives in $env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1</description>
+    </item>
+    
+  </channel>
+</rss>

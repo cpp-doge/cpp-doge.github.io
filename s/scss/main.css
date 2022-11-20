@@ -1,0 +1,433 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  border: 0;
+  padding-top: 1px;
+  padding-bottom: 1px; }
+
+h1 {
+  font-size: 24pt; }
+
+h2 {
+  font-size: 20pt; }
+
+h3 {
+  font-size: 18pt; }
+
+h4 {
+  font-size: 16pt; }
+
+h5 {
+  font-size: 14pt; }
+
+ul {
+  margin: 0;
+  border: 0; }
+
+li {
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+a, a:hover, a:link {
+  color: #89f;
+  text-decoration: none; }
+
+a:hover {
+  color: #abf; }
+
+.highlight {
+  margin: 10px 30px; }
+  .highlight pre {
+    background-color: rgba(25, 20, 40, 0.8);
+    border-radius: 5px;
+    overflow-x: auto; }
+    .highlight pre code {
+      font-family: 'Roboto Mono'; }
+      .highlight pre code > span.line {
+        padding-top: 5px;
+        padding-left: 10px; }
+      .highlight pre code > span:first-child {
+        padding-top: 10px; }
+      .highlight pre code > span:last-child {
+        padding-bottom: 10px; }
+
+html, body {
+  background-color: #121212;
+  background-image: url(/s/img/cameronsworld.net/stars3.png);
+  color: #ddd;
+  font-family: 'Roboto', sans-serif; }
+
+#body {
+  position: relative; }
+
+.main {
+  width: 1200px;
+  border: 1px solid #232323;
+  border-radius: 5px;
+  padding: 0;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px; }
+
+.layout-header {
+  background-color: #0e0e0e;
+  background-image: url(/s/img/cameronsworld.net/purple-stars.jpg);
+  padding: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 10px #348;
+  display: flex; }
+  .layout-header .center {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center; }
+    .layout-header .center .menu-center {
+      width: 600px;
+      display: flex; }
+      .layout-header .center .menu-center .menu-home {
+        width: 150px;
+        text-align: center;
+        border-radius: 5px;
+        margin: 0 auto; }
+        .layout-header .center .menu-center .menu-home .home-link {
+          font-weight: bold;
+          font-family: 'Press Start 2P';
+          color: #abd;
+          font-size: 20px; }
+          .layout-header .center .menu-center .menu-home .home-link span {
+            display: block;
+            padding-top: 10px; }
+          .layout-header .center .menu-center .menu-home .home-link:link {
+            color: #abd; }
+          .layout-header .center .menu-center .menu-home .home-link:hover {
+            color: orange; }
+
+.layout-footer {
+  background: #232323;
+  border: 0;
+  margin: 0;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  color: #666;
+  display: flex; }
+  .layout-footer a, .layout-footer a:link {
+    color: #555; }
+  .layout-footer .center {
+    flex-grow: 1; }
+  .layout-footer .copyright {
+    padding-right: 10px; }
+
+.card {
+  padding: 10px;
+  background: #181818;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center; }
+
+.home {
+  position: relative;
+  padding: 20px;
+  background-image: url(/s/img/cameronsworld.net/stars1.png);
+  padding-bottom: 80px; }
+
+.home-title-header {
+  background-color: #121212;
+  border-radius: 5px;
+  padding: 10px;
+  width: 500px;
+  margin: 0 auto; }
+  .home-title-header .home-title {
+    font-family: 'Chewy', sans-serif;
+    font-size: 30pt;
+    padding-bottom: 10px;
+    text-align: center; }
+  .home-title-header .home-sub-title {
+    text-align: center;
+    color: #aaa; }
+
+.home-blog-link {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer; }
+  .home-blog-link, .home-blog-link:link {
+    text-align: center;
+    font-size: 100px;
+    font-family: 'Rubik Moonrocks';
+    color: #aaa; }
+  .home-blog-link:hover {
+    color: #f0f; }
+  .home-blog-link.inferno, .home-blog-link.inferno:link {
+    font-family: 'Creepster';
+    color: #aaa; }
+  .home-blog-link.inferno:hover {
+    color: #f00; }
+
+.home-other .home-blog-link, .home-other .home-blog-link:link {
+  font-family: 'Chewy';
+  font-size: 40px;
+  color: #aaa; }
+
+.home-other .home-blog-link:hover {
+  color: #f90; }
+
+.home-logo {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  padding-top: 20px; }
+  .home-logo img {
+    border-radius: 100%; }
+
+.home-posts {
+  width: 800px;
+  margin: 0 auto; }
+
+.home-post {
+  padding: 12px;
+  margin: 20px 0;
+  border: 1px solid #222;
+  background: #181818;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center; }
+
+.home-wiggle-fish {
+  position: absolute;
+  top: 35px;
+  left: 73px; }
+
+.home-space-ship {
+  position: absolute;
+  top: 175px;
+  left: 223px; }
+
+.home-skel-doot {
+  position: absolute;
+  top: 35px;
+  right: 73px; }
+
+.home-enterprise {
+  position: absolute;
+  top: 300px;
+  left: 120px; }
+
+.home-cat-walk {
+  position: absolute;
+  top: 300px;
+  right: 200px; }
+
+.home-ufo2 {
+  position: absolute;
+  top: 400px;
+  right: 150px; }
+
+.purple-dragon {
+  position: absolute;
+  top: 0;
+  right: 60px; }
+
+.fairy-toadstool {
+  width: 102px;
+  height: 111px;
+  position: absolute;
+  bottom: 0;
+  right: 910px; }
+
+.blog {
+  position: relative;
+  padding: 20px;
+  background-image: url(/s/img/cameronsworld.net/stars1.png); }
+  .blog.inferno {
+    background-image: url(/s/img/cameronsworld.net/gothbg.png); }
+
+.blog-title-header {
+  background-color: #121212;
+  border-radius: 5px;
+  padding: 10px;
+  width: 500px;
+  margin: 0 auto; }
+  .blog-title-header .blog-title {
+    font-family: 'Chewy', sans-serif;
+    font-size: 30pt;
+    padding-bottom: 10px;
+    text-align: center; }
+  .blog-title-header .blog-sub-title {
+    text-align: center;
+    color: #aaa; }
+
+.blog-logo {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  padding-top: 20px;
+  padding-bottom: 40px; }
+  .blog-logo img {
+    border-radius: 100%; }
+
+.blog-posts {
+  width: 800px;
+  margin: 0 auto; }
+
+.blog-post {
+  padding: 12px;
+  margin: 20px 0;
+  border: 1px solid #222;
+  background: #181818;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center; }
+  .blog-post.inferno a, .blog-post.inferno a:link {
+    color: #f90; }
+  .blog-post.inferno a:hover {
+    color: #f00; }
+
+.blog-fire-skull1 {
+  position: absolute;
+  top: 115px;
+  left: 73px; }
+
+.blog-dog-mail {
+  position: absolute;
+  top: 50px;
+  left: 183px; }
+
+.blog-gold-man {
+  position: absolute;
+  top: 170px;
+  left: 213px; }
+
+.blog-scarab {
+  position: absolute;
+  top: 55px;
+  right: 163px; }
+
+.blog-fire-skull2 {
+  position: absolute;
+  top: 185px;
+  right: 73px; }
+
+.blog-posts-footer {
+  padding-top: 30px;
+  width: 100%;
+  display: flex; }
+  .blog-posts-footer .center {
+    text-align: center;
+    flex-grow: 1; }
+
+.post {
+  position: relative;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px; }
+
+.post-header {
+  text-align: center;
+  border-radius: 5px;
+  background-color: #181818;
+  background-image: url(/s/img/cameronsworld.net/bubble-stars.png);
+  border-bottom: 1px solid #343434;
+  padding: 10px;
+  margin-bottom: 10px; }
+  .post-header h1 {
+    font-family: 'Rubik Moonrocks', sans-serif;
+    font-size: 60px; }
+
+.post-toc {
+  position: absolute;
+  top: 120px;
+  right: 20px;
+  width: 350px;
+  max-height: 600px;
+  overflow-y: auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgba(32, 16, 50, 0.6); }
+  .post-toc h1 {
+    font-family: 'Russo One'; }
+  .post-toc ul, .post-toc li {
+    padding: 0;
+    margin: 0;
+    border: 0; }
+  .post-toc ul {
+    padding-left: 24px; }
+    .post-toc ul:first-child {
+      padding-left: 0; }
+  .post-toc li {
+    list-style-type: none;
+    padding: 4px 0; }
+
+.post-content {
+  width: 780px;
+  padding-bottom: 80px; }
+  .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6, .post-content p {
+    padding: 10px 0;
+    margin: 0 30px; }
+  .post-content h1 {
+    font-family: 'Monoton'; }
+  .post-content h2 {
+    padding-top: 80px;
+    font-family: 'Russo One'; }
+  .post-content h3 {
+    font-family: 'Chewy'; }
+  .post-content h4, .post-content h5, .post-content h6 {
+    font-family: 'Teko'; }
+  .post-content p, .post-content ul {
+    font-family: 'Roboto';
+    font-size: 20px; }
+  .post-content p code, .post-content li code, .post-content aside code {
+    font-size: 16px;
+    background: #223;
+    border-radius: 3px;
+    border: 1px solid #334;
+    padding: 1px 4px; }
+  .post-content ul {
+    padding-left: 80px; }
+    .post-content ul li {
+      padding: 3px 0px; }
+  .post-content .post-note {
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-left: 60px;
+    width: 690px;
+    border-radius: 3px; }
+    .post-content .post-note.ok {
+      background-color: rgba(0, 170, 100, 0.3); }
+    .post-content .post-note.info {
+      background-color: rgba(50, 100, 255, 0.3); }
+    .post-content .post-note.warn {
+      background-color: rgba(100, 50, 200, 0.4); }
+    .post-content .post-note.stop {
+      background-color: rgba(180, 0, 50, 0.3); }
+    .post-content .post-note p, .post-content .post-note ul, .post-content .post-note li {
+      padding: 0;
+      margin: 0;
+      margin-bottom: 20px;
+      font-size: 20px; }
+    .post-content .post-note > p {
+      margin: 20px; }
+  .post-content h1 {
+    font-size: 60px;
+    background-image: url(/s/img/cameronsworld.net/purple-clouds.jpg);
+    border-radius: 20px;
+    margin-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px; }
+  .post-content h2 {
+    font-size: 50px; }
+  .post-content h3 {
+    font-size: 40px; }
+  .post-content h4 {
+    font-size: 30px; }
+  .post-content h5, .post-content h6 {
+    font-size: 20px; }
+
+.post-content.not-found p {
+  text-align: center; }

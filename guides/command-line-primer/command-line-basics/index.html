@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/guides/command-line-primer/command-line-basics/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>3 - CLI Basics</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">3 - CLI Basics</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-command-prompt">The Command Prompt</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#running-commands">Running Commands</a>
+      <ul>
+        <li></li>
+        <li><a href="#echo">Echo</a></li>
+        <li><a href="#escaping">Escaping</a></li>
+        <li><a href="#doing-basic-math">Doing Basic Math</a></li>
+      </ul>
+    </li>
+    <li><a href="#getting-around">Getting Around</a>
+      <ul>
+        <li><a href="#where-am-i-now">Where Am I Now?</a></li>
+        <li><a href="#changing-directory">Changing Directory</a></li>
+      </ul>
+    </li>
+    <li><a href="#managing-files--directories">Managing Files &amp; Directories</a>
+      <ul>
+        <li><a href="#listing-files">Listing Files</a></li>
+        <li><a href="#looking-inside-files">Looking Inside Files</a></li>
+        <li><a href="#creating-directories">Creating Directories</a></li>
+        <li><a href="#creating-files">Creating Files</a></li>
+        <li><a href="#copying-files">Copying Files</a></li>
+        <li><a href="#moving--renaming-files">Moving &amp; Renaming Files</a></li>
+        <li><a href="#deleting-files">Deleting Files</a></li>
+        <li><a href="#deleting-folders">Deleting Folders</a></li>
+      </ul>
+    </li>
+    <li><a href="#running-programs">Running Programs</a>
+      <ul>
+        <li></li>
+        <li><a href="#running-relative-programs">Running Relative Programs</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-else">What Else?</a></li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><p><img src="/s/img/sai-kiran-anagani-Tjbk79TARiE-unsplash-crop.png" alt="Command Line"></p>
+<p>Photo <a href="https://unsplash.com/@anagani_saikiran?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Sai Kiran Anagani</a></p>
+<h2 id="the-command-prompt">The Command Prompt</h2>
+<p>When you open your terminal, you will be greeted with your shell
+prompt.</p>
+<h4 id="bash">Bash</h4>
+<p>In Bash it looks something like this</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">elmo@doge:~$
+</span></span></code></pre></div><aside class="post-note info"><p>INFO</p><p>
+<p>The little squiggle <code>~</code> is special, it is short for your
+local user directory.</p>
+</p></aside>
+<h4 id="powershell">PowerShell</h4>
+<p>In PowerShell it looks something like this</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Users\elmo&gt;
+</span></span></code></pre></div><p>The prompt usually shows you some information about your computer
+and where you are, like your username and the path to the current
+working directory.</p>
+<h2 id="running-commands">Running Commands</h2>
+<p>You run a command on the command line by simply typing out the
+command and hitting the <code>Enter</code> key.</p>
+<h4 id="bash-1">Bash</h4>
+<p>Running a command in Bash looks something like this</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">elmo@doge:~$ firefox
+</span></span></code></pre></div><h4 id="powershell-1">PowerShell</h4>
+<p>Running a command in PowerShell looks something like this</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\&gt; explorer.exe
+</span></span></code></pre></div><h3 id="echo">Echo</h3>
+<p>You can print messages with <code>echo</code> or <code>Write-Output</code>, doing
+so looks something like this.</p>
+<h4 id="bash-2">Bash</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">elmo@doge:~$ echo &#34;hello this is my message&#34;
+</span></span><span class="line"><span class="cl">hello this is my message
+</span></span><span class="line"><span class="cl">elmo@doge:~$
+</span></span></code></pre></div><h4 id="powershell-2">PowerShell</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Users\elmo&gt; Write-Output &#34;hello this is my message&#34;
+</span></span><span class="line"><span class="cl">hello this is my message
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">C:\Users\elmo&gt;
+</span></span></code></pre></div><p>From now on, examples may not show the
+full command prompt, but only the commands to be run.</p>
+<aside class="post-note info"><p>INFO</p><p>
+<p>Many Linux commands can also be run in PowerShell
+for example the <code>echo</code> command can be used in PowerShell too</p>
+</p></aside>
+<h3 id="escaping">Escaping</h3>
+<p>Some characters are special because what you&rsquo;re actually
+doing is writing tiny short snippets in a shell scripting
+language and then running them as commands.</p>
+<p>If you want to print a literal double quote, for example,
+then you will need to escape it.</p>
+<h4 id="bash-3">Bash</h4>
+<p>Escape double quotes with backslashes in Bash</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">echo &#34;the message is \&#34;hello\&#34;&#34;
+</span></span><span class="line"><span class="cl">the message is &#34;hello&#34;
+</span></span></code></pre></div><h4 id="powershell-3">PowerShell</h4>
+<p>Escape double quotes with the backtick in PowerShell</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Write-Output &#34;the message is `&#34;hello`&#34;&#34;
+</span></span><span class="line"><span class="cl">the message is &#34;hello&#34;
+</span></span></code></pre></div><h3 id="doing-basic-math">Doing Basic Math</h3>
+<p>You can do basic arithmetic directly from your shell.</p>
+<h4 id="powershell-4">PowerShell</h4>
+<p>In PowerShell you can simply type it out and hit enter</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Users\elmo&gt; 2 + 2
+</span></span><span class="line"><span class="cl">4
+</span></span><span class="line"><span class="cl">C:\Users\elmo&gt;
+</span></span></code></pre></div><h4 id="bash-4">Bash</h4>
+<p>In Bash you can use the <code>bc</code> calculator program.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">elmo@doge:~$ echo &#34;2 + 2&#34; | bc
+</span></span><span class="line"><span class="cl">4
+</span></span><span class="line"><span class="cl">elmo@doge:~$
+</span></span></code></pre></div><aside class="post-note ok"><p><p>OK!</p>
+<p>Don&rsquo;t worry too much about how this works for now.</p>
+<p>See <a href="/guides/command-line-primer/command-line-advanced">Advanced Command Line</a> for more
+information about why this works, but probably save that for later
+and finish this guide first.</p>
+</p></aside>
+<h2 id="getting-around">Getting Around</h2>
+<p>You will want to be able to move around into different
+folders on your computer so you can more easily work
+with your projects and better manage your files.</p>
+<h3 id="where-am-i-now">Where Am I Now?</h3>
+<p>You can check which directory you&rsquo;re in right now.</p>
+<h4 id="bash-5">Bash</h4>
+<p>In Bash use <code>pwd</code> which stands for &ldquo;print workding directory&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">pwd
+</span></span><span class="line"><span class="cl">/home/elmo
+</span></span></code></pre></div><h4 id="powershell-5">PowerShell</h4>
+<p>In PowerShell use <code>Get-Location</code>, the name is hopefully self explanatory.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Get-Location
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Path
+</span></span><span class="line"><span class="cl">----
+</span></span><span class="line"><span class="cl">C:\Users\elmo
+</span></span></code></pre></div><h3 id="changing-directory">Changing Directory</h3>
+<p>Your current working directory can be changed.</p>
+<h4 id="bash-6">Bash</h4>
+<p>In Bash use the <code>cd</code> command which stands for &ldquo;change directory&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">elmo@doge:~$ cd projects
+</span></span><span class="line"><span class="cl">elmo@doge:~/projects$ pwd
+</span></span></code></pre></div><h4 id="powershell-6">PowerShell</h4>
+<p>In PowerShell use the <code>Set-Location</code> command, the name is hopefully self explanatory.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Users\elmo&gt; Set-Location projects
+</span></span><span class="line"><span class="cl">C:\Users\elmo\projects&gt;
+</span></span></code></pre></div><p>In both of these cases the prompt changes to show us
+that we are in the new different directory.</p>
+<p>If your prompt doesn&rsquo;t show this, use the technique above
+to see where you are right now.</p>
+<h2 id="managing-files--directories">Managing Files &amp; Directories</h2>
+<h3 id="listing-files">Listing Files</h3>
+<p>Your can print out a list of files in the current directory</p>
+<h4 id="bash-7">Bash</h4>
+<p>In Bash use the <code>ls</code> command which stands for &ldquo;list&rdquo;. Doing so
+should look something like this.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">elmo@doge:~$ ls
+</span></span><span class="line"><span class="cl">Documents Downloads MyFile.txt MyPhoto.png
+</span></span><span class="line"><span class="cl">elmo@doge:~$
+</span></span></code></pre></div><p>In Bash use <code>ls -l</code> for more details, think of <code>-l</code> as meaning &ldquo;long&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">elmo@doge:~$ ls -l
+</span></span><span class="line"><span class="cl">total 112
+</span></span><span class="line"><span class="cl">drwxr-xr-x 2 elmo elmo 36864 Nov 28 2020 Documents
+</span></span><span class="line"><span class="cl">drwxr-xr-x 6 elmo elmo  4096 Nov 28 2020 Downloads
+</span></span><span class="line"><span class="cl">drwxr-xr-x 1 elmo elmo 20480 Nov 28 2020 MyFile.txt
+</span></span><span class="line"><span class="cl">drwxr-xr-x 1 elmo elmo 20480 Nov 28 2020 MyPhoto.png
+</span></span><span class="line"><span class="cl">elmo@doge:~$
+</span></span></code></pre></div><h4 id="powershell-7">PowerShell</h4>
+<p>In PowerShell use the <code>Get-ChildItem</code> command. Doing so should look
+something like this.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Users\elmo&gt; Get-ChildItem
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    Directory:  C:\Users\elmo
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Mode                LastWriteTime     Length Name
+</span></span><span class="line"><span class="cl">----                -------------     ------ ----
+</span></span><span class="line"><span class="cl">d----        06/28/2022   9:00 AM        1   Documents
+</span></span><span class="line"><span class="cl">d-r--        06/28/2022   9:00 AM        1   Downloads
+</span></span><span class="line"><span class="cl">-a---        06/28/2022   9:00 AM    54.88KB MyNotes.txt
+</span></span><span class="line"><span class="cl">-a---        06/28/2022   9:00 AM    72.33MB MyPhoto.png
+</span></span></code></pre></div><p>Don&rsquo;t worry too much for now about what all these details
+mean, you can deal with that when you want to.</p>
+<h3 id="looking-inside-files">Looking Inside Files</h3>
+<p>You can print the contents of a file.</p>
+<p>Let&rsquo;s say you have a file named <code>Surprise.txt</code> in your
+current folder.</p>
+<h4 id="bash-8">Bash</h4>
+<p>In Bash, use the <code>cat</code> command to print it out.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cat ./Surprise.txt
+</span></span><span class="line"><span class="cl">Happy Birthday!
+</span></span></code></pre></div><h4 id="powershell-8">PowerShell</h4>
+<p>In PowerShell, use the <code>Get-Content</code> command to print it out.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Get-Content .\Surprise.txt
+</span></span><span class="line"><span class="cl">Happy Birthday!
+</span></span></code></pre></div><h3 id="creating-directories">Creating Directories</h3>
+<p>You can create new folders.</p>
+<h4 id="bash-9">Bash</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">mkdir MyNewFolder
+</span></span></code></pre></div><h4 id="powershell-9">PowerShell</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">New-Item -Path MyNewFolder -ItemType Directory
+</span></span></code></pre></div><h3 id="creating-files">Creating Files</h3>
+<p>You can create new files.</p>
+<h4 id="bash-10">Bash</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">touch SecretRecipes.txt
+</span></span></code></pre></div><h4 id="powershell-10">PowerShell</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">New-Item -Path SecretRecipes.txt -ItemType File
+</span></span></code></pre></div><h3 id="copying-files">Copying Files</h3>
+<p>You can copy files.</p>
+<h4 id="bash-11">Bash</h4>
+<p>In Bash, <code>cp</code> stands for &ldquo;copy&rdquo;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cp SecretRecipes.txt NotSoSecret.txt
+</span></span></code></pre></div><h4 id="powershell-11">PowerShell</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Copy-Item -Path SecretRecipes.txt -Destination NotSoSecret.txt
+</span></span></code></pre></div><p>This will make a new file, the new file will be a copy
+of the old file and the old file will remain.</p>
+<h3 id="moving--renaming-files">Moving &amp; Renaming Files</h3>
+<p>You can move files. Moving a file is basically the
+same as renaming it.</p>
+<h4 id="bash-12">Bash</h4>
+<p>In Bash, <code>mv</code> stands for &ldquo;move&rdquo;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">mv ./locked/SecretRecipes.txt ./open/NotSoSecret.txt
+</span></span></code></pre></div><h4 id="powershell-12">PowerShell</h4>
+<p>In PowerShell</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Move-Item -Path .\locked\SecretRecipes.txt -Destination .\open\NotSoSecret.txt
+</span></span></code></pre></div><p>This will rename the old file. The file will remain but
+it will have a new name. No copy is made, only the one
+original file still exists.</p>
+<p>This will also move the file from the <code>locked</code> folder
+into the <code>open</code> folder.</p>
+<h3 id="deleting-files">Deleting Files</h3>
+<p>You can delete files.</p>
+<h4 id="bash-13">Bash</h4>
+<p>In Bash, <code>rm</code> stands for &ldquo;remove&rdquo;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">rm ./some_file_i_dont_want.jpg
+</span></span></code></pre></div><h4 id="powershell-13">PowerShell</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Remove-Item .\some_file_i_dont_want.jpg
+</span></span></code></pre></div><aside class="post-note ok"><p><p>OK!</p>
+<p>You may notice it is much faster to use the command
+line to delete files than it is to use the Recyle
+or Trash bins.</p>
+</p></aside>
+<h3 id="deleting-folders">Deleting Folders</h3>
+<p>You can delete folders, but if you want to remove an entire
+directory and everything it, you must do it recursively.</p>
+<h4 id="bash-14">Bash</h4>
+<p>In Bash, <code>-r</code> means &ldquo;recursive&rdquo; and <code>-f</code> stands for &ldquo;force&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">rm -r -f ./some_folder_i_dont_want
+</span></span></code></pre></div><h4 id="powershell-14">PowerShell</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Remove-Item -Recurse -Force .\some_folder_i_dont_want
+</span></span></code></pre></div><h2 id="running-programs">Running Programs</h2>
+<p>You can run a program by typing a fully qualified path to the
+program.</p>
+<p>For example&hellip;</p>
+<h4 id="bash-15">Bash</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">/usr/bin/uptime
+</span></span></code></pre></div><h4 id="powershell-15">PowerShell</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Windows\System32\notepad.exe
+</span></span></code></pre></div><h3 id="running-relative-programs">Running Relative Programs</h3>
+<p>You can also run a program using a relative path. You will probably
+want to <code>cd</code> into the program directory first.</p>
+<p>For example</p>
+<h4 id="bash-16">Bash</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">elmo@doge:~$ cd /usr/bin
+</span></span><span class="line"><span class="cl">elmo@doge:/usr/bin$ ./uptime
+</span></span></code></pre></div><h4 id="powershell-16">PowerShell</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\&gt; cd C:\Windows\System32
+</span></span><span class="line"><span class="cl">C:\Windows\System32&gt; .\notepad.exe
+</span></span></code></pre></div><h2 id="what-else">What Else?</h2>
+<p>Useful Links</p>
+<ul>
+<li><a href="https://ss64.com/ps/syntax.html">PowerShell Howto</a></li>
+<li><a href="https://mywiki.wooledge.org/BashGuide">Bash Guide</a></li>
+</ul>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 Phone Doggo
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

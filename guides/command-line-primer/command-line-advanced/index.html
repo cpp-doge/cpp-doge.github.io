@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/guides/command-line-primer/command-line-advanced/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>6 - Advanced CLI</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">6 - Advanced CLI</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-boolean-tests">Basic Boolean Tests</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#if-statements">If Statements</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#checking-for-success">Checking For Success</a>
+      <ul>
+        <li><a href="#the-exit-code">The Exit Code</a></li>
+        <li><a href="#exit-code-examples">Exit Code Examples</a></li>
+      </ul>
+    </li>
+    <li><a href="#more-file-stuff">More File Stuff</a>
+      <ul>
+        <li><a href="#checking-for-files">Checking For Files</a></li>
+        <li><a href="#checking-if-files-do-not-exist">Checking If Files Do NOT Exist</a></li>
+      </ul>
+    </li>
+    <li><a href="#pipes--redirection">Pipes &amp; Redirection</a>
+      <ul>
+        <li><a href="#writing-output-to-files">Writing Output To Files</a></li>
+        <li><a href="#another-glorified-calculator">Another Glorified Calculator</a></li>
+        <li><a href="#using-tee">Using Tee</a></li>
+      </ul>
+    </li>
+    <li><a href="#for-each-file">For Each File</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#compound-commands">Compound Commands</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#what-else">What Else?</a></li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><p><img src="/s/img/sai-kiran-anagani-Tjbk79TARiE-unsplash-crop.png" alt="Command Line"></p>
+<p>Photo <a href="https://unsplash.com/@anagani_saikiran?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Sai Kiran Anagani</a></p>
+<h2 id="basic-boolean-tests">Basic Boolean Tests</h2>
+<p>You can use basic boolean tests. This mostly works based
+on whether another command succeeds or not.</p>
+<h4 id="bash">Bash</h4>
+<p>The <em>Test</em> command is the special character <code>[</code>.</p>
+<p>The <em>Test</em> command on Linux lets you check if something
+is true or not.</p>
+<p>The test command contains what should hopefully be
+mostly familiar expressions and ends with <code>]</code>, like this</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span> <span class="s2">&#34;hello&#34;</span> <span class="o">==</span> <span class="s2">&#34;world&#34;</span> <span class="o">]</span>
+</span></span></code></pre></div><p>This checks to see if <code>hello</code> is the same as <code>world</code>.</p>
+<aside class="post-note stop"><p><p>STOP</p>
+<p>Be sure to leave space after <code>[</code> and before <code>]</code>.</p>
+</p></aside>
+<h4 id="powershell">PowerShell</h4>
+<p>PowerShell test commands are performed with
+various special operators like <code>-eq</code> meaning
+equal.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="s2">&#34;hello&#34;</span> <span class="o">-eq</span> <span class="s2">&#34;world&#34;</span>
+</span></span></code></pre></div><h2 id="if-statements">If Statements</h2>
+<p>You can check if something is true and then do something
+or not, based on the result.</p>
+<h4 id="bash-1">Bash</h4>
+<p>In Bash you can use the test <code>[</code> command from earlier with
+if statements.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;hello&#34;</span> <span class="o">==</span> <span class="s2">&#34;world&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Yes they are equal&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;NO they are equal&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><aside class="post-note stop"><p><p>STOP</p>
+<p>The semi-colon <code>;</code> after <code>]</code> and before <code>then</code> is important,
+don&rsquo;t forget!</p>
+</p></aside>
+<h4 id="powershell-1">PowerShell</h4>
+<p>PowerShell if statements have a C like syntax.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="s2">&#34;hello&#34;</span> <span class="o">-eq</span> <span class="s2">&#34;world&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Write-Output</span> <span class="s2">&#34;Yes they are equal&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Write-Output</span> <span class="s2">&#34;NO they are equal&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="checking-for-success">Checking For Success</h2>
+<p>You can check to see if a command was successful or not.</p>
+<h3 id="the-exit-code">The Exit Code</h3>
+<p>The exit code of a program is a plain integer number that
+the program gives back to the shell when the program is
+finished running.</p>
+<p>An exit code of zero <code>0</code> means success.</p>
+<p>All other exit codes of mean failure or error.</p>
+<p>You should return reasonable error codes from the programs you
+write if you detect an error.</p>
+<p>The meaning of the non zero error codes you use when writing your
+own programs is your free choice.</p>
+<h3 id="exit-code-examples">Exit Code Examples</h3>
+<h4 id="bash-2">Bash</h4>
+<p>In bash, you can simply write command instead
+of using the <code>[</code> test command. The test command itself
+works by setting the exit code.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">if</span> /usr/local/bin/mycommand<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Success&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;FAIL&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><h4 id="powershell-2">PowerShell</h4>
+<p>In PowerShell you can check the last exit code
+from the <code>$LASTEXITCODE</code> variable.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">C:</span><span class="p">\</span><span class="n">my</span><span class="p">\</span><span class="n">command</span><span class="p">.</span><span class="n">exe</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nv">$LASTEXITCODE</span> <span class="o">-eq</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Write-Output</span> <span class="s2">&#34;Success&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Write-Output</span> <span class="s2">&#34;FAIL&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="more-file-stuff">More File Stuff</h2>
+<p>You can check to see if a file or folder exists or not.</p>
+<h3 id="checking-for-files">Checking For Files</h3>
+<h4 id="bash-3">Bash</h4>
+<p>Check if a file exists, <code>-f</code> means file.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;./myfile.txt&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Found myfile&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;myfile NOT FOUND&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><p>Check if a folder exists, <code>-d</code> means directory.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -d <span class="s2">&#34;./myfolder/&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Found myfolder&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;myfolder NOT FOUND&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><h4 id="powershell-3">PowerShell</h4>
+<p>Check if a file exists</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">-Path</span> <span class="s2">&#34;.\myfile.txt&#34;</span> <span class="n">-Type</span> <span class="n">Leaf</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo </span><span class="s2">&#34;Found myfile&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo </span><span class="s2">&#34;myfile NOT FOUND&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Check if a folder exists</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">-Path</span> <span class="s2">&#34;.\myfolder\&#34;</span> <span class="n">-Type</span> <span class="n">Container</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Write-Output</span> <span class="s2">&#34;Found myfolder&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Write-Output</span> <span class="s2">&#34;myfolder NOT FOUND&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="checking-if-files-do-not-exist">Checking If Files Do NOT Exist</h3>
+<p>This works the same for both directories and files.</p>
+<h4 id="bash-4">Bash</h4>
+<p>To check if a file does NOT exist, just add the not <code>!</code>
+operator to your logic.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> ! -f <span class="s2">&#34;./myfile.txt&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;Found myfile&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;myfile NOT FOUND&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><h4 id="powershell-4">PowerShell</h4>
+<p>To check if a file does NOT exist, just add the <code>-not</code>
+operator to your logic.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">-Path</span> <span class="s2">&#34;.\myfile.txt&#34;</span> <span class="n">-Type</span> <span class="n">Leaf</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo </span><span class="s2">&#34;myfile NOT FOUND&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo </span><span class="s2">&#34;Found myfile&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="pipes--redirection">Pipes &amp; Redirection</h2>
+<p>You can send the output of a command into a other
+commands. This is known as using pipes. A pipe
+is like a connection from one program to another
+through which data can flow.</p>
+<p>You can also send the output of a command into
+a file. You might want to do this, for example
+if you have a command that produces a lot of output
+and you want to save the result so you can look
+at it later.</p>
+<p>This is common when dealing with programming related
+things like compiling, building, installing and testing
+programs. It can also be useful if you have something
+like a game server and you want to save a history log
+of who connects to your game and what they say and do.</p>
+<p>This can be useful for things like admins moderating
+a game server and other similar situations. This can
+also be useful for troubleshooting your scripts
+and programs.</p>
+<h3 id="writing-output-to-files">Writing Output To Files</h3>
+<p>You can send the output of a command into a file
+instead. You can do this with the greater than <code>&gt;</code>
+symobl. This is called redirection.</p>
+<h4 id="bash-5">Bash</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Hello this is going into the file&#34;</span> &gt; myfile.txt
+</span></span></code></pre></div><h4 id="powershell-5">PowerShell</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Write-Output</span> <span class="s2">&#34;Hello this is going into the file&#34;</span> <span class="p">&gt;</span> <span class="n">myfile</span><span class="p">.</span><span class="n">txt</span>
+</span></span></code></pre></div><aside class="post-note warn"><p>WARNING</p><p>
+<p>This will normally output <a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">UTF-16</a> when using the default Windows PowerShell 5.</p>
+<p>This will likely cause problems with Linux like tools such as GCC, Perl, Grep Sed and Awk.</p>
+<p>Use <a href="https://github.com/PowerShell/PowerShell/releases">PowerShell 7</a> for better interoperation with Linux tools.</p>
+</p></aside>
+<h3 id="another-glorified-calculator">Another Glorified Calculator</h3>
+<p>You can connect the output of one command to
+the input of another. You can do this with the
+vertical bar <code>|</code> symbol, also known as the pipe symbol.
+This is called piping.</p>
+<h4 id="bash-6">Bash</h4>
+<p>The <code>bc</code> command on Linux allows you to do math.
+It can run files like scripts, or you can send
+it some input with a pipe.</p>
+<p>For example in Bash, you can send the output
+of the echo command into the <code>bc</code> command like this.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;2 + 2&#34;</span> <span class="p">|</span> bc
+</span></span></code></pre></div><h4 id="powershell-6">PowerShell</h4>
+<p>This works mostly the same in PowerShell but you
+don&rsquo;t need to use <code>bc</code> to do basic math because
+you can just do math directly in PowerShell.</p>
+<h3 id="using-tee">Using Tee</h3>
+<p>You may have noticed in the output to file example that
+you no longer see the output in your terminal.</p>
+<p>You can fix this by using the <code>tee</code> command. The tee
+command takes input from a pipe and sends it into a file
+but also still prints it to your terminal so you can
+see what&rsquo;s going on.</p>
+<h4 id="bash-7">Bash</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Hello this is going into the file&#34;</span> <span class="p">|</span> tee myfile.txt
+</span></span></code></pre></div><h4 id="powershell-7">PowerShell</h4>
+<p>In PowerShell, the command is called <code>Tee-Object</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Write-Output</span> <span class="s2">&#34;Hello this is going into the file&#34;</span> <span class="p">|</span> <span class="nb">Tee-Object</span> <span class="n">myfile</span><span class="p">.</span><span class="n">txt</span>
+</span></span></code></pre></div><h2 id="for-each-file">For Each File</h2>
+<p>You can loop over lists of files and do something
+with each one.</p>
+<h4 id="bash-8">Bash</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">for</span> f in ./myfolder/*.mp3<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&#34;The File Is </span><span class="nv">$f</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">done</span>
+</span></span></code></pre></div><p>You can also use find exec</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find ./myfolder -iname <span class="s2">&#34;*.mp3&#34;</span> -exec <span class="s2">&#34;The File Is {}&#34;</span><span class="se">\;</span>
+</span></span></code></pre></div><aside class="post-note warn"><p>WARNING</p><p>
+<p>The <code>\;</code> may seem odd, but it&rsquo;s important. This is too much
+to cover here, see the
+<a href="https://www.gnu.org/software/findutils/manual/html_mono/find.html">find command</a>
+documentation for more info.</p>
+</p></aside>
+<h4 id="powershell-8">PowerShell</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$files</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="n">-Filter</span> <span class="p">*.</span><span class="n">mp3</span> <span class="p">.\</span><span class="n">myfolder</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$f</span> <span class="k">in</span> <span class="nv">$files</span><span class="p">)</span> <span class="p">{</span> <span class="nb">Write-Output</span> <span class="s2">&#34;The File Is: $f&#34;</span> <span class="p">}</span>
+</span></span></code></pre></div><p>You can also pipe command output to for each.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-ChildItem</span> <span class="n">-Filter</span> <span class="p">*.</span><span class="n">mp3</span> <span class="p">.\</span><span class="n">myfolder</span> <span class="p">|</span> <span class="k">foreach</span> <span class="p">{</span> <span class="nb">Write-Output</span> <span class="s2">&#34;The File Is: $_&#34;</span> <span class="p">}</span>
+</span></span></code></pre></div><h2 id="compound-commands">Compound Commands</h2>
+<p>Sometimes you may want more power than a simple command
+provides, but you don&rsquo;t want to write a full separate
+script.</p>
+<p>You can run complex compound commands by running a sub
+shell and giving it a command to run.</p>
+<p>Sometimes using a sub shell is necessary.</p>
+<h4 id="bash-9">Bash</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bash -c <span class="s1">&#39;echo &#34;Hello from the sub shell&#34;&#39;</span>
+</span></span></code></pre></div><h4 id="powershell-9">PowerShell</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">pwsh</span> <span class="n">-Command</span> <span class="p">{</span> <span class="nb">Write-Output</span> <span class="s2">&#34;Hello from the sub shell&#34;</span> <span class="p">}</span>
+</span></span></code></pre></div><h2 id="what-else">What Else?</h2>
+<p>Useful Links</p>
+<ul>
+<li><a href="https://ss64.com/ps/syntax.html">PowerShell Howto</a></li>
+<li><a href="https://mywiki.wooledge.org/BashGuide">Bash Guide</a></li>
+</ul>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 Phone Doggo
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

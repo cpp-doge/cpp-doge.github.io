@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/guides/command-line-primer/about-file-paths/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>2 - About File Paths</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">2 - About File Paths</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#files--folders">Files &amp; Folders</a>
+      <ul>
+        <li><a href="#the-current-working-directory">The Current Working Directory</a></li>
+        <li><a href="#file-paths">File Paths</a></li>
+        <li><a href="#paths--spaces">Paths &amp; Spaces</a></li>
+        <li><a href="#file-extensions">File Extensions</a></li>
+        <li><a href="#filesystem-root">Filesystem Root</a></li>
+        <li><a href="#the-real-root">The Real Root</a></li>
+      </ul>
+    </li>
+    <li><a href="#path-types">Path Types</a>
+      <ul>
+        <li><a href="#absolute-paths">Absolute Paths</a></li>
+        <li><a href="#relative-paths">Relative Paths</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><h2 id="files--folders">Files &amp; Folders</h2>
+<p>Long ago, we used to store information on bits of dead trees
+on our desks and in boxes. No more.</p>
+<p><img src="/s/img/maksym-kaharlytskyi-Q9y3LRuuxmg-unsplash-crop.png" alt="File Cabinet"></p>
+<p>Photo by <a href="https://unsplash.com/@qwitka?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Maksym Kaharlytskyi</a></p>
+<p>You have files on your computer. You probably have things like
+photos, music, videos, spreadsheets, video game saves and many
+other possible kinds of files.</p>
+<p>Your files are organized in folders, much like a traditional
+old school filing cabinet. One major difference is that folders
+on a computer can have many other folders and files inside them
+where usually a physical filing cabinet does not typically
+have folders inside of other folders (but it could, who knows!?)</p>
+<p>Folders on a computer are more technically known as &ldquo;directories&rdquo;.</p>
+<h3 id="the-current-working-directory">The Current Working Directory</h3>
+<p>Any program you run has a current working directory.</p>
+<p>Think of this as the folder where the program believes it lives.</p>
+<p>This allows programs to, for example, use files they might need
+that are part of the program like fonts, sounds, photos or videos.</p>
+<p>The current directory can be changed at any time, either before
+you run a program, or the program might change its own current
+directory as it runs.</p>
+<p>Your shell also has a current working directory and
+it will usually be shown so you know where you are.</p>
+<p>When you run a program from your shell then the program you
+run will inherit the same current working directory as your shell.</p>
+<h3 id="file-paths">File Paths</h3>
+<p>You need a way to get to the files and folders on your computer.</p>
+<p>A file path is a special unique way to know exactly how to get
+to any specific file or folder.</p>
+<p>A file path is usually a list of folder names separate with
+slashes. Linux uses the forward slash <code>/</code> while Windows uses
+the backslash <code>\</code>.</p>
+<p>Some example file paths on Linux might look like this.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">/usr/local/include
+</span></span><span class="line"><span class="cl">/home/elmo/MyFile.txt
+</span></span></code></pre></div><p>Some example file paths on Windows might look like this.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Windows\System32
+</span></span><span class="line"><span class="cl">C:\Users\elmo\MyFile.txt
+</span></span></code></pre></div><aside class="post-note warn"><p>WARNING</p><p>
+<p>Linux is case sensitive, Windows is not.</p>
+</p></aside>
+<h3 id="paths--spaces">Paths &amp; Spaces</h3>
+<p>Having spaces in your file or directory names can cause a lot of pain.</p>
+<p>Avoid it if you can.</p>
+<p>Name your files with other characters like <code>_</code>, <code>-</code> or <code>.</code></p>
+<aside class="post-note info"><p>INFO</p><p>
+Sometimes you can't avoid it like with <code>C:\Program Files</code>.
+</p></aside>
+
+<p>For example, instead of</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">My Very Scientific Research Paper.doc
+</span></span></code></pre></div><p>substitute underscores for spaces</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">My_Very_Scientific_Research_Paper.doc
+</span></span></code></pre></div><p>or use dashes</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">My-Very-Scientific-Research-Paper.doc
+</span></span></code></pre></div><p>or using dots is also fine, but maybe a little weird</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">My.Very.Scientific.Research.Paper.doc
+</span></span></code></pre></div><h3 id="file-extensions">File Extensions</h3>
+<p>How do you know what&rsquo;s in a file? How do you know if a file
+is a video or an MS Word document?</p>
+<p>A simple answer is file extensions.</p>
+<p>A file extension is really only a simple matter how you name your
+files. When you create or rename a file, you can put a period <code>.</code> followed
+by short abbreviated name describing what is in the file.</p>
+<p>For example</p>
+<ul>
+<li><code>miami_vacay37.jpg</code> means a JPEG photo</li>
+<li><code>to_do_list.txt</code> means a plain text file</li>
+<li><code>so_much_words.doc</code> means an MS Word document</li>
+</ul>
+<p>These are known as <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types">MIME Types</a>.</p>
+<p>You are not required to have extensions in your file names
+and you are not required to follow MIME Types.</p>
+<aside class="post-note warn"><p>WARNING</p><p>
+
+What's more, file extensions may not match their file contents!
+
+</p></aside>
+
+<p>This information helps decide what to do with the
+file, like if you want all images to open in Photoshop
+and you want all movies to open in Final Cut.</p>
+<aside class="post-note info"><p>INFO</p><p>
+<p>You may receive a warning when renaming
+a file, but this is often ok.</p>
+<p>If you created a new text file on accident when you wanted to
+create an HTML file then renaming the new file from <code>.txt</code> to <code>.html</code>
+is probably fine.</p>
+<p>If you are trying to rename <code>summer_camp.jpg</code> to <code>My Essay.doc</code>
+then that won&rsquo;t work.</p>
+</p></aside>
+<aside class="post-note stop"><p><p>STOP</p>
+<p>Windows hides file extensions by default. You should probably
+disable this setting in View Options.</p>
+<p><img src="/s/img/showext.png" alt="Show File Extensions"></p>
+</p></aside>
+<h3 id="filesystem-root">Filesystem Root</h3>
+<p>Your files are stored on your hard drive using a special kind
+of computer program called a <a href="https://en.wikipedia.org/wiki/File_system">Filesystem</a>.</p>
+<p>Filesystems aren&rsquo;t really separate programs, they are part of
+your operating system.</p>
+<p>Files in a filesystem are organized in a tree like structure.
+Folders are like the branches of the tree and files are like
+the leaves.</p>
+<p>Every filesystem has a root folder. This is like the trunk
+or roots of the tree. There is only one trunk, but there
+are many branches. This is the starting place for all
+the other files on your computer.</p>
+<h3 id="the-real-root">The Real Root</h3>
+<p>On Linux your root folder is simply named <code>/</code>.</p>
+<p>On Windows your root folders have a drive name.</p>
+<p>The default windows root folder is named <code>C:\</code> because
+<code>C:</code> is the default system drive name and <code>\</code> means
+root folder sort of similar to Linux, but it&rsquo;s a
+backslash on Windows because that&rsquo;s what Windows uses.</p>
+<h2 id="path-types">Path Types</h2>
+<p>There are two kinds of paths, absolute paths and relative paths.</p>
+<h3 id="absolute-paths">Absolute Paths</h3>
+<p>An absolute path is sometimes called a full path.</p>
+<p>An absolute path gives the full and exact location of
+a file or folder.</p>
+<p>Absolute paths must begin at the root folder and name
+all the nested subfolders that your file is in.</p>
+<p>For eaxmple this is an absolute path.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C\Users\elmo\documents\drawings\pokemon\2022\September\my_art.png
+</span></span></code></pre></div><p>As you can see, absolute paths may become long and
+cumbersome.</p>
+<h3 id="relative-paths">Relative Paths</h3>
+<p>A relative path gives the path of a file or folder relative
+to the current working directory.</p>
+<p>There is a special relative path named <code>..</code> that means the parent
+folder.</p>
+<p>Let&rsquo;s pretend our current working directory is</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Users\elmo\blog\posts
+</span></span></code></pre></div><p>then this relative path</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">..\..\images\doge.png
+</span></span></code></pre></div><p>refers to the file</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Users\elmo\images\doge.png
+</span></span></code></pre></div><h4 id="current-relative-directory">Current Relative Directory</h4>
+<p>There is another special path named <code>.</code> that just means
+the current working directory. This may not seem useful
+but it has its uses, for example, you may need to use this
+if you want to run a script.</p>
+<p>Let&rsquo;s pretend our current working directory is</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Users\elmo\blog\posts
+</span></span></code></pre></div><p>then this relative path</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">.\wow-much-doge.html
+</span></span></code></pre></div><p>refers to the file</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Users\elmo\blog\posts\wow-much-doge.html
+</span></span></code></pre></div><h4 id="fully-qualified-paths">Fully Qualified Paths</h4>
+<p>Some things need fully qualified paths to work correctly.</p>
+<p>A fully qualified path is either an absolute path or a
+relative path that begins with the <code>.</code> or <code>..</code> special
+directory names.</p>
+<p>This is a relative path but it is NOT a fully qualified path</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">hello/world.txt
+</span></span></code></pre></div><p>This IS a fully qualified path</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">./hello/world.txt
+</span></span></code></pre></div></section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 Phone Doggo
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

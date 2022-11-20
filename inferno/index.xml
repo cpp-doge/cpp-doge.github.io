@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Inferno on Doge Codes</title>
+    <link>https://cpp-doge.github.io/inferno/</link>
+    <description>Recent content in Inferno on Doge Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://cpp-doge.github.io/inferno/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating An MCVE</title>
+      <link>https://cpp-doge.github.io/inferno/minimal-reproducible-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/inferno/minimal-reproducible-example/</guid>
+      <description>Basics A Minimal Reproducible Example is exactly enough code to demonstrate your problem, but no more and no less.
+Sometimes also known as a Minimal Complete and Viable Example or MCVE.
+How Do I Make One? Use an online compiler website that can compile and run your code like
+Wandbox Godbolt For smaller examples you can also use the discord bot to compile and run your code.
+See: Howto Use Wandbox Video</description>
+    </item>
+    
+    <item>
+      <title>Dante&#39;s Inferno</title>
+      <link>https://cpp-doge.github.io/inferno/objections/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/inferno/objections/</guid>
+      <description>Frequently Asked Questions We&amp;rsquo;ve been trying to contact you about your car&amp;rsquo;s extended warranty.
+Please be sure your seat backs and tray tables are in their fully upright and locked positions as we begin our final descent into Hell.
+Your Honor I Object! We regret to inform you that your programming help insurance has been cancelled.
+Your supervisor will be with you shortly.
+Why Am I Here People have been wondering this for thousands of years and we still don&amp;rsquo;t have many good answers.</description>
+    </item>
+    
+    <item>
+      <title>Should I Use VSCode And MinGW</title>
+      <link>https://cpp-doge.github.io/inferno/vscode-mingw/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/inferno/vscode-mingw/</guid>
+      <description>In 30 Seconds Use Visual Studio. It&amp;rsquo;s FREE! It does everything you want.
+Download: Visual Studio
+Visual Studio is not VSCode. Don&amp;rsquo;t use VSCode. Don&amp;rsquo;t use MinGW.
+What&amp;rsquo;s The Point The point is that an IDE comes with all the tools you need to quickly and easily begin working with C++.
+You should probably use an IDE regardless of what kind of computer you have.
+I Am Not Using Windows You should probably still use an IDE.</description>
+    </item>
+    
+    <item>
+      <title>Why C&#43;&#43; Instead of C</title>
+      <link>https://cpp-doge.github.io/inferno/why-cpp-instead-of-c/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/inferno/why-cpp-instead-of-c/</guid>
+      <description>What Is The Difference? The difference between C++ and C is very large.
+Most C++ code is not valid C code.
+Most idiomatic C code is very poor C++ code.
+Why Should I Use C++? C++ has many features in both the language and its standard library including, in no particular order
+Metaprogramming Variadic Templates Lambdas Concurrency and Parellelism Atomics Structured Bindings Regular Expressions Strings, Arrays &amp;amp; Dictionaries Unicode Support Date &amp;amp; Time Functions File And Directory Management Random Number Generation Function Overloads Operator Overloads Classes Inheritance Polymorphism Iterators Ranges Concepts Views &amp;amp; Spans Exceptions Variant Plus there exist many other common useful libraries for things like</description>
+    </item>
+    
+  </channel>
+</rss>

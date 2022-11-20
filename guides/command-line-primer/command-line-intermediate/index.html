@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/guides/command-line-primer/command-line-intermediate/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>4 - Intermediate CLI</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">4 - Intermediate CLI</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#scripting">Scripting</a></li>
+    <li><a href="#aliases">Aliases</a>
+      <ul>
+        <li><a href="#stretching-list">Stretching List</a></li>
+        <li><a href="#making-remove-nicer">Making Remove Nicer</a></li>
+        <li><a href="#easy-cd-to-project">Easy CD To Project</a></li>
+      </ul>
+    </li>
+    <li><a href="#variables">Variables</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#the-system-path">The System Path</a>
+      <ul>
+        <li><a href="#what-is-it">What Is It</a></li>
+        <li><a href="#path-separators">Path Separators</a></li>
+        <li><a href="#take-a-look">Take A Look</a></li>
+      </ul>
+    </li>
+    <li><a href="#using-this-to-your-advantage">Using This To Your Advantage</a>
+      <ul>
+        <li><a href="#adding-system-paths">Adding System Paths</a></li>
+        <li><a href="#run-your-own-scripts">Run Your Own Scripts</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-else">What Else?</a></li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><p><img src="/s/img/sai-kiran-anagani-Tjbk79TARiE-unsplash-crop.png" alt="Command Line"></p>
+<p>Photo <a href="https://unsplash.com/@anagani_saikiran?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Sai Kiran Anagani</a></p>
+<h2 id="scripting">Scripting</h2>
+<p>You can write programs using the programming language
+of your shell, usually called your <em>shell scripting</em> language.</p>
+<p>These programs can do almost anything.</p>
+<p>Some ideas for things you could do</p>
+<ul>
+<li>Backup your vacation photos</li>
+<li>Backup your game saves</li>
+<li>Run different Minecraft versions with different mods</li>
+<li>Launch a video game with a high priority for better performance</li>
+<li>Compile and run a program you wrote</li>
+<li>Compile and run a program someone else wrote</li>
+<li>Manage a Git repository</li>
+<li>Rename hundreds of files at once</li>
+<li>Resize, rotate, crop and blur hundreds of images at once</li>
+</ul>
+<h2 id="aliases">Aliases</h2>
+<p>Aliases are a way to make common commands shorter,
+easier and faster to type and run.</p>
+<h3 id="stretching-list">Stretching List</h3>
+<p>Let&rsquo;s pretend you want <code>ls</code> to always show the long detailed
+version of your list of files.</p>
+<p>You can create an alias for this in Bash  with</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s2">&#34;ls -l&#34;</span>
+</span></span></code></pre></div><p>Now when you run the <code>ls</code> command you will get a long
+detailed list of files.</p>
+<h3 id="making-remove-nicer">Making Remove Nicer</h3>
+<p>Deleting a directory in PowerShell can be a bit cumbersome</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Remove-Item</span> <span class="n">-Recurse</span> <span class="n">-Force</span> <span class="p">.\</span><span class="n">some_folder_i_dont_want</span>
+</span></span></code></pre></div><p>We can make this shorter with an alias like this</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Set-Alias</span> <span class="n">-Name</span> <span class="s2">&#34;mydel&#34;</span> <span class="n">-Value</span> <span class="nb">Remove-Item</span> <span class="n">-Recurse</span> <span class="n">-Force</span>
+</span></span></code></pre></div><p>And now we can simply run</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">mydel</span> <span class="p">.\</span><span class="n">some_folder_i_dont_want</span>
+</span></span></code></pre></div><h3 id="easy-cd-to-project">Easy CD To Project</h3>
+<p>Let&rsquo;s pretend you have a C++ project living in</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">/home/elmo/projects/cpp/all/games/myengine
+</span></span></code></pre></div><p>Typing out this path can be cumbersome, so make an alias</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">myengine</span><span class="o">=</span><span class="s2">&#34;cd /home/elmo/projects/cpp/all/games/myengine&#34;</span>
+</span></span></code></pre></div><p>Now you can run the <code>myengine</code> command to easily and
+quickly change into your awesome game engine project directory.</p>
+<h4 id="powershell">PowerShell</h4>
+<p>You can similarly create aliases with PowerShell, for example
+our previous alias might look like this in powershell.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Set-Alias</span> <span class="n">-Name</span> <span class="s2">&#34;myengine&#34;</span> <span class="n">-Value</span> <span class="nb">Set-Location</span> <span class="n">C:</span><span class="p">\</span><span class="n">home</span><span class="p">\</span><span class="n">elmo</span><span class="p">\</span><span class="n">projects</span><span class="p">\</span><span class="n">cpp</span><span class="p">\</span><span class="n">all</span><span class="p">\</span><span class="n">games</span><span class="p">\</span><span class="n">myengine</span>
+</span></span></code></pre></div><h2 id="variables">Variables</h2>
+<p>You can set variables in your shell like you do in other programming languages.</p>
+<h4 id="bash">Bash</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">my_var</span><span class="o">=</span><span class="s2">&#34;Hello&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$my_var</span><span class="s2">&#34;</span>
+</span></span></code></pre></div><h4 id="powershell-1">PowerShell</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$MyVar</span><span class="p">=</span><span class="s2">&#34;Hello&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Write-Output</span> <span class="s2">&#34;$MyVar&#34;</span>
+</span></span></code></pre></div><h2 id="the-system-path">The System Path</h2>
+<p>Be sure to read</p>
+<ul>
+<li><a href="/guides/command-line-primer/about-environment-variables/">About Environment Variables</a></li>
+</ul>
+<h3 id="what-is-it">What Is It</h3>
+<p>The system path is a list of directories where your shell will
+look for programs when you try to run commands.</p>
+<p>This list of directories is stored in the <code>PATH</code> environment variable
+on Windows, Mac and Linux.</p>
+<p>If you run a command without a fully qualified path then your
+shell will search through each directory in the system path
+list to see if there are any programs with that name.</p>
+<p>If a program name is found in one of those directories then
+the shell runs the program as you would run any other command
+from the command line.</p>
+<p>This is one of the main ways that you are able to run many
+shell commands by only their name, without needing to give
+a qualified path.</p>
+<h3 id="path-separators">Path Separators</h3>
+<p>Environment variables are just strings, so the system
+path is just a string.</p>
+<p>There needs to be a way to pack a list of many directories
+into a single string.</p>
+<p>The system path separator is a single character that separates
+each path in the list.</p>
+<p>Linux uses the colon <code>:</code> as the system path separator.</p>
+<p>Windows uses semicolon <code>;</code> as the system path separator.</p>
+<h3 id="take-a-look">Take A Look</h3>
+<p>Have a look at your current system <code>PATH</code> for yourself</p>
+<h4 id="bash-1">Bash</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">echo &#34;$PATH&#34;
+</span></span></code></pre></div><h4 id="powershell-2">PowerShell</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Write-Output &#34;$env:PATH&#34;
+</span></span></code></pre></div><aside class="post-note ok"><p><p>OK!</p>
+<p>Your system path may naturally be long and confusing to look at.</p>
+</p></aside>
+<h2 id="using-this-to-your-advantage">Using This To Your Advantage</h2>
+<h3 id="adding-system-paths">Adding System Paths</h3>
+<p>You can use the system path to your advantage. You can write
+your own programs and put them in one of the system path directories
+so that your commands are easily and readily available on the
+command line.</p>
+<p>Aliases are convenient, but when you want to do more complicated
+things you will probably want to write standalone shell script
+programs to accomplish your goals.</p>
+<h3 id="run-your-own-scripts">Run Your Own Scripts</h3>
+<p>It is very convenient to create a new directory where you will
+keep the shell scripts that you write.</p>
+<p>Add this directory to your system path and suddenly you have
+the power to write infinitely many infinitely flexible commands
+to do whatever you want quickly and with ease.</p>
+<p>For example</p>
+<h4 id="bash-2">Bash</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /home/elmo
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create a new directory for your scripts</span>
+</span></span><span class="line"><span class="cl">mkdir scripts
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create a new script file</span>
+</span></span><span class="line"><span class="cl">touch scripts/dostuff
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Edit your script to do whatever you want</span>
+</span></span><span class="line"><span class="cl">nano scripts/dostuff
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Add your new scripts directory to the system path</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># so that you can run your new commands directly</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&#34;/home/elmo/scripts:</span><span class="nv">$PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># On linux you will need to make your script executable</span>
+</span></span><span class="line"><span class="cl">chmod <span class="m">755</span> scripts/dostuff
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Now you can run your script like you</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># would run any other normal command</span>
+</span></span><span class="line"><span class="cl">dostuff
+</span></span></code></pre></div><h4 id="powershell-3">PowerShell</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="line"><span class="cl"><span class="nb">Set-Location</span> <span class="n">C:</span><span class="p">\</span><span class="n">Users</span><span class="p">\</span><span class="n">elmo</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Create a new directory for your scripts</span>
+</span></span><span class="line"><span class="cl"><span class="nb">New-Item</span> <span class="n">-Path</span> <span class="n">scripts</span> <span class="n">-ItemType</span> <span class="n">Directory</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Create a new script file</span>
+</span></span><span class="line"><span class="cl"><span class="nb">New-Item</span> <span class="n">-Path</span> <span class="n">scripts</span><span class="p">\</span><span class="n">dostuff</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-ItemType</span> <span class="n">File</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Edit your script to do whatever you want</span>
+</span></span><span class="line"><span class="cl"><span class="n">notepad</span> <span class="n">scripts</span><span class="p">\</span><span class="n">dostuff</span><span class="p">.</span><span class="n">ps1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Add your new scripts directory to the system path</span>
+</span></span><span class="line"><span class="cl"><span class="c"># so that you can run your new commands directly</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$env:PATH</span> <span class="p">=</span> <span class="s2">&#34;C:\Users\elmo\scripts;$env:PATH&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Now you can run your script like you</span>
+</span></span><span class="line"><span class="cl"><span class="c"># would run any other normal command</span>
+</span></span><span class="line"><span class="cl"><span class="n">dostuff</span>
+</span></span></code></pre></div><h2 id="what-else">What Else?</h2>
+<p>Useful Links</p>
+<ul>
+<li><a href="https://ss64.com/ps/syntax.html">PowerShell Howto</a></li>
+<li><a href="https://mywiki.wooledge.org/BashGuide">Bash Guide</a></li>
+</ul>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 Phone Doggo
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

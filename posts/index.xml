@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Doge Codes</title>
+    <link>https://cpp-doge.github.io/posts/</link>
+    <description>Recent content in Blog on Doge Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://cpp-doge.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C Compatibility Headers</title>
+      <link>https://cpp-doge.github.io/posts/c-compatibility-headers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/posts/c-compatibility-headers/</guid>
+      <description>This Is Bad You may often see C++ code like this
+#include &amp;lt;stdio.h&amp;gt; #include &amp;lt;math.h&amp;gt; int main() { float x = sqrt(3.14); printf(&amp;#34;%f&amp;#34;, x); } These are C compatibility headers. Don&amp;rsquo;t use them in C++.
+Do This Instead Put the letter c in front, remove the .h and add the std namespace.
+#include &amp;lt;cstdio&amp;gt; #include &amp;lt;cmath&amp;gt; int main() { float x = std::sqrt(3.14); std::printf(&amp;#34;%f&amp;#34;, x); } </description>
+    </item>
+    
+    <item>
+      <title>G&#43;&#43; And Clang&#43;&#43;</title>
+      <link>https://cpp-doge.github.io/posts/gcc-clang-plus-plus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/posts/gcc-clang-plus-plus/</guid>
+      <description>What Is This About? A common mistake is not running the right command when compiling a C++ program.
+So Which Command Do I Use? If you are using GCC then use the g++ command
+g++ main.cpp -o main If you are using Clang then use the clang++ command
+clang++ main.cpp -o main Why Is This A Thing? The GNU Compiler Collection is known as GCC. Confusingly this collection of compilers also includes a program named gcc, however this is not what you want.</description>
+    </item>
+    
+    <item>
+      <title>Getline And Cin</title>
+      <link>https://cpp-doge.github.io/posts/getline-cin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/posts/getline-cin/</guid>
+      <description>Does Noob A Bamboozle Using getline() together with cin &amp;gt;&amp;gt; is a sharp corner.
+This guide will help you figure that out.
+The Problem When you use &amp;gt;&amp;gt; to get input from a stream, then the stream does not consume whitespace after your input.
+This means for example that if you cin &amp;gt;&amp;gt; up to the end of the line, then the subsequent newline \n character will still remain in the stream.</description>
+    </item>
+    
+    <item>
+      <title>How Binary Works</title>
+      <link>https://cpp-doge.github.io/posts/how-binary-works/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/posts/how-binary-works/</guid>
+      <description>Binary Numbers How do they work!?
+What Is A Number System What Is A Base The base of your number system is how many digits you have.
+We doggos use a beef hotdog number system.
+No, wait&amp;hellip; we use a base ten number system.
+What does that actually mean though?
+I&amp;rsquo;m The Only Tigger We have been using base ten for so long in our normal lives, like at the grocery store or when talking about footbal scores, that it just feels natural and normal to most people.</description>
+    </item>
+    
+    <item>
+      <title>Wandbox Example Video</title>
+      <link>https://cpp-doge.github.io/posts/using-wandbox/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/posts/using-wandbox/</guid>
+      <description>How To Use Wandbox Go To: The Wandbox Online Compiler Website
+Here&amp;rsquo;s a video showing how to create a Wandbox example with multiple .cpp files and user input.
+NOVIDEO </description>
+    </item>
+    
+    <item>
+      <title>What Is A Data Type</title>
+      <link>https://cpp-doge.github.io/posts/what-is-a-data-type/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/posts/what-is-a-data-type/</guid>
+      <description>Before You Begin See: How Binary Works
+Computer Memory Computers store information in memory as binary numbers.
+Transistors Transistors are good at turning on and off. This can easily be used represent a one or a zero.
+The information in your computer is managed by a bunch of transitors. You can think of it like being one bit per transistor, meaning each transistor can represent either a zero or a one.</description>
+    </item>
+    
+    <item>
+      <title>Which C&#43;&#43; Book?</title>
+      <link>https://cpp-doge.github.io/posts/which-cpp-book/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/posts/which-cpp-book/</guid>
+      <description>What Should I Choose? These are pretty good, though I haven&amp;rsquo;t read them all, some may be better or worse. Some may be better for your skill level than others.
+You agree to not hold me liable if any of these books eats your first born child, kicks your puppy or is otherwise nasty to you.
+I&amp;rsquo;m Literally Broke LearnCPP CppLang Tutorial I Want Something Easy And Fun For Children MIT Scratch FREE Roblox Studio I&amp;rsquo;m Scared Of C++ Code Academy - Learn Python FREE I Am A Beginner Programming: Principles and Practice Using C++ I Have Programming Experience A Tour of C++ Murach&amp;rsquo;s C++ Programming Professional C++ I Want To Know More Scott Meyers C++ Concurrency In Action High Performance C++ I Am Extremely Motivated And I Like Pain The C++ Programming Language I Actually Just Want To Play Video Games Ok, sure, try one of these.</description>
+    </item>
+    
+  </channel>
+</rss>

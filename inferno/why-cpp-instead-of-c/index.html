@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/inferno/why-cpp-instead-of-c/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>Why C&#43;&#43; Instead of C</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">Why C&#43;&#43; Instead of C</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-the-difference">What Is The Difference?</a></li>
+    <li><a href="#why-should-i-use-c">Why Should I Use C++?</a></li>
+    <li><a href="#but">But!</a>
+      <ul>
+        <li><a href="#but-c-is-complex">But C++ Is Complex!</a></li>
+        <li><a href="#a-paradox">A Paradox</a></li>
+        <li><a href="#but-c-is-fast">But C Is Fast!</a></li>
+      </ul>
+    </li>
+    <li><a href="#but-part-deux">But! Part Deux</a>
+      <ul>
+        <li><a href="#why-shouldnt-i-use-c">Why Shouldn&rsquo;t I Use C?</a></li>
+        <li><a href="#but-i-am-smart-i-can-handle-it">But I Am Smart! I Can Handle It!</a></li>
+        <li><a href="#why-does-anyone-use-c">Why Does Anyone Use C?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><h2 id="what-is-the-difference">What Is The Difference?</h2>
+<p>The difference between C++ and C is very large.</p>
+<p>Most C++ code is not valid C code.</p>
+<p>Most idiomatic C code is very poor C++ code.</p>
+<h2 id="why-should-i-use-c">Why Should I Use C++?</h2>
+<p>C++ has many features in both the language and its standard library including,
+in no particular order</p>
+<ul>
+<li>Metaprogramming</li>
+<li>Variadic Templates</li>
+<li>Lambdas</li>
+<li>Concurrency and Parellelism</li>
+<li>Atomics</li>
+<li>Structured Bindings</li>
+<li>Regular Expressions</li>
+<li>Strings, Arrays &amp; Dictionaries</li>
+<li>Unicode Support</li>
+<li>Date &amp; Time Functions</li>
+<li>File And Directory Management</li>
+<li>Random Number Generation</li>
+<li>Function Overloads</li>
+<li>Operator Overloads</li>
+<li>Classes</li>
+<li>Inheritance</li>
+<li>Polymorphism</li>
+<li>Iterators</li>
+<li>Ranges</li>
+<li>Concepts</li>
+<li>Views &amp; Spans</li>
+<li>Exceptions</li>
+<li>Variant</li>
+</ul>
+<p><img src="https://media.tenor.com/wVxE8OvK-hYAAAAd/step-brothers-so-much-space.gif" alt="Brothers"></p>
+<p>Plus there exist many other common useful libraries for things like</p>
+<ul>
+<li>Network Programming</li>
+<li>HTTP, REST &amp; Websockets</li>
+<li>Gregorian Calendar &amp; DST Handling</li>
+<li>GPU &amp; Parallel Computation</li>
+<li>Lexing, Parsing &amp; Tokenization</li>
+<li>Databases</li>
+<li>Command Line Options</li>
+<li>Unicode Conversion</li>
+<li>String Formatting</li>
+<li>3D Graphics Math</li>
+<li>Physics</li>
+<li>Serialization</li>
+<li>Unit Tests</li>
+<li>JSON</li>
+<li>Yaml</li>
+</ul>
+<p>C has basically none of this. Or where C does have some of this, C
+has tremendously less of this and it is unsafe.</p>
+<p>C++ can use any C library, but C cannot use any C++ library.</p>
+<p>If the idea of rewriting all of this stuff from scratch is
+appealing to you, then you might like C. But you could also just
+rewrite it yourself in C++ instead, in a much safer and less
+painful way.</p>
+<h2 id="but">But!</h2>
+<h3 id="but-c-is-complex">But C++ Is Complex!</h3>
+<p><img src="https://media.tenor.com/zySGP75JLWgAAAAC/well-yes-but-actually-no-well-yes.gif" alt="Well yes"></p>
+<p>If you stick to a subset of modern idiomatic value semantics based
+C++ then life can be quite pleasant in C++ land.</p>
+<h3 id="a-paradox">A Paradox</h3>
+<p>C is simple</p>
+<ul>
+<li>This means your C programs must be excessively verbose and complex as a result.</li>
+</ul>
+<p>C++ can be complex</p>
+<ul>
+<li>This means, however, that your C++ programs can be clean, concise, elgant, simple and safe
+as a result.</li>
+</ul>
+<aside class="post-note info"><p>INFO</p><p>
+<p>Much (if not most) of the C compiler source code for GCC has been rewritten
+in C++ because C++ is better, safer and more powerful.</p>
+</p></aside>
+<h3 id="but-c-is-fast">But C Is Fast!</h3>
+<p>Not really. I mean, it can be, however&hellip;</p>
+<p>C++ is not inherently slower than C.</p>
+<p>In some cases C++ is faster than C precisely because C++ can better
+optimize due to a better type system. The canon example here is <code>qsort</code>.</p>
+<p><img src="https://media.tenor.com/l6CJxGWdYAoAAAAM/speed-i-am-speed.gif" alt="Speed"></p>
+<p>C++ is only &ldquo;pay for what you use&rdquo;.</p>
+<p>To do the same things in C would incur the same
+performance penalties, and your code would still
+be unsafe, less readable and more difficult to work with.</p>
+<h2 id="but-part-deux">But! Part Deux</h2>
+<h3 id="why-shouldnt-i-use-c">Why Shouldn&rsquo;t I Use C?</h3>
+<p>C is an ancient outdated byte processing language invented
+in the pre-dawn of modern computing.</p>
+<ul>
+<li>C has no features.</li>
+<li>C is unsafe.</li>
+<li>C is verbose and cumbersome.</li>
+<li>If you can write it in C, you could write it in C++ instead.</li>
+</ul>
+<p>C has basically none of the features of C++ like being
+able to easily and safely add things to a list or a dictionary.</p>
+<p>C has no metaprogramming and no overloads.</p>
+<p>If you write C then you will probably end up rewriting
+all these things yourself, poorly, with lots of bugs.</p>
+<p>The C++ standard library and other well known libraries
+like Boost are written by experts. They have done
+it much better than you or I probably would.</p>
+<h3 id="but-i-am-smart-i-can-handle-it">But I Am Smart! I Can Handle It!</h3>
+<p>I believe you&hellip;</p>
+<p>Until, one day, you forget to free some memory, because
+like the rest of us you are human.</p>
+<p>Until, one day, you make a big mistake because the wall
+of text you are looking at would make Satan cry and
+you didn&rsquo;t notice one of the thousands of small details that
+can shoot you in the foot, so now you are
+crying because prod is down and it&rsquo;s 4PM on Friday.</p>
+<p>Even if you can avoid this, which you probably can&rsquo;t&hellip;</p>
+<p><img src="https://media.tenor.com/QaGZ50VlEPEAAAAC/think-about-it-use-your-brain.gif" alt="Big Brain"></p>
+<p>Work smarter not harder&hellip;</p>
+<ul>
+<li>Why use your awesome brain power needlessly attending
+to pedantic details that would otherwise make your program unsafe?</li>
+<li>Why use your awesome brain power to rewrite a bunch of
+stuff that a bunch of experts have already done for you,
+expertly?</li>
+<li>Why use your awesome brain power to write a whole bunch
+of code you probably didn&rsquo;t need to write?</li>
+<li>Why make it harder for the next person?</li>
+</ul>
+<h3 id="why-does-anyone-use-c">Why Does Anyone Use C?</h3>
+<p><img src="https://media.tenor.com/8la2-VzSwhsAAAAC/qui-a-partag%C3%A9vos-photos-de-vacances-sur-internet.gif" alt="idk"></p>
+<p>When your vendor provides a C compiler and not a C++ compiler, then
+you may have no choice.</p>
+<p>When your vendor provides a good C compiler but a bad C++ compiler, then
+you may have little choice.</p>
+<p>These situations are increasingly rare.</p>
+<p>Are you stuck on an embedded platform, like a microcontroller
+for self driving cars, with 256 bytes of memory and no standard
+library? Maybe C works fine there, but C++ would work fine too
+if you have a C++ compiler available.</p>
+<p>Most die hard C enthusiasts are probably just uninterested to
+try new things when what they already know gets the job done.
+It is their right to make this decision. We all probably want
+to retire some day and learning new things is hard.</p>
+<p>The job could still usually be better and more safely done with C++.</p>
+<p>If you have the choice, then choose C++.</p>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 Phone Doggo
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

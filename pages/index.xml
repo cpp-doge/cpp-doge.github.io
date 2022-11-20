@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Doge Codes</title>
+    <link>https://cpp-doge.github.io/pages/</link>
+    <description>Recent content in Pages on Doge Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://cpp-doge.github.io/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Phone Doggo</title>
+      <link>https://cpp-doge.github.io/pages/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/pages/about/</guid>
+      <description>Hello? Yes? This is Doge. About Me About This Blog This is a blog about mostly C++ programming.
+Simple, approachable and easy to understand is the goal here.
+Deals frequently &amp;amp; frivolously in hyperbolic incendiary claims Wantonly discards pedantry in favor of punchiness, humor, sarcasm and staying power in the mind Calously ignores details in favor of simplicity and ease of understanding for the layman As my Calculus professor once said:</description>
+    </item>
+    
+    <item>
+      <title>Links To Stuff</title>
+      <link>https://cpp-doge.github.io/pages/links/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/pages/links/</guid>
+      <description>Learn With Games (this is not the only section on this page, keep scrolling for other stuff)
+I love games. I love programming.
+These are games that teach programming, are turing complete enough to build a full computer inside the game, are about programming or they contain programming inside the game in some way, etc etc.
+Shenzhen I/O
+Stationeers
+Stationeers MIPS Documentation Stationeers MIPS Simulator Space Engineers
+12 Free Beginner Coding Games</description>
+    </item>
+    
+  </channel>
+</rss>

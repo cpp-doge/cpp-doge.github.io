@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/guides/command-line-primer/about-environment-variables/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>5 - About Environment Variables</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">5 - About Environment Variables</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#environment-variables">Environment Variables</a>
+      <ul>
+        <li><a href="#syntax">Syntax</a></li>
+        <li><a href="#common-variables">Common Variables</a></li>
+        <li><a href="#setting-environment-variables">Setting Environment Variables</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-else">What Else?</a></li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><p><img src="/s/img/sai-kiran-anagani-Tjbk79TARiE-unsplash-crop.png" alt="Command Line"></p>
+<p>Photo <a href="https://unsplash.com/@anagani_saikiran?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Sai Kiran Anagani</a></p>
+<h2 id="environment-variables">Environment Variables</h2>
+<p>An environment variable is a way to save some info
+in a place where your programs can always get to it.</p>
+<p>You can set environment variables so that all programs
+have them or only for one program at a time.</p>
+<h3 id="syntax">Syntax</h3>
+<p>Environment variables look like regular variables in your
+shell scripting language.</p>
+<p>Bash environment variables begin with <code>$</code> and the name,
+so for example <code>$HELLO</code> could be an environment variable
+in Bash.</p>
+<p>PowerShell environment variables begin with <code>$env:</code> and the name,
+so for example <code>$env:HELLO</code> could be an environment variable
+in PowerShell.</p>
+<h3 id="common-variables">Common Variables</h3>
+<p>There are some common environment variables that will
+already be set on your system.</p>
+<p>On Linux the <code>$HOME</code> environment variable points to
+your local user foler. On Windows the <code>$env:USERPROFILE</code>
+environment variable points to your local user folder.</p>
+<p>Try printing these from the command line and see what you get.</p>
+<p>with Bash</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;My User Dir Is </span><span class="nv">$HOME</span><span class="s2">&#34;</span>
+</span></span></code></pre></div><p>with PowerShell</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Write-Host <span class="s2">&#34;My User Dir Is </span><span class="nv">$env</span><span class="s2">:HOME&#34;</span>
+</span></span></code></pre></div><p>These variables are useful because they help you write scripts
+that run about the same on any computer, even when different
+people have different usernames. Maybe those different people
+are not different people but you just have two computers and
+the username is different between them.</p>
+<h3 id="setting-environment-variables">Setting Environment Variables</h3>
+<p>Set environment variables in Bash like you would set a normal
+scripting variable, but add the word <code>export</code> like this.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">MYVAR</span><span class="o">=</span><span class="s2">&#34;hello&#34;</span>
+</span></span></code></pre></div><p>Set environment variables in PowerShell like you would set a normal
+scripting variable, but add the <code>env:</code> prefix like this.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$env:MYVAR</span><span class="p">=</span><span class="s2">&#34;hello&#34;</span>
+</span></span></code></pre></div><h4 id="temporarily">Temporarily</h4>
+<p>You can set an environment variable when you run a program
+and it will only apply to that program as it runs.</p>
+<p>In Bash you can do this by simply putting a plain variable
+assignment directly in front of your command.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">SOMEVAR</span><span class="o">=</span><span class="s2">&#34;hello&#34;</span> ./someprogram
+</span></span></code></pre></div><p>In PowerShell you can do this by running a command in a
+subshell with the <code>Command</code> option.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">pwsh</span> <span class="n">-Command</span> <span class="p">{</span> <span class="nv">$env:SOMEVAR</span><span class="p">=</span><span class="s2">&#34;hello&#34;</span><span class="p">;</span> <span class="nb">Write-Host</span> <span class="s2">&#34;Some Var Is $env:SOMEVAR&#34;</span> <span class="p">}</span>
+</span></span></code></pre></div><h2 id="what-else">What Else?</h2>
+<p>Useful Links</p>
+<ul>
+<li><a href="https://ss64.com/ps/syntax.html">PowerShell Howto</a></li>
+<li><a href="https://mywiki.wooledge.org/BashGuide">Bash Guide</a></li>
+</ul>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 Phone Doggo
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>
