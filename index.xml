@@ -109,6 +109,17 @@ Deals frequently &amp;amp; frivolously in hyperbolic incendiary claims Wantonly 
     </item>
     
     <item>
+      <title>Attention To Detail</title>
+      <link>https://cpp-doge.github.io/inferno/style/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/inferno/style/</guid>
+      <description>A Matter Of Style What Is Style Style consists of the subjective choices you make like how you name your variables, how you organize your files, how much whitespace you use and where you put that whitespace.
+Why It Matters If it makes my eyes bleed, am I going to be motivated to help?
+Attention To Detail Is Important Programming is a detail oriented art. If you neglect details you will make lots of mistakes, your code will be bad, your programs will have errors, you will cause yourself (and others) much undue pain debugging problems you could have easily avoided.</description>
+    </item>
+    
+    <item>
       <title>C Compatibility Headers</title>
       <link>https://cpp-doge.github.io/posts/c-compatibility-headers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
