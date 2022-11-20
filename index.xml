@@ -128,9 +128,9 @@ Do This Instead Put the letter c in front, remove the .h and add the std namespa
       <guid>https://cpp-doge.github.io/inferno/minimal-reproducible-example/</guid>
       <description>Basics A Minimal Reproducible Example is exactly enough code to demonstrate your problem, but no more and no less.
 Sometimes also known as a Minimal Complete and Viable Example or MCVE.
-How Do I Make One? Use an online compiler website that can compile and run your code like
-Wandbox Godbolt For smaller examples you can also use the discord bot to compile and run your code.
-See: Howto Use Wandbox Video</description>
+How Do I Make One? See: Howto Use Wandbox Video
+Use an online compiler website that can compile and run your code like
+Wandbox Godbolt For smaller examples you can also use the discord bot to compile and run your code.</description>
     </item>
     
     <item>

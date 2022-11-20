@@ -91,6 +91,7 @@
       <ul>
         <li><a href="#it-needs-to-be-minimal">It Needs To Be Minimal</a></li>
         <li><a href="#it-needs-to-be-complete">It Needs To Be Complete</a></li>
+        <li><a href="#describe-the-problem">Describe The Problem</a></li>
         <li><a href="#it-needs-to-be-both-minimal-and-complete">It Needs To Be BOTH Minimal AND Complete</a></li>
         <li><a href="#it-should-compile-and-run">It Should Compile And Run</a></li>
         <li><a href="#it-should-be-nicely-formatted">It Should Be Nicely Formatted</a></li>
@@ -126,6 +127,11 @@
         <li><a href="#but-i-cant-split-it-up">But I Can&rsquo;t Split It Up!</a></li>
         <li><a href="#but-i-really-cant-split-it-up">But I Really Can&rsquo;t Split It Up!</a></li>
         <li><a href="#but-i-really-really-cant-split-it-up">But I Really REALLY Can&rsquo;t Split It Up!</a></li>
+        <li><a href="#large-or-advanced-projects">Large Or Advanced Projects</a></li>
+        <li><a href="#wandbox-doesnt-have">Wandbox Doesn&rsquo;t Have</a></li>
+        <li><a href="#your-job">Your Job</a></li>
+        <li><a href="#a-last-resort">A Last Resort</a></li>
+        <li><a href="#my-deadline-is-in-20-minutes">My Deadline Is In 20 Minutes!</a></li>
       </ul>
     </li>
   </ul>
@@ -139,6 +145,7 @@ your problem, but no more and no less.</p>
 <p>Sometimes also known as a <em>Minimal Complete and Viable Example</em>
 or <em>MCVE</em>.</p>
 <h3 id="how-do-i-make-one">How Do I Make One?</h3>
+<p>See: <a href="/posts/using-wandbox/">Howto Use Wandbox Video</a></p>
 <p>Use an online compiler website that can compile
 and run your code like</p>
 <ul>
@@ -147,15 +154,42 @@ and run your code like</p>
 </ul>
 <p>For smaller examples you can also use the
 discord bot to compile and run your code.</p>
-<p>See: <a href="/posts/using-wandbox/">Howto Use Wandbox Video</a></p>
+<p>I advise using an online paste site for your examples.</p>
+<aside class="post-note warn"><p>WARNING</p><p>
+<p>There is no syntax highlighting on Discord mobile and long
+lines are very difficult to read on mobile. Online compiler websites
+have syntax highlighting. Websites also usually allow
+pinch zooming for mobile users.</p>
+</p></aside>
 <h2 id="what-do-i-show">What Do I Show?</h2>
 <h3 id="it-needs-to-be-minimal">It Needs To Be Minimal</h3>
 <p>If you have too much code then start over from scratch.</p>
 <p>Copy paste some of your old code if you like.</p>
 <p>Strive to make your example fewer than about 50-100 lines.</p>
+<p>See Also: <a href="/inferno/minimal-reproducible-example/#but-i-cant-split-it-up">But I Can&rsquo;t Split It Up!</a></p>
 <h3 id="it-needs-to-be-complete">It Needs To Be Complete</h3>
 <p>We need all the details.</p>
 <p>Maybe you made a typo we can&rsquo;t see?</p>
+<h3 id="describe-the-problem">Describe The Problem</h3>
+<p>This is part of being complete.</p>
+<p>Explain in regular English language what the problem is.</p>
+<p>Posting code is good, but it&rsquo;s only one of the first steps.</p>
+<p>If you have a problem description, like from a leetcode
+challenge or a homework assignment, then post the
+full problem description.</p>
+<p>Show the input and expected output. Explain how what
+you get is different from what you want.</p>
+<h4 id="it-doesnt-work">It Doesn&rsquo;t Work</h4>
+<p>Then post the full error message.</p>
+<p>Simply saying &ldquo;it doesn&rsquo;t work&rdquo; is generally insufficient.</p>
+<h4 id="there-is-no-error-message">There Is No Error Message</h4>
+<p>Then show the input and expected output. Explain how what
+you get is different from what you want.</p>
+<p>I somewhat doubt there is no error, but either way do your
+best to describe how it is failing.</p>
+<p>Saying something like &ldquo;When I run it, it pauses and then
+immediately exits with no output&rdquo;, while vague, is still
+better and more descriptive than saying &ldquo;it doesn&rsquo;t work&rdquo;.</p>
 <h3 id="it-needs-to-be-both-minimal-and-complete">It Needs To Be BOTH Minimal AND Complete</h3>
 <p>We need to understand the full problem, but
 most of us don&rsquo;t want to analyze thousands of lines.</p>
@@ -372,7 +406,7 @@ implementation for you here.</p>
 <li>We probably don&rsquo;t want to analyze hundreds or thousands of lines of code</li>
 </ul>
 <h3 id="but-i-cant-split-it-up">But I Can&rsquo;t Split It Up!</h3>
-<p>Yes, you can.</p>
+<p>Yes you can.</p>
 <h4 id="but-thats-more-work-for-me">But That&rsquo;s More Work For Me!</h4>
 <p>Yes, it is.</p>
 <h3 id="but-i-really-cant-split-it-up">But I Really Can&rsquo;t Split It Up!</h3>
@@ -391,29 +425,50 @@ your code is not required to be shown to fully demonstrate the key issue
 at hand. Surely we also need enough code to understand the problem,
 hence needing to be at the same time minimal yet also complete.</p>
 <h3 id="but-i-really-really-cant-split-it-up">But I Really REALLY Can&rsquo;t Split It Up!</h3>
-<p>Yes, you can. Get creative.</p>
+<p>Yes you can. Get creative.</p>
 <h4 id="but-thats-more-work-for-me-1">But That&rsquo;s More Work For Me!</h4>
 <p>Yes, it is.</p>
-<h4 id="but-i-have-unreasonably-too-much-code-thats-way-too-much-work-for-me">But I Have Unreasonably Too Much Code! That&rsquo;s WAY Too Much Work For Me!</h4>
+<h4 id="thats-way-too-much-work-for-me">That&rsquo;s WAY Too Much Work For Me!</h4>
 <p>Then that&rsquo;s probably unreasonable to ask of someone else too, no?</p>
+<h3 id="large-or-advanced-projects">Large Or Advanced Projects</h3>
 <p>The nature of online help forums is that they have limits. Online
-help forums are not really appropriate to help with large projects,
-they are here to provide general guidance, help you with common
-questions, soften sharp corners, illuminate best practices, and
-provide further resources to supplement your study.</p>
+help forums are not fully suitable to help with large or advanced
+projects.</p>
+<p>They are here to provide general guidance, facilitate intuition,
+help you with common problems, soften sharp corners, illuminate best
+practices, and provide further resources to supplement your study.</p>
+<p>See Also: <a href="/inferno/minimal-reproducible-example/#your-job">Your Job</a></p>
+<h3 id="wandbox-doesnt-have">Wandbox Doesn&rsquo;t Have</h3>
+<p>SFML, SDL2, GLFW, etc</p>
+<p>Sadly this is true. However&hellip;</p>
+<p>At some point when you get past beginner phase, you need
+to learn to solve your own problems.</p>
+<p>See Also: <a href="/inferno/minimal-reproducible-example/#your-job">Your Job</a></p>
+<p>If you still need help you then do your best to make a minimal
+reproducible example anyway, following the instructions
+in this guide.</p>
+<p>It&rsquo;s ok if it doesn&rsquo;t compile and run in a case like this
+but we still need enough information, and not too much
+information.</p>
+<p>See Also: <a href="/inferno/minimal-reproducible-example/#a-last-resort">A Last Resort</a></p>
+<h3 id="your-job">Your Job</h3>
 <p>At some point in your programming career you need to learn to solve your
-own problems. At some point, when you get a lot of code, dealing with it
-becomes your job, and we probably don&rsquo;t want to deal with what likely
+own problems. At some point, when you get a lot of code and or code
+that is well beyond beginner level (like a 2D/3D game), then dealing with
+it becomes your job, and we probably don&rsquo;t want to deal with what likely
 has been a full time job worth of effort on your part.</p>
 <p>I&rsquo;m sorry that this is the case, but this is the case. At some point,
 to deal with this much code, you usually need to pay someone. This is
 part of why we get paid at our own jobs in the first place.</p>
 <p>If no one is helping then consider doing your best to create a minimal
-complete and viable example anyway. As a last resort you could try
-just putting it in a GitHub repo and giving us the link. Will someone
-want to read that much code? Probably not, which is why you should still
-probably make an MCVE, but maybe someone will, idk.</p>
-<h4 id="but-i-will-fail-if-i-dont-meet-my-deadline-in-20-minutes">But I Will Fail If I Don&rsquo;t Meet My Deadline In 20 Minutes!</h4>
+complete and viable example anyway.</p>
+<h3 id="a-last-resort">A Last Resort</h3>
+<p>As a last resort you could try just putting all your code in a GitHub repo
+and giving us the link. Will someone want to read that much code? Probably
+not, which is why you should still probably make an MCVE, but maybe someone
+will, idk.</p>
+<p>Good luck.</p>
+<h3 id="my-deadline-is-in-20-minutes">My Deadline Is In 20 Minutes!</h3>
 <p>See: <a href="/inferno/objections/#but-its-urgent">But It&rsquo;s Urgent</a></p>
 </section>
 
