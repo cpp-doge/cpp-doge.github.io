@@ -82,11 +82,6 @@
           <h1>Table Of Contents</h1>
           <nav id="TableOfContents">
   <ul>
-    <li><a href="#a-matter-of-style">A Matter Of Style</a>
-      <ul>
-        <li><a href="#what-is-style">What Is Style</a></li>
-      </ul>
-    </li>
     <li><a href="#why-it-matters">Why It Matters</a>
       <ul>
         <li></li>
@@ -99,24 +94,12 @@
         <li><a href="#actually-caring">Actually Caring</a></li>
       </ul>
     </li>
-    <li><a href="#what-and-how">What And How</a>
-      <ul>
-        <li><a href="#be-consistent">Be Consistent</a></li>
-        <li><a href="#whitespace">Whitespace</a></li>
-        <li><a href="#indentation">Indentation</a></li>
-      </ul>
-    </li>
   </ul>
 </nav>
       
     </section>
 
-    <section class="post-content"><h2 id="a-matter-of-style">A Matter Of Style</h2>
-<h3 id="what-is-style">What Is Style</h3>
-<p>Style consists of the subjective choices you make like
-how you name your variables, how you organize your files,
-how much whitespace you use and where you put that whitespace.</p>
-<h2 id="why-it-matters">Why It Matters</h2>
+    <section class="post-content"><h2 id="why-it-matters">Why It Matters</h2>
 <p>If it makes my eyes bleed, am I going to be motivated to help?</p>
 <p><img src="https://media.tenor.com/I3C9wDN_ZDkAAAAC/my-eyes.gif" alt="My Eyes"></p>
 <h4 id="attention-to-detail-is-important">Attention To Detail Is Important</h4>
@@ -161,119 +144,16 @@ of larger, worse and more dangerous problems.</p>
 in your code, then I instantly begin to wonder how many other
 problems there are with your code.</p>
 <p>The answer is: probably a lot.</p>
-<p>If it seems apparent that you may have hundreds of other problems to
-fix before we really get to helping you with the core of
-your main problem, then I don&rsquo;t really want to participate,</p>
-<p>I also wonder why you don&rsquo;t care to fix these.</p>
+<p>If it seems apparent that you may have hundreds of other problems
+that you could have avoided through attention to detail then
+I may be bit apathetic to help.</p>
 <h3 id="actually-caring">Actually Caring</h3>
-<p>If you don&rsquo;t care enough to format your code nicely so it is pleasant
-to read for yourself (much less other people) then I don&rsquo;t care to
-help you.</p>
-<p>I have spent thousands of hours caring about and perfecting my craft.
-When you show me that you fundamentally probably don&rsquo;t care about
-what is effectively not only my hobby, but my career and my life,
-then I feel rather insulted and I don&rsquo;t want to help you.</p>
-<p>Show me that you care.</p>
-<h2 id="what-and-how">What And How</h2>
-<h3 id="be-consistent">Be Consistent</h3>
-<p>Consistency breeds familiarity. Familiarity breeds quick
-recognition. Quick recognition frees your brain to think about
-more important things. All of this means you can work
-faster and write better more robust code.</p>
-<p>There are many subjective decisions to be made with regard to style.</p>
-<ul>
-<li>Should you use same line curly braces or next line curly braces?</li>
-<li>Should you use hungarian notation?</li>
-<li>Should you put spaces inside of conditional clauses?</li>
-<li>Camel case, snake case or Pascal case?</li>
-<li>East const or west const?</li>
-<li>East ref or west ref?</li>
-<li>East pointer or west pointer?</li>
-</ul>
-<p>The answer is simple:</p>
-<ul>
-<li>It doesn&rsquo;t matter what you choose</li>
-<li>Just keep it the same for everything</li>
-<li>Keep it consistent</li>
-</ul>
-<h3 id="whitespace">Whitespace</h3>
-<p>We put spaces between words in English to help make things
-easier to read.</p>
-<p>You should do the same for your code.</p>
-<p>Whitespace characters are things like spaces, line breaks and tabs.</p>
-<p>These are the &ldquo;invisible&rdquo; yet visible characters. They contain no
-squiggly lines like the letter <code>g</code> or the letter <code>z</code> but they
-still affect how your code looks.</p>
-<p>When you press the space bar you insert a space. When you hit
-enter you insert a line break, also called a newline.</p>
-<p>Where whitespace is allowed, you may use as much of it as you wish.</p>
-<p>If you are allowed to put one space, you may instead put 3 or 4, or
-put a line break instead.</p>
-<h3 id="indentation">Indentation</h3>
-<p>We indent code blocks to make it more immediately obvious which
-code belongs to which blocks.</p>
-<p>You should indent your code appropriately. You should also make
-use of whitespace like newlines. For example</p>
-<h4 id="really-bad">Really Bad</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">blarg</span><span class="p">(){</span> <span class="k">while</span><span class="p">(</span><span class="n">boop</span><span class="p">){</span><span class="k">if</span><span class="p">(</span><span class="n">foo</span><span class="o">+</span><span class="mi">1</span><span class="p">){</span><span class="n">bing</span><span class="p">;</span><span class="n">baz</span><span class="p">;</span> <span class="n">bar</span><span class="p">;}</span> <span class="p">}}</span>
-</span></span></code></pre></div><p>This is bad because</p>
-<ul>
-<li>All the code is on one line.</li>
-<li>There are very few spaces</li>
-<li>There are no line breaks</li>
-<li>The placement of the spaces is inconsistent and makes no logical sense</li>
-</ul>
-<h4 id="bad">Bad</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">blarg</span><span class="p">(){</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span><span class="p">(</span><span class="n">boop</span><span class="p">){</span><span class="k">if</span><span class="p">(</span><span class="n">foo</span><span class="o">+</span><span class="mi">1</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl"><span class="n">bing</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">baz</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">bar</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}}</span>
-</span></span></code></pre></div><p>This is bad because</p>
-<ul>
-<li>The logical sections are not indented</li>
-<li>There are still very few spaces</li>
-<li>The placement of the curly braces <code>{}</code>, spaces and line breaks is inconsistent,
-and makes no logical sense and is difficult to visually reason about</li>
-</ul>
-<h4 id="good">Good</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">blarg</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">boop</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">foo</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">bing</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">baz</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">bar</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>This is good because</p>
-<ul>
-<li>There is more visual separation
-<ul>
-<li>It is easier to read for the same reason that we add spaces between words in English</li>
-</ul>
-</li>
-<li>It is properly indented
-<ul>
-<li>It is clear which code is logically grouped together</li>
-</ul>
-</li>
-<li>It is easy to see that the <code>{</code> and <code>}</code> all match and line up and are correctly balanced
-<ul>
-<li>Same line braces are also fine, but they are a bit more difficult to easily and quickly visually match up</li>
-</ul>
-</li>
-<li>The usage of whitespace and indentation is consistent, making the code visually predictable
-<ul>
-<li>Predictable is easier and faster to understand and reason about</li>
-</ul>
-</li>
-</ul>
+<p>I have spent thousands of hours caring about and perfecting my craft.</p>
+<p>If you show me that you probably don&rsquo;t care about
+what is not only my hobby, but my career and my life,
+then I feel sad and I probably don&rsquo;t want to help you.</p>
+<p>When you show me that you do care, at least even a little bit, then
+I do want to help you.</p>
 </section>
 
     <script

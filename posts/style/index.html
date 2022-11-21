@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/posts/style/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>Styling Your Code</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">Styling Your Code</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#a-matter-of-style">A Matter Of Style</a>
+      <ul>
+        <li><a href="#what-is-style">What Is Style</a></li>
+        <li><a href="#automatic-tools">Automatic Tools</a></li>
+        <li><a href="#guidelines">Guidelines</a></li>
+      </ul>
+    </li>
+    <li><a href="#why-and-how">Why And How</a>
+      <ul>
+        <li><a href="#consistency">Consistency</a></li>
+      </ul>
+    </li>
+    <li><a href="#basic-concepts">Basic Concepts</a>
+      <ul>
+        <li><a href="#whitespace">Whitespace</a></li>
+        <li><a href="#indentation">Indentation</a></li>
+        <li><a href="#naming-conventions">Naming Conventions</a></li>
+      </ul>
+    </li>
+    <li><a href="#examples">Examples</a>
+      <ul>
+        <li><a href="#bad">Bad</a></li>
+        <li><a href="#good">Good</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><h2 id="a-matter-of-style">A Matter Of Style</h2>
+<h3 id="what-is-style">What Is Style</h3>
+<p>Style consists of the subjective choices you make like
+how you name your variables, how you organize your files,
+how much whitespace you use and where you put that whitespace.</p>
+<h3 id="automatic-tools">Automatic Tools</h3>
+<p>You can use tools to automatically format your code.</p>
+<ul>
+<li><a href="https://clang.llvm.org/docs/ClangFormat.html">Clang Format</a></li>
+<li><a href="https://clang.llvm.org/extra/clang-tidy/">Clang Tidy</a></li>
+</ul>
+<p>These tools do a lot but they don&rsquo;t do everything. You still need to
+observe some guidelines by hand.</p>
+<h3 id="guidelines">Guidelines</h3>
+<p>There are many flavors of style to choose from. Try
+the default styles available in <a href="https://clang.llvm.org/docs/ClangFormat.html">Clang Format</a>
+to get an idea of what they are like and how you might want
+to customize your own.</p>
+<p>I also recommend adopting the</p>
+<ul>
+<li><a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines">Cpp Core Guidelines</a></li>
+</ul>
+<h2 id="why-and-how">Why And How</h2>
+<h3 id="consistency">Consistency</h3>
+<p>Consistency breeds familiarity. Familiarity breeds quick
+recognition. Quick recognition frees your brain to think about
+more important things. All of this means you can work
+faster and write better more robust code.</p>
+<h4 id="impact">Impact</h4>
+<p>Style transcends just the aesthetic. Style can and does have
+an impact on your product at the end of the day.</p>
+<p>This can manifest in process and project management as well
+as in customer satisfaction and public relations.</p>
+<h4 id="expectations">Expectations</h4>
+<p>Setting expectations helps you write better more correct programs
+with fewer bugs and less pain. Keeping paradigms consistent means
+there is less chance for something to go wrong because there are
+well established patterns of development that are known to work
+and be effective.</p>
+<p>Adopting standardized approaches to not only whitespace
+but also to file, function and class structure helps
+ensure a smoother better experience for everyone, and takes a
+lot of the guess work out of writing robust bug free code.</p>
+<h4 id="just-keep-it-consistent">Just Keep It Consistent</h4>
+<p>There are many subjective decisions to be made with regard to style.</p>
+<ul>
+<li>Same line curly braces or next line curly braces?</li>
+<li>Hungarian notation?</li>
+<li>Spaces inside of conditional clauses?</li>
+<li>Spaces between template arguments?</li>
+<li>Camel case, snake case or Pascal case?</li>
+<li>East const or west const?</li>
+<li>East ref or west ref?</li>
+<li>East pointer or west pointer?</li>
+</ul>
+<p>The answer is simple:</p>
+<ul>
+<li>It doesn&rsquo;t matter what you choose</li>
+<li>Just keep it the same for everything</li>
+<li>Keep it consistent</li>
+</ul>
+<h2 id="basic-concepts">Basic Concepts</h2>
+<h3 id="whitespace">Whitespace</h3>
+<p>We put spaces between words in English to help make things
+easier to read.</p>
+<p>You should do the same for your code.</p>
+<p>Whitespace characters are things like spaces, line breaks and tabs.</p>
+<p>In C++ these are written as</p>
+<ul>
+<li><code>' '</code></li>
+<li><code>'\n'</code></li>
+<li><code>'\t'</code></li>
+</ul>
+<p>These are the &ldquo;invisible&rdquo; yet visible characters. They contain no
+squiggly lines like the letter <code>g</code> or the letter <code>z</code> but they
+still affect how your code looks.</p>
+<p>When you press the space bar you insert a space. When you hit
+enter you insert a line break, also called a newline.</p>
+<p>Where whitespace is allowed, you may use as much of it as you wish.</p>
+<p>If you are allowed to put one space, you may instead put 3 or 4, or
+put a line break instead.</p>
+<h3 id="indentation">Indentation</h3>
+<p>Indentation is adding some extra whitespace at the beginning of a line.</p>
+<p>We indent code blocks to make it more immediately obvious which
+code belongs to which blocks.</p>
+<p>You should indent your code appropriately. You should also make
+use of whitespace like newlines.</p>
+<h3 id="naming-conventions">Naming Conventions</h3>
+<p>Things like variable names and function names in C++ have some
+limitations, like they cannot also contain spaces.</p>
+<p>For this reason it is common to see names written in one of
+a few common conventional styles.</p>
+<h4 id="camel-case">Camel Case</h4>
+<p>Camel case is capitalizing the first letter of each word
+instead of using spaces between words. So named because
+the visual appearance resembles humps on a camel.</p>
+<p>For example we would write &ldquo;hello how are you&rdquo; as <code>helloHowAreYou</code>.</p>
+<h4 id="pascal-case">Pascal Case</h4>
+<p>Pascal case is camel case with the first letter also capitalized.</p>
+<p>For example we would write &ldquo;this is nice&rdquo; as <code>ThisIsNice</code>.</p>
+<p>Pascal case is often used to signify type names so for example <code>MyModel</code>
+indicates a class and <code>myModel</code> indicates an instance of that class.</p>
+<h4 id="snake-case">Snake Case</h4>
+<p>Snake case, also called &ldquo;lower underscore&rdquo; is placing the underscore
+character <code>_</code> between words instead of spaces.</p>
+<p>For example we would write &ldquo;hello how are you&rdquo; as <code>hello_how_are_you</code>.</p>
+<h4 id="annotation">Annotation</h4>
+<p>It is common to place some letter or word first in a variable
+or function name to help signifiy what kind of variable it is.</p>
+<p>For example we might write <code>gFoo</code> or <code>g_foo</code> for a global instead of just <code>foo</code>.</p>
+<p>For example we might write <code>mFoo</code> for a member variable instead of just <code>foo</code>.</p>
+<p>This can help prevent naming conflicts between names commonly used
+for many things like locals, globals, parameters and members.</p>
+<h4 id="mixing">Mixing</h4>
+<p>Try to stick with only one or two naming conventions, but some mixing
+can be useful.</p>
+<p>For example <code>m_Foo</code> may refer to a member function while <code>mFoo</code> may refer
+to a member variable.</p>
+<p>For example <code>foo_bar</code> may refer to a key in a map, while <code>fooBar</code> refers
+to a local member variable and <code>FooBar</code> refers to a class.</p>
+<p>As always, no matter your choice, just remember to keep it consistent.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="bad">Bad</h3>
+<p><img src="https://media.tenor.com/PRiY5cZA1TIAAAAd/cat-meme-face-cat-meme.gif" alt="Gag"></p>
+<h4 id="really-bad">Really Bad</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">blarg</span><span class="p">(){</span> <span class="k">while</span><span class="p">(</span><span class="n">boop</span><span class="p">){</span><span class="k">if</span><span class="p">(</span><span class="n">foo</span> <span class="o">+</span><span class="mi">1</span><span class="p">){</span><span class="n">bing</span>
+</span></span><span class="line"><span class="cl"><span class="p">;</span><span class="n">baz</span><span class="p">;</span> <span class="n">bar</span><span class="p">;}</span> <span class="p">}}</span>
+</span></span></code></pre></div><p>This is bad because</p>
+<ul>
+<li>All the code is all squished on only two lines</li>
+<li>The placement of the line break illogical</li>
+<li>There are very few spaces</li>
+<li>The placement of the spaces is inconsistent and illogical</li>
+</ul>
+<h4 id="still-pretty-bad">Still Pretty Bad</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">blarg</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span><span class="p">(</span> <span class="n">boop</span><span class="p">){</span><span class="k">if</span><span class="p">(</span><span class="n">foo</span><span class="o">+</span><span class="mi">1</span> <span class="p">){</span>
+</span></span><span class="line"><span class="cl"><span class="n">bing</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">baz</span><span class="p">;</span> <span class="n">bar</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}}</span>
+</span></span></code></pre></div><p>This is bad because</p>
+<ul>
+<li>The logical sections are not indented, and so are not visually obvious</li>
+<li>There are still very few spaces or line breaks</li>
+<li>The placement of the curly braces <code>{}</code>, spaces and line breaks is inconsistent,
+illogical and difficult to quickly and visually reason about</li>
+</ul>
+<h3 id="good">Good</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">blarg</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">boop</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">foo</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">bing</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">baz</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">bar</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>This is good because</p>
+<ul>
+<li>There is more visual separation
+<ul>
+<li>It is easier to read for the same reason that we add spaces between words in English</li>
+</ul>
+</li>
+<li>It is properly indented
+<ul>
+<li>It is clear which code is logically grouped together</li>
+</ul>
+</li>
+<li>It is easy to see that the <code>{</code> and <code>}</code> all match and line up and are correctly balanced
+<ul>
+<li>Same line braces are also fine, but they are a bit more difficult to easily and quickly visually match up</li>
+</ul>
+</li>
+<li>The usage of whitespace and indentation is consistent, making the code visually predictable
+<ul>
+<li>Predictable is easier and faster to understand and reason about</li>
+</ul>
+</li>
+</ul>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 Phone Doggo
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>
