@@ -2,15 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://cpp-doge.github.io/guides/building-software/introduction/</loc>
+  </url><url>
     <loc>https://cpp-doge.github.io/guides/command-line-primer/what-is-the-command-line/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/guides/command-line-primer/about-file-paths/</loc>
   </url><url>
+    <loc>https://cpp-doge.github.io/guides/building-software/gcc-basics/</loc>
+  </url><url>
+    <loc>https://cpp-doge.github.io/guides/building-software/msvc-basics/</loc>
+  </url><url>
     <loc>https://cpp-doge.github.io/guides/command-line-primer/command-line-basics/</loc>
+  </url><url>
+    <loc>https://cpp-doge.github.io/guides/building-software/libs-basics/</loc>
+  </url><url>
+    <loc>https://cpp-doge.github.io/guides/building-software/gcc-libs/</loc>
+  </url><url>
+    <loc>https://cpp-doge.github.io/guides/building-software/msvc-libs/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/guides/command-line-primer/command-line-intermediate/</loc>
   </url><url>
+    <loc>https://cpp-doge.github.io/guides/building-software/flags-basics/</loc>
+  </url><url>
+    <loc>https://cpp-doge.github.io/guides/building-software/gcc-flags/</loc>
+  </url><url>
+    <loc>https://cpp-doge.github.io/guides/building-software/msvc-flags/</loc>
+  </url><url>
     <loc>https://cpp-doge.github.io/guides/command-line-primer/about-environment-variables/</loc>
+  </url><url>
+    <loc>https://cpp-doge.github.io/guides/building-software/dirpath-basics/</loc>
+  </url><url>
+    <loc>https://cpp-doge.github.io/guides/building-software/gcc-paths/</loc>
+  </url><url>
+    <loc>https://cpp-doge.github.io/guides/building-software/msvc-paths/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/guides/command-line-primer/command-line-advanced/</loc>
   </url><url>
@@ -18,9 +42,13 @@
   </url><url>
     <loc>https://cpp-doge.github.io/pages/about/</loc>
   </url><url>
+    <loc>https://cpp-doge.github.io/posts/powershell/</loc>
+  </url><url>
     <loc>https://cpp-doge.github.io/inferno/style/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/posts/</loc>
+  </url><url>
+    <loc>https://cpp-doge.github.io/guides/building-software/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/posts/c-compatibility-headers/</loc>
   </url><url>
@@ -29,8 +57,6 @@
     <loc>https://cpp-doge.github.io/guides/command-line-primer/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/inferno/minimal-reproducible-example/</loc>
-  </url><url>
-    <loc>https://cpp-doge.github.io/inferno/objections/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/posts/gcc-clang-plus-plus/</loc>
   </url><url>
@@ -46,20 +72,28 @@
   </url><url>
     <loc>https://cpp-doge.github.io/pages/links/</loc>
   </url><url>
-    <loc>https://cpp-doge.github.io/pages/</loc>
+    <loc>https://cpp-doge.github.io/inferno/objections/</loc>
   </url><url>
-    <loc>https://cpp-doge.github.io/inferno/vscode-mingw/</loc>
+    <loc>https://cpp-doge.github.io/pages/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/posts/style/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/tags/</loc>
   </url><url>
+    <loc>https://cpp-doge.github.io/posts/use-an-ide/</loc>
+  </url><url>
     <loc>https://cpp-doge.github.io/posts/using-wandbox/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/posts/what-is-a-data-type/</loc>
   </url><url>
+    <loc>https://cpp-doge.github.io/posts/where-do-i-start/</loc>
+  </url><url>
     <loc>https://cpp-doge.github.io/posts/which-cpp-book/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/inferno/why-cpp-instead-of-c/</loc>
+  </url><url>
+    <loc>https://cpp-doge.github.io/inferno/you-are-a-toxic-idiot/</loc>
+  </url><url>
+    <loc>https://cpp-doge.github.io/inferno/you-are-wrong/</loc>
   </url>
 </urlset>

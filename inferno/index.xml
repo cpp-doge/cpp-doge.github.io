@@ -31,7 +31,7 @@ Wandbox Godbolt For smaller examples you can also use the discord bot to compile
     </item>
     
     <item>
-      <title>Dante&#39;s Inferno</title>
+      <title>Objections</title>
       <link>https://cpp-doge.github.io/inferno/objections/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -41,20 +41,6 @@ Please be sure your seat backs and tray tables are in their fully upright and lo
 Your Honor I Object! We regret to inform you that your programming help insurance has been cancelled.
 Your supervisor will be with you shortly.
 Why Am I Here People have been wondering this for thousands of years and we still don&amp;rsquo;t have many good answers.</description>
-    </item>
-    
-    <item>
-      <title>Should I Use VSCode And MinGW</title>
-      <link>https://cpp-doge.github.io/inferno/vscode-mingw/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cpp-doge.github.io/inferno/vscode-mingw/</guid>
-      <description>In 30 Seconds Use Visual Studio. It&amp;rsquo;s FREE! It does everything you want.
-Download: Visual Studio
-Visual Studio is not VSCode. Don&amp;rsquo;t use VSCode. Don&amp;rsquo;t use MinGW.
-What&amp;rsquo;s The Point The point is that an IDE comes with all the tools you need to quickly and easily begin working with C++.
-You should probably use an IDE regardless of what kind of computer you have.
-I Am Not Using Windows You should probably still use an IDE.</description>
     </item>
     
     <item>
@@ -68,6 +54,27 @@ Most C++ code is not valid C code.
 Most idiomatic C code is very poor C++ code.
 Why Should I Use C++? C++ has many features in both the language and its standard library including, in no particular order
 Metaprogramming Variadic Templates Lambdas Concurrency and Parellelism Atomics Structured Bindings Regular Expressions Strings, Arrays &amp;amp; Dictionaries Unicode Support Date &amp;amp; Time Functions File And Directory Management Random Number Generation Function Overloads Operator Overloads Classes Inheritance Polymorphism Iterators Ranges Concepts Views &amp;amp; Spans Exceptions Variant Plus there exist many other common useful libraries for things like</description>
+    </item>
+    
+    <item>
+      <title>You Are A Toxic Idiot</title>
+      <link>https://cpp-doge.github.io/inferno/you-are-a-toxic-idiot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/inferno/you-are-a-toxic-idiot/</guid>
+      <description>Of Course You Are Literally the most important person in the world. All knowing, all seeing, wise beyond your years, intellect beyond comprehension. Everyone should listen to you speak, no one should ever doubt your sage advice.
+Why Wouldn&amp;rsquo;t You Be? A prime specimen, a beacon of humility, a bastion of kindness, a champion of morality, a pillar of the community, a solution to all suffering, the center of wisdom and reason, a holy pure light shining from heaven, a righteous fire, savior of puppies and kittens, infallible, a veritable vanguard of humanity.</description>
+    </item>
+    
+    <item>
+      <title>You Are Wrong</title>
+      <link>https://cpp-doge.github.io/inferno/you-are-wrong/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/inferno/you-are-wrong/</guid>
+      <description>Why You Are Wrong If You Came Here To Tell Me I Should Say This Other Thing Instead This is a blog mostly aimed at newbies. This blog is probably not for you.
+This blog is what it is intended to be for its target audience.
+If You Came Here To Tell Me I Should Advise Some Other Probably Advanced Tool Or Technique Instead Reducing Complexity Read about the mission statement and objectives of this blog.</description>
     </item>
     
   </channel>

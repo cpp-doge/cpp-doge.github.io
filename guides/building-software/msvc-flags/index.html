@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/guides/building-software/msvc-flags/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>4c - MSVC Flags</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">4c - MSVC Flags</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#msvc-flags">MSVC Flags</a>
+      <ul>
+        <li><a href="#c-language-version">C++ Language Version</a></li>
+        <li><a href="#c-standard-library">C++ Standard Library</a></li>
+        <li><a href="#defines">Defines</a></li>
+        <li><a href="#warning--error-levels">Warning &amp; Error Levels</a></li>
+        <li><a href="#performance-optimization">Performance Optimization</a></li>
+        <li><a href="#debugging">Debugging</a></li>
+        <li><a href="#unicode--character-sets">Unicode &amp; Character Sets</a></li>
+      </ul>
+    </li>
+    <li><a href="#putting-it-all-together">Putting It All Together</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#exercise-for-the-reader">Exercise For The Reader</a></li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><h2 id="msvc-flags">MSVC Flags</h2>
+<p>For more information on all of this stuff&hellip;</p>
+<p>See <a href="https://learn.microsoft.com/en-us/cpp/build/reference/compiler-options">MSVC Compiler Options</a></p>
+<aside class="post-note stop"><p><p>STOP</p>
+<p>Be sure you are using the <a href="/guides/building-sofware/introduction/#devtools-powershell">Developer Tools PowerShell</a></p>
+<p><strong>THIS IS CRITICALLY IMPORTANT</strong></p>
+</p></aside>
+<h3 id="c-language-version">C++ Language Version</h3>
+<p>C++ like many things has versions. You can be sure you&rsquo;re
+using a specific version of C++ with the latest features
+by adding a compiler flag to control the so called
+language standard.</p>
+<p>Use the <code>-std</code> flag to configure this.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -std:c++20 main.cpp
+</span></span></code></pre></div><h3 id="c-standard-library">C++ Standard Library</h3>
+<p>Microsoft&rsquo;s C++ Standard Library comes in both debug and release flavors.</p>
+<p>Use <code>-MD</code> for the release flavor.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -MD main.cpp
+</span></span></code></pre></div><p>Use <code>-MDd</code> for the debug flavor.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -MDd main.cpp
+</span></span></code></pre></div><p>The debug and release flavors are not guaranteed compatbile, do not mix
+them together in the same program. Usually you will build two separate
+versions of your program, one in Debug mode and one in Release mode.</p>
+<h3 id="defines">Defines</h3>
+<p>You likely know about the <code>#define</code> macro from C. You can
+define things on demand from the command line and they
+will be defined that way in your program.</p>
+<p>Use the <code>-D</code> flag to add a macro definition</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -DSOME_VAR=3 main.cpp
+</span></span></code></pre></div><p>This means that <code>SOME_VAR</code> will equal <code>3</code> in the <code>main.cpp</code> code
+when the source is compiled.</p>
+<p>This means you can do stuff like <code>#ifdef SOME_VAR</code> inside of <code>main.cpp</code>.</p>
+<h3 id="warning--error-levels">Warning &amp; Error Levels</h3>
+<p>One of the first and most highly important things you should
+probably do when you begin learning C++ is configure a rather
+strict warning level.</p>
+<p>This will warn you of many possible bad mistakes you might
+make and will help you write better code, faster with
+fewer mistakes and less pain.</p>
+<p>Default to using Warning Level 3 for all your
+programs. You can customize this in other ways later.</p>
+<p>You can do this with the <code>-W3</code> flag</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -W3 main.cpp
+</span></span></code></pre></div><p>See <a href="https://learn.microsoft.com/en-us/cpp/build/reference/compiler-option-warning-level">MSVC Warning Level</a></p>
+<h3 id="performance-optimization">Performance Optimization</h3>
+<p>We all know that C++ is fast, but it&rsquo;s only fast if you
+compile your programs with optimizations enabled.</p>
+<p>Do this with the <code>-O</code> flags, these control whether your
+program is optimized and how much.</p>
+<p>The <code>-O2</code> flag is a common default choice and should be
+close to as fast as you usually need or want.</p>
+<aside class="post-note warn"><p>WARNING</p><p>
+<p>You should probably define <code>NDEBUG</code> (which means &ldquo;No Debug&rdquo;) when
+building programs with performance optimization.</p>
+</p></aside>
+<p>For example, this will compile with optimization level 2.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -DNDEBUG -O2 main.cpp
+</span></span></code></pre></div><p>You can use <code>-Ot</code> to aggressively favor speed optimizations over
+size optimizations.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -DNDEBUG -O2 -Ot main.cpp
+</span></span></code></pre></div><p>See <a href="https://learn.microsoft.com/en-us/cpp/build/reference/o-options-optimize-code">MSVC Optimization Options</a></p>
+<h3 id="debugging">Debugging</h3>
+<p>Using a debugger is an important skill.</p>
+<p>Before you can use a debugger you must add debugging information
+to your program.</p>
+<h4 id="debug-info">Debug Info</h4>
+<p>Add debugging information with the <code>-Z7</code> flag.</p>
+<p>See <a href="https://learn.microsoft.com/en-us/cpp/build/reference/z7-zi-zi-debug-information-format">MSVC Debug Options</a></p>
+<h4 id="no-optimization">No Optimization</h4>
+<p>Disable optimization with the <code>-Od</code> flag.</p>
+<aside class="post-note warn"><p>WARNING</p><p>
+<p>You should probably disable optimization because
+optimization may sometimes delete some of your code.</p>
+<p>This is called being &ldquo;optimized away&rdquo; when some code is deleted by the compiler
+for performance reasons.</p>
+<p>This is bad for debugging.</p>
+</p></aside>
+<h4 id="debug-defines">Debug Defines</h4>
+<p>Add the standard <code>_DEBUG</code> define with <code>-D</code>.</p>
+<aside class="post-note warn"><p>WARNING</p><p>
+<p>You should probably define <code>_DEBUG</code> which indicates that this
+is in fact a program intended for debugging.</p>
+</p></aside>
+<h4 id="debug-build">Debug Build</h4>
+<p>Here is an example compile command for a debuggable build.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -D_DEBUG -Od -Z7 main.cpp
+</span></span></code></pre></div><aside class="post-note warn"><p>WARNING</p><p>
+<p>Be sure you use <code>-Od</code> with MSVC and <strong>NOT</strong> <code>-Og</code> as you would in GCC!</p>
+<p>The <code>-Og</code> flag is <strong>NOT THE SAME</strong> in MSVC as it is in GCC.</p>
+</p></aside>
+<h3 id="unicode--character-sets">Unicode &amp; Character Sets</h3>
+<p>You can specify some of the behavior of how Windows handles
+international characters like those from Chinese, Hebrew
+and other non western alphabets.</p>
+<p>You should probably specify that <code>wchar_t</code> is a valid and
+mostly predictable standard type when using MSVC by
+adding the <code>-Zc:wchar_t</code> flag.</p>
+<p>For example</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -Zc:wchar_t main.cpp
+</span></span></code></pre></div><p>See also <a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">Joel On Unicode</a></p>
+<h2 id="putting-it-all-together">Putting It All Together</h2>
+<p>With all of the above in mind, your compile commands for MSVC should
+all probably look something like this</p>
+<h4 id="for-debug-builds">For Debug Builds</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -std:c++20 -W3 -Zc:wchar_t -MDd -D_DEBUG -Z7 -Od main.cpp
+</span></span></code></pre></div><h4 id="for-release-builds">For Release Builds</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -std:c++20 -W3 -Zc:wchar_t -MD -DNDEBUG -O2 -Ot main.cpp
+</span></span></code></pre></div><h2 id="exercise-for-the-reader">Exercise For The Reader</h2>
+<p>As you can see, our build commands are becoming quite long
+and cumbersome to type.</p>
+<p>If we need to type all this any time we want to compile
+a single file program, that&rsquo;s a lot. It&rsquo;s even worse
+if we need to type this all out multiple times for multi
+file discrete builds as demonstrated earlier.</p>
+<p>Your first exercise is to use the information from the
+<a href="/guides/command-line-primer/command-line-intermediate">Command Line Primer</a>
+to write your own shell scripts for performing your build.</p>
+<p>Then you can move on to learning about build systems like CMake.</p>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 <a href="/pages/about/">Phone Doggo</a>
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

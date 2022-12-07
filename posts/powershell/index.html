@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/posts/powershell/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>About PowerShell</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">About PowerShell</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#powershell">PowerShell</a>
+      <ul>
+        <li></li>
+        <li><a href="#powershell-editions">PowerShell Editions</a></li>
+        <li><a href="#execution-policy">Execution Policy</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><h2 id="powershell">PowerShell</h2>
+<p>PowerShell is a <a href="/guides/command-line-primer/what-is-the-command-line/">shell</a> from Microsoft.</p>
+<p>You should use <a href="https://github.com/PowerShell/PowerShell/releases">PowerShell 7</a>
+if you are on Windows.</p>
+<p>Download: <a href="https://github.com/PowerShell/PowerShell/releases">PowerShell 7</a></p>
+<p>PowerShell is greatly superior to the ancient and outdated legacy
+DOS batch shell named <code>cmd.exe</code> or simply named &ldquo;Command Prompt&rdquo;
+in your Windows Start Menu.</p>
+<h4 id="add-a-better-terminal">Add A Better Terminal</h4>
+<p>You should also use <a href="https://github.com/microsoft/terminal/releases">Windows Terminal</a>.
+It has more and better features including tabs and integration with WSL.</p>
+<p>Alternatively try <a href="https://conemu.github.io/">ConEmu</a> instead.</p>
+<h3 id="powershell-editions">PowerShell Editions</h3>
+<p>There are two distinctly different versions of PowerShell
+known as &ldquo;PowerShell Editions&rdquo;.</p>
+<p>These are <strong>NOT THE SAME</strong></p>
+<ul>
+<li><a href="https://github.com/PowerShell/PowerShell/releases">PowerShell Core Edition</a>
+<ul>
+<li><em><strong>Use this one.</strong></em> This is the new PowerShell from Microsoft. It runs on Mac, Linux and Windows.</li>
+</ul>
+</li>
+<li>PowerShell Desktop Edition
+<ul>
+<li>This is the default PowerShell that comes with Windows, it is old, it does not work well with cross platform tools like GCC, don&rsquo;t use it.</li>
+</ul>
+</li>
+</ul>
+<h3 id="execution-policy">Execution Policy</h3>
+<p>This is not a problem if you use <a href="https://github.com/PowerShell/PowerShell/releases">PowerShell Core</a>.</p>
+<h4 id="the-problem">The Problem</h4>
+<p>PowerShell Desktop Edition forbids running PowerShell scripts by default.</p>
+<h4 id="the-simple-solution">The Simple Solution</h4>
+<p>Use <a href="https://github.com/PowerShell/PowerShell/releases">PowerShell Core</a> instead.</p>
+<h4 id="the-other-solution">The Other Solution</h4>
+<p>If you must, this can instead be fixed by setting your execution policy.</p>
+<p>See: <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy">Set-ExecutionPolicy</a></p>
+<p>This may require Administrator privileges.</p>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 <a href="/pages/about/">Phone Doggo</a>
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

@@ -7,15 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://cpp-doge.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>1 - Introduction</title>
+      <link>https://cpp-doge.github.io/guides/building-software/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/introduction/</guid>
+      <description>Overview This is a simplified guide on the basics of how to use common C++ compilers from the command line.
+How Long Does This Take? This guide should probably require about 30 minutes to read in total, or even less if you only read the sections on GCC or MSVC.
+The goal is for this to be short and to the point, an efficient and worthwhile investment of your time.</description>
+    </item>
+    
+    <item>
       <title>1 - What Is The CLI</title>
       <link>https://cpp-doge.github.io/guides/command-line-primer/what-is-the-command-line/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cpp-doge.github.io/guides/command-line-primer/what-is-the-command-line/</guid>
-      <description>What Is The Command Line The command line is usually a black screen or window into which you can enter and run plain text commands.
+      <description>What Is It CLI means Command Line Interface, or simply Command Line.
+The command line is usually a black screen or window into which you can enter and run plain text commands.
 This means you need to know about the commands that are available and how to run them. There are no buttons, no icons and no menus you can use to navigate.
-Long ago the command prompt was the only way to use your computer.
-Photo Sai Kiran Anagani</description>
+Long ago the command prompt was the only way to use your computer.</description>
     </item>
     
     <item>
@@ -28,6 +39,35 @@ Photo Sai Kiran Anagani</description>
 Photo by Maksym Kaharlytskyi
 You have files on your computer. You probably have things like photos, music, videos, spreadsheets, video game saves and many other possible kinds of files.
 Your files are organized in folders, much like a traditional old school filing cabinet. One major difference is that folders on a computer can have many other folders and files inside them where usually a physical filing cabinet does not typically have folders inside of other folders (but it could, who knows!</description>
+    </item>
+    
+    <item>
+      <title>2a - GCC Basics</title>
+      <link>https://cpp-doge.github.io/guides/building-software/gcc-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/gcc-basics/</guid>
+      <description>Using GCC Here&amp;rsquo;s how to use g++ on the command line to build and run a simple C++ program consisting of a single main.cpp source file.
+elmo@doge:~$ cd project elmo@doge:~/project$ g++ main.cpp elmo@doge:~/project$ ./a.out Hello World! STOP
+Be sure to use g++ and NOT gcc when you compile your C++ programs.
+See G++ And Clang++
+WARNING
+The ./ is important, you must use a fully qualified path to run your program.</description>
+    </item>
+    
+    <item>
+      <title>2b - MSVC Basics</title>
+      <link>https://cpp-doge.github.io/guides/building-software/msvc-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/msvc-basics/</guid>
+      <description>Before You Begin STOP
+Be sure you are using the Developer Tools PowerShell
+THIS IS CRITICALLY IMPORTANT
+About The Compiler The Microsoft command line compiler program is named cl.exe and the command line linker program is named link.exe.
+INFO
+We can omit the .exe when running these, so to run the compiler we simply run the cl command or to run the linker we simply run the link command.
+Using Visual Studio Here&amp;rsquo;s how to use cl on the command line to build and run a simple C++ program consisting of a single main.</description>
     </item>
     
     <item>
@@ -46,6 +86,43 @@ C:\Users\elmo&amp;gt; The prompt usually shows you some information about your c
     </item>
     
     <item>
+      <title>3a - Libraries Basics</title>
+      <link>https://cpp-doge.github.io/guides/building-software/libs-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/libs-basics/</guid>
+      <description>Introduction There is too much to cover in this guide. This guide presents most of the bare bones basics of working with libraries on your own, by hand, from the command line.
+Expect that you will need to continue learning, researching and studying as you grow your skills and career as a programmer.
+Motivation It is critically important to understand the basics of creating and using your own libraries so that you are better and more able to use other people&amp;rsquo;s libraries with less pain.</description>
+    </item>
+    
+    <item>
+      <title>3b - GCC Libraries</title>
+      <link>https://cpp-doge.github.io/guides/building-software/gcc-libs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/gcc-libs/</guid>
+      <description>Static Libraries Compile Object Files First compile your .cpp source files into individual object files as you would normally do.
+g++ -c algebra.cpp -o algebra.o g++ -c calculus.cpp -o calculus.o g++ -c physics.cpp -o physics.o g++ -c graphics.cpp -o graphics.o Create The Static Library Now link your object files into a final resulting static library.
+We will name our library VGM, which stands for &amp;ldquo;Video Game Math&amp;rdquo;.
+Run this command to create the static library.</description>
+    </item>
+    
+    <item>
+      <title>3c - MSVC Libraries</title>
+      <link>https://cpp-doge.github.io/guides/building-software/msvc-libs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/msvc-libs/</guid>
+      <description>Before You Begin STOP
+Be sure you are using the Developer Tools PowerShell
+THIS IS CRITICALLY IMPORTANT
+Static Libraries Compile Object Files First compile your .cpp source files into individual object files as you would normally do.
+cl -EHsc -c algebra.cpp -Fo&amp;#34;algebra.obj&amp;#34; cl -EHsc -c calculus.cpp -Fo&amp;#34;calculus.obj&amp;#34; cl -EHsc -c physics.cpp -Fo&amp;#34;physics.obj&amp;#34; cl -EHsc -c graphics.cpp -Fo&amp;#34;graphics.obj&amp;#34; WARNING
+You need the -EHsc flag or you will probably get some warnings relating to exceptions.</description>
+    </item>
+    
+    <item>
       <title>4 - Intermediate CLI</title>
       <link>https://cpp-doge.github.io/guides/command-line-primer/command-line-intermediate/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -59,6 +136,48 @@ Backup your vacation photos Backup your game saves Run different Minecraft versi
     </item>
     
     <item>
+      <title>4a - Compile Flags Basics</title>
+      <link>https://cpp-doge.github.io/guides/building-software/flags-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/flags-basics/</guid>
+      <description>Compile Flags Your compiler has hundreds, maybe even thousands of command line flags that help control how you build your programs.
+You have already seen several of these in previous examples, however there are several more important flags you should familiarize yourself with.
+You should familiarize yourself with flags that control things like
+C++ Language Version C++ Standard Library Warning &amp;amp; Error Levels Performance Optimization Debugging Unicode &amp;amp; Character Sets Include File Search Directories Library File Search Directories The next sections will detail some of these flags for each compiler and how to use them and why.</description>
+    </item>
+    
+    <item>
+      <title>4b - GCC Flags</title>
+      <link>https://cpp-doge.github.io/guides/building-software/gcc-flags/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/gcc-flags/</guid>
+      <description>GCC Flags For more information on all of this stuff&amp;hellip;
+See GCC Options
+INFO
+Most of this should work the same between Clang and GCC.
+C++ Language Version C++ like many things has versions. You can be sure you&amp;rsquo;re using a specific version of C++ with the latest features by adding a compiler flag to control the so called language standard.
+Use the -std flag to configure this.
+g++ -std=c++20 main.</description>
+    </item>
+    
+    <item>
+      <title>4c - MSVC Flags</title>
+      <link>https://cpp-doge.github.io/guides/building-software/msvc-flags/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/msvc-flags/</guid>
+      <description>MSVC Flags For more information on all of this stuff&amp;hellip;
+See MSVC Compiler Options
+STOP
+Be sure you are using the Developer Tools PowerShell
+THIS IS CRITICALLY IMPORTANT
+C++ Language Version C++ like many things has versions. You can be sure you&amp;rsquo;re using a specific version of C++ with the latest features by adding a compiler flag to control the so called language standard.
+Use the -std flag to configure this.</description>
+    </item>
+    
+    <item>
       <title>5 - About Environment Variables</title>
       <link>https://cpp-doge.github.io/guides/command-line-primer/about-environment-variables/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -69,6 +188,44 @@ Environment Variables An environment variable is a way to save some info in a pl
 You can set environment variables so that all programs have them or only for one program at a time.
 Syntax Environment variables look like regular variables in your shell scripting language.
 Bash environment variables begin with $ and the name, so for example $HELLO could be an environment variable in Bash.</description>
+    </item>
+    
+    <item>
+      <title>5a - Dirpath Basics</title>
+      <link>https://cpp-doge.github.io/guides/building-software/dirpath-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/dirpath-basics/</guid>
+      <description>Directory Paths When you compile a program your compiler will search in a large number of different directories for things like header include files and link library files.
+Depending on your OS and file structure, you may need to observe some other considerations around the files and folders of your project including your programs and libraries.
+Concepts Overview
+Include File Search Directories Library File Search Directories Binary Search Directories Library Loader Directories File Search Directories Most C++ programs will use so called header include files or just headers for short.</description>
+    </item>
+    
+    <item>
+      <title>5a - GCC Paths</title>
+      <link>https://cpp-doge.github.io/guides/building-software/gcc-paths/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/gcc-paths/</guid>
+      <description>GCC Paths Include File Search Directories Say you want your includes to live in their own separate directory like my_headers.
+You can add more folders to be searched for header include files with the -I flag, where -I stands for &amp;ldquo;include&amp;rdquo;.
+g++ -I ~/project/my_headers main.cpp Now you can #include any files from my_headers in the source code of main.cpp.
+GCC Link Library Flags The -l flag is new to us. Let&amp;rsquo;s explain it before moving on.</description>
+    </item>
+    
+    <item>
+      <title>5c - MSVC Paths</title>
+      <link>https://cpp-doge.github.io/guides/building-software/msvc-paths/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/msvc-paths/</guid>
+      <description>MSVC Paths STOP
+Be sure you are using the Developer Tools PowerShell
+THIS IS CRITICALLY IMPORTANT
+Include File Search Directories Say you want your includes to live in their own separate directory like my_headers.
+You can add more folders to be searched for header include files with the -I flag, where -I stands for &amp;ldquo;include&amp;rdquo;.
+cl -I&amp;#34;C:\project\my_headers&amp;#34; main.cpp Now you can #include any files from my_headers in the source code of main.</description>
     </item>
     
     <item>
@@ -103,9 +260,24 @@ The PowerShell 7 startup file lives in $env:USERPROFILE\Documents\PowerShell\Mic
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cpp-doge.github.io/pages/about/</guid>
-      <description>Hello? Yes? This is Doge. About Me About This Blog This is a blog about mostly C++ programming.
+      <description>Hello? Yes? This is Doge. About Me About This Blog This is a blog about mostly C++ programming, mostly for newbies.
+If you are already advanced then you are generally not the target audience.
 Simple, approachable and easy to understand is the goal here.
-Deals frequently &amp;amp; frivolously in hyperbolic incendiary claims Wantonly discards pedantry in favor of punchiness, humor, sarcasm and staying power in the mind Calously ignores details in favor of simplicity and ease of understanding for the layman As my Calculus professor once said:</description>
+Reduced cognitive load and reduced barriers to entry are paramount here Deals frequently &amp;amp; frivolously in hyperbolic incendiary claims Wantonly discards pedantry in favor of punchiness, humor, sarcasm and staying power in the mind Calously ignores details in favor of simplicity and ease of understanding for the layman As my Calculus professor once said:</description>
+    </item>
+    
+    <item>
+      <title>About PowerShell</title>
+      <link>https://cpp-doge.github.io/posts/powershell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/posts/powershell/</guid>
+      <description>PowerShell PowerShell is a shell from Microsoft.
+You should use PowerShell 7 if you are on Windows.
+Download: PowerShell 7
+PowerShell is greatly superior to the ancient and outdated legacy DOS batch shell named cmd.exe or simply named &amp;ldquo;Command Prompt&amp;rdquo; in your Windows Start Menu.
+Add A Better Terminal You should also use Windows Terminal. It has more and better features including tabs and integration with WSL.
+Alternatively try ConEmu instead.</description>
     </item>
     
     <item>
@@ -145,19 +317,6 @@ Wandbox Godbolt For smaller examples you can also use the discord bot to compile
     </item>
     
     <item>
-      <title>Dante&#39;s Inferno</title>
-      <link>https://cpp-doge.github.io/inferno/objections/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cpp-doge.github.io/inferno/objections/</guid>
-      <description>Frequently Asked Questions We&amp;rsquo;ve been trying to contact you about your car&amp;rsquo;s extended warranty.
-Please be sure your seat backs and tray tables are in their fully upright and locked positions as we begin our final descent into Hell.
-Your Honor I Object! We regret to inform you that your programming help insurance has been cancelled.
-Your supervisor will be with you shortly.
-Why Am I Here People have been wondering this for thousands of years and we still don&amp;rsquo;t have many good answers.</description>
-    </item>
-    
-    <item>
       <title>G&#43;&#43; And Clang&#43;&#43;</title>
       <link>https://cpp-doge.github.io/posts/gcc-clang-plus-plus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -187,12 +346,11 @@ This means for example that if you cin &amp;gt;&amp;gt; up to the end of the lin
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cpp-doge.github.io/posts/how-binary-works/</guid>
-      <description>Binary Numbers How do they work!?
-What Is A Number System What Is A Base The base of your number system is how many digits you have.
+      <description>What Is A Number System What Is A Base The base of your number system is how many digits you have.
 We doggos use a beef hotdog number system.
 No, wait&amp;hellip; we use a base ten number system.
 What does that actually mean though?
-I&amp;rsquo;m The Only Tigger We have been using base ten for so long in our normal lives, like at the grocery store or when talking about footbal scores, that it just feels natural and normal to most people.</description>
+I&amp;rsquo;m The Only Tigger We have been using base ten for so long in our normal lives, like at the grocery store or when talking about football scores, that it just feels natural and normal to most people.</description>
     </item>
     
     <item>
@@ -211,17 +369,16 @@ Stationeers MIPS Documentation Stationeers MIPS Simulator Space Engineers
     </item>
     
     <item>
-      <title>Should I Use VSCode And MinGW</title>
-      <link>https://cpp-doge.github.io/inferno/vscode-mingw/</link>
+      <title>Objections</title>
+      <link>https://cpp-doge.github.io/inferno/objections/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cpp-doge.github.io/inferno/vscode-mingw/</guid>
-      <description>In 30 Seconds Use Visual Studio. It&amp;rsquo;s FREE! It does everything you want.
-Download: Visual Studio
-Visual Studio is not VSCode. Don&amp;rsquo;t use VSCode. Don&amp;rsquo;t use MinGW.
-What&amp;rsquo;s The Point The point is that an IDE comes with all the tools you need to quickly and easily begin working with C++.
-You should probably use an IDE regardless of what kind of computer you have.
-I Am Not Using Windows You should probably still use an IDE.</description>
+      <guid>https://cpp-doge.github.io/inferno/objections/</guid>
+      <description>Frequently Asked Questions We&amp;rsquo;ve been trying to contact you about your car&amp;rsquo;s extended warranty.
+Please be sure your seat backs and tray tables are in their fully upright and locked positions as we begin our final descent into Hell.
+Your Honor I Object! We regret to inform you that your programming help insurance has been cancelled.
+Your supervisor will be with you shortly.
+Why Am I Here People have been wondering this for thousands of years and we still don&amp;rsquo;t have many good answers.</description>
     </item>
     
     <item>
@@ -233,6 +390,20 @@ I Am Not Using Windows You should probably still use an IDE.</description>
       <description>A Matter Of Style What Is Style Style consists of the subjective choices you make like how you name your variables, how you organize your files, how much whitespace you use and where you put that whitespace.
 Automatic Tools You can use tools to automatically format your code.
 Clang Format Clang Tidy These tools do a lot but they don&amp;rsquo;t do everything. You still need to observe some guidelines by hand.</description>
+    </item>
+    
+    <item>
+      <title>Use An IDE</title>
+      <link>https://cpp-doge.github.io/posts/use-an-ide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/posts/use-an-ide/</guid>
+      <description>In 60 Seconds Use Visual Studio for Windows. It&amp;rsquo;s FREE! It does everything you want.
+Download: Visual Studio
+Visual Studio is not VSCode, they are different products. Visual Studio comes with a compiler, no need for MinGW. See also I Am Not Using Windows
+See also I Want To Use Something Else
+INFO
+Using and IDE like Visual Studio may not be a direct solution to your current problem, which is to say simply using Visual Studio may not immediately solve your current issue.</description>
     </item>
     
     <item>
@@ -258,14 +429,28 @@ The information in your computer is managed by a bunch of transitors. You can th
     </item>
     
     <item>
+      <title>Where Do I Start</title>
+      <link>https://cpp-doge.github.io/posts/where-do-i-start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/posts/where-do-i-start/</guid>
+      <description>Where Do I Start Begin by reading your textbook.
+But I Don&amp;rsquo;t Have A Textbook Use the one from your syllabus.
+But I Don&amp;rsquo;t Have A Syllabus You probably do. Ask your TAs or your professor for book recommendations.
+Anyway, you could try a free one like this
+Free CompSci Curriculum But I Don&amp;rsquo;t Have A Syllabus Textbook Then get yourself a book, there are free books available.
+Paid books are still generally better.</description>
+    </item>
+    
+    <item>
       <title>Which C&#43;&#43; Book?</title>
       <link>https://cpp-doge.github.io/posts/which-cpp-book/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cpp-doge.github.io/posts/which-cpp-book/</guid>
       <description>What Should I Choose? These are pretty good, though I haven&amp;rsquo;t read them all, some may be better or worse. Some may be better for your skill level than others.
-You agree to not hold me liable if any of these books eats your first born child, kicks your puppy or is otherwise nasty to you.
-I&amp;rsquo;m Literally Broke LearnCPP CppLang Tutorial I Want Something Easy And Fun For Children MIT Scratch FREE Roblox Studio I&amp;rsquo;m Scared Of C++ Code Academy - Learn Python FREE I Am A Beginner Programming: Principles and Practice Using C++ I Have Programming Experience A Tour of C++ Murach&amp;rsquo;s C++ Programming Professional C++ I Want To Know More Scott Meyers C++ Concurrency In Action High Performance C++ I Am Extremely Motivated And I Like Pain The C++ Programming Language I Actually Just Want To Play Video Games Ok, sure, try one of these.</description>
+As you&amp;rsquo;ll see, not all of these are books, but you should probably get a book.
+You agree to not hold me liable if any of these eats your first born child, kicks your puppy or is otherwise nasty to you.</description>
     </item>
     
     <item>
@@ -279,6 +464,27 @@ Most C++ code is not valid C code.
 Most idiomatic C code is very poor C++ code.
 Why Should I Use C++? C++ has many features in both the language and its standard library including, in no particular order
 Metaprogramming Variadic Templates Lambdas Concurrency and Parellelism Atomics Structured Bindings Regular Expressions Strings, Arrays &amp;amp; Dictionaries Unicode Support Date &amp;amp; Time Functions File And Directory Management Random Number Generation Function Overloads Operator Overloads Classes Inheritance Polymorphism Iterators Ranges Concepts Views &amp;amp; Spans Exceptions Variant Plus there exist many other common useful libraries for things like</description>
+    </item>
+    
+    <item>
+      <title>You Are A Toxic Idiot</title>
+      <link>https://cpp-doge.github.io/inferno/you-are-a-toxic-idiot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/inferno/you-are-a-toxic-idiot/</guid>
+      <description>Of Course You Are Literally the most important person in the world. All knowing, all seeing, wise beyond your years, intellect beyond comprehension. Everyone should listen to you speak, no one should ever doubt your sage advice.
+Why Wouldn&amp;rsquo;t You Be? A prime specimen, a beacon of humility, a bastion of kindness, a champion of morality, a pillar of the community, a solution to all suffering, the center of wisdom and reason, a holy pure light shining from heaven, a righteous fire, savior of puppies and kittens, infallible, a veritable vanguard of humanity.</description>
+    </item>
+    
+    <item>
+      <title>You Are Wrong</title>
+      <link>https://cpp-doge.github.io/inferno/you-are-wrong/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/inferno/you-are-wrong/</guid>
+      <description>Why You Are Wrong If You Came Here To Tell Me I Should Say This Other Thing Instead This is a blog mostly aimed at newbies. This blog is probably not for you.
+This blog is what it is intended to be for its target audience.
+If You Came Here To Tell Me I Should Advise Some Other Probably Advanced Tool Or Technique Instead Reducing Complexity Read about the mission statement and objectives of this blog.</description>
     </item>
     
   </channel>

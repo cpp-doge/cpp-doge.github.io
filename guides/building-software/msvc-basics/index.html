@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/guides/building-software/msvc-basics/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>2b - MSVC Basics</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">2b - MSVC Basics</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#before-you-begin">Before You Begin</a></li>
+    <li><a href="#about-the-compiler">About The Compiler</a></li>
+    <li><a href="#using-visual-studio">Using Visual Studio</a>
+      <ul>
+        <li><a href="#change-the-name">Change The Name</a></li>
+        <li><a href="#multiple-files">Multiple Files</a></li>
+      </ul>
+    </li>
+    <li><a href="#discrete-builds">Discrete Builds</a>
+      <ul>
+        <li><a href="#step-1-compile">Step 1 Compile</a></li>
+        <li><a href="#step-2-link">Step 2 Link</a></li>
+        <li><a href="#step-3-run">Step 3 Run</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><h2 id="before-you-begin">Before You Begin</h2>
+<aside class="post-note stop"><p><p>STOP</p>
+<p>Be sure you are using the <a href="/guides/building-sofware/introduction/#devtools-powershell">Developer Tools PowerShell</a></p>
+<p><strong>THIS IS CRITICALLY IMPORTANT</strong></p>
+</p></aside>
+<h2 id="about-the-compiler">About The Compiler</h2>
+<p>The Microsoft command line compiler program is named <code>cl.exe</code>
+and the command line linker program is named <code>link.exe</code>.</p>
+<aside class="post-note info"><p>INFO</p><p>
+<p>We can omit the <code>.exe</code> when running these, so to run the
+compiler we simply run the <code>cl</code> command or to run the
+linker we simply run the <code>link</code> command.</p>
+</p></aside>
+<h2 id="using-visual-studio">Using Visual Studio</h2>
+<p>Here&rsquo;s how to use <code>cl</code> on the command line to build and run
+a simple C++ program consisting of a single <code>main.cpp</code> source file.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\&gt; cd project
+</span></span><span class="line"><span class="cl">C:\project&gt; cl -EHsc main.cpp
+</span></span><span class="line"><span class="cl">C:\project&gt; .\main
+</span></span><span class="line"><span class="cl">Hello World!
+</span></span></code></pre></div><aside class="post-note warn"><p>WARNING</p><p>
+<p>You need the <code>-EHsc</code> flag or you will probably get some
+warnings relating to exceptions.</p>
+</p></aside>
+<aside class="post-note warn"><p>WARNING</p><p>
+<p>The <code>.\</code> is important, you must use a
+<a href="/guides/command-line-primer/about-file-paths/#fully-qualified-paths">fully qualified path</a>
+to run your program.</p>
+</p></aside>
+<h3 id="change-the-name">Change The Name</h3>
+<p>Change the program name by adding the <code>-Fe</code> flag.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\&gt; cd project
+</span></span><span class="line"><span class="cl">C:\project&gt; cl -EHsc main.cpp -Fe&#34;hello.exe&#34;
+</span></span><span class="line"><span class="cl">C:\project&gt; .\hello
+</span></span><span class="line"><span class="cl">Hello World!
+</span></span></code></pre></div><p>The <code>-Fe</code> flag stands for <strong>E</strong>xecutable <strong>F</strong>ile.</p>
+<h3 id="multiple-files">Multiple Files</h3>
+<p>If your program consists of multiple <code>.cpp</code> files you can
+simply list them all when you compile. The commands are
+otherwise the same as before. This works best when all
+files are in the same folder.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\&gt; cd project
+</span></span><span class="line"><span class="cl">C:\project&gt; cl -EHsc main.cpp foo.cpp -Fe&#34;hello.exe&#34;
+</span></span><span class="line"><span class="cl">C:\project&gt; .\hello
+</span></span><span class="line"><span class="cl">Hello World!
+</span></span></code></pre></div><h2 id="discrete-builds">Discrete Builds</h2>
+<p>Building and running a C++ program actually consists of
+multiple steps that are hidden from you. Your compiler can handle
+all of these steps automatically but you can have more power
+and flexibility if you learn how to perform these individual
+steps yourself, by hand. It is also just generally good to be
+aware of and know how this works.</p>
+<p>Overview</p>
+<ul>
+<li>Step 1: Compile individual <code>.cpp</code> source files into Object Files</li>
+<li>Step 2: Link multiple Object Files into your final program</li>
+</ul>
+<h3 id="step-1-compile">Step 1 Compile</h3>
+<p>Compile each individual <code>.cpp</code> file into a corresponding
+object file by using the <code>-c</code> flag for MSVC. This means
+compile only.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -EHsc -c foo.cpp -Fo&#34;foo.obj&#34;
+</span></span><span class="line"><span class="cl">cl -EHsc -c main.cpp -Fo&#34;main.obj&#34;
+</span></span></code></pre></div><p>The <code>-Fo</code> flag is similar to the <code>-Fe</code> flag, it gives a name to the
+resulting object file.</p>
+<aside class="post-note info"><p>INFO</p><p>
+<p>The <code>.o</code> means Object File for GCC but <code>.obj</code> means
+object file for MSVC.</p>
+</p></aside>
+<h3 id="step-2-link">Step 2 Link</h3>
+<p>Link all your object files into the final resulting program.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">link foo.obj main.obj -out:hello.exe
+</span></span></code></pre></div><p>Notice that there are different commands for
+compiling versus linking.</p>
+<p>Notice that the flag to control output file name is also
+different for the linker versus the compiler.</p>
+<h3 id="step-3-run">Step 3 Run</h3>
+<p>Now you can run your program as before.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">.\hello
+</span></span><span class="line"><span class="cl">Hello World!
+</span></span></code></pre></div><h4 id="wow">WOW!</h4>
+<p><img src="/s/img/cameronsworld.net/fire-skull1.gif" alt="Wow"></p>
+<h4 id="wow-1">WOW!</h4>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 <a href="/pages/about/">Phone Doggo</a>
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

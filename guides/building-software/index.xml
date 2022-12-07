@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Building C&#43;&#43; Programs on Doge Codes</title>
+    <link>https://cpp-doge.github.io/guides/building-software/</link>
+    <description>Recent content in Building C&#43;&#43; Programs on Doge Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://cpp-doge.github.io/guides/building-software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1 - Introduction</title>
+      <link>https://cpp-doge.github.io/guides/building-software/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/introduction/</guid>
+      <description>Overview This is a simplified guide on the basics of how to use common C++ compilers from the command line.
+How Long Does This Take? This guide should probably require about 30 minutes to read in total, or even less if you only read the sections on GCC or MSVC.
+The goal is for this to be short and to the point, an efficient and worthwhile investment of your time.</description>
+    </item>
+    
+    <item>
+      <title>2a - GCC Basics</title>
+      <link>https://cpp-doge.github.io/guides/building-software/gcc-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/gcc-basics/</guid>
+      <description>Using GCC Here&amp;rsquo;s how to use g++ on the command line to build and run a simple C++ program consisting of a single main.cpp source file.
+elmo@doge:~$ cd project elmo@doge:~/project$ g++ main.cpp elmo@doge:~/project$ ./a.out Hello World! STOP
+Be sure to use g++ and NOT gcc when you compile your C++ programs.
+See G++ And Clang++
+WARNING
+The ./ is important, you must use a fully qualified path to run your program.</description>
+    </item>
+    
+    <item>
+      <title>2b - MSVC Basics</title>
+      <link>https://cpp-doge.github.io/guides/building-software/msvc-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/msvc-basics/</guid>
+      <description>Before You Begin STOP
+Be sure you are using the Developer Tools PowerShell
+THIS IS CRITICALLY IMPORTANT
+About The Compiler The Microsoft command line compiler program is named cl.exe and the command line linker program is named link.exe.
+INFO
+We can omit the .exe when running these, so to run the compiler we simply run the cl command or to run the linker we simply run the link command.
+Using Visual Studio Here&amp;rsquo;s how to use cl on the command line to build and run a simple C++ program consisting of a single main.</description>
+    </item>
+    
+    <item>
+      <title>3a - Libraries Basics</title>
+      <link>https://cpp-doge.github.io/guides/building-software/libs-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/libs-basics/</guid>
+      <description>Introduction There is too much to cover in this guide. This guide presents most of the bare bones basics of working with libraries on your own, by hand, from the command line.
+Expect that you will need to continue learning, researching and studying as you grow your skills and career as a programmer.
+Motivation It is critically important to understand the basics of creating and using your own libraries so that you are better and more able to use other people&amp;rsquo;s libraries with less pain.</description>
+    </item>
+    
+    <item>
+      <title>3b - GCC Libraries</title>
+      <link>https://cpp-doge.github.io/guides/building-software/gcc-libs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/gcc-libs/</guid>
+      <description>Static Libraries Compile Object Files First compile your .cpp source files into individual object files as you would normally do.
+g++ -c algebra.cpp -o algebra.o g++ -c calculus.cpp -o calculus.o g++ -c physics.cpp -o physics.o g++ -c graphics.cpp -o graphics.o Create The Static Library Now link your object files into a final resulting static library.
+We will name our library VGM, which stands for &amp;ldquo;Video Game Math&amp;rdquo;.
+Run this command to create the static library.</description>
+    </item>
+    
+    <item>
+      <title>3c - MSVC Libraries</title>
+      <link>https://cpp-doge.github.io/guides/building-software/msvc-libs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/msvc-libs/</guid>
+      <description>Before You Begin STOP
+Be sure you are using the Developer Tools PowerShell
+THIS IS CRITICALLY IMPORTANT
+Static Libraries Compile Object Files First compile your .cpp source files into individual object files as you would normally do.
+cl -EHsc -c algebra.cpp -Fo&amp;#34;algebra.obj&amp;#34; cl -EHsc -c calculus.cpp -Fo&amp;#34;calculus.obj&amp;#34; cl -EHsc -c physics.cpp -Fo&amp;#34;physics.obj&amp;#34; cl -EHsc -c graphics.cpp -Fo&amp;#34;graphics.obj&amp;#34; WARNING
+You need the -EHsc flag or you will probably get some warnings relating to exceptions.</description>
+    </item>
+    
+    <item>
+      <title>4a - Compile Flags Basics</title>
+      <link>https://cpp-doge.github.io/guides/building-software/flags-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/flags-basics/</guid>
+      <description>Compile Flags Your compiler has hundreds, maybe even thousands of command line flags that help control how you build your programs.
+You have already seen several of these in previous examples, however there are several more important flags you should familiarize yourself with.
+You should familiarize yourself with flags that control things like
+C++ Language Version C++ Standard Library Warning &amp;amp; Error Levels Performance Optimization Debugging Unicode &amp;amp; Character Sets Include File Search Directories Library File Search Directories The next sections will detail some of these flags for each compiler and how to use them and why.</description>
+    </item>
+    
+    <item>
+      <title>4b - GCC Flags</title>
+      <link>https://cpp-doge.github.io/guides/building-software/gcc-flags/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/gcc-flags/</guid>
+      <description>GCC Flags For more information on all of this stuff&amp;hellip;
+See GCC Options
+INFO
+Most of this should work the same between Clang and GCC.
+C++ Language Version C++ like many things has versions. You can be sure you&amp;rsquo;re using a specific version of C++ with the latest features by adding a compiler flag to control the so called language standard.
+Use the -std flag to configure this.
+g++ -std=c++20 main.</description>
+    </item>
+    
+    <item>
+      <title>4c - MSVC Flags</title>
+      <link>https://cpp-doge.github.io/guides/building-software/msvc-flags/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/msvc-flags/</guid>
+      <description>MSVC Flags For more information on all of this stuff&amp;hellip;
+See MSVC Compiler Options
+STOP
+Be sure you are using the Developer Tools PowerShell
+THIS IS CRITICALLY IMPORTANT
+C++ Language Version C++ like many things has versions. You can be sure you&amp;rsquo;re using a specific version of C++ with the latest features by adding a compiler flag to control the so called language standard.
+Use the -std flag to configure this.</description>
+    </item>
+    
+    <item>
+      <title>5a - Dirpath Basics</title>
+      <link>https://cpp-doge.github.io/guides/building-software/dirpath-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/dirpath-basics/</guid>
+      <description>Directory Paths When you compile a program your compiler will search in a large number of different directories for things like header include files and link library files.
+Depending on your OS and file structure, you may need to observe some other considerations around the files and folders of your project including your programs and libraries.
+Concepts Overview
+Include File Search Directories Library File Search Directories Binary Search Directories Library Loader Directories File Search Directories Most C++ programs will use so called header include files or just headers for short.</description>
+    </item>
+    
+    <item>
+      <title>5a - GCC Paths</title>
+      <link>https://cpp-doge.github.io/guides/building-software/gcc-paths/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/gcc-paths/</guid>
+      <description>GCC Paths Include File Search Directories Say you want your includes to live in their own separate directory like my_headers.
+You can add more folders to be searched for header include files with the -I flag, where -I stands for &amp;ldquo;include&amp;rdquo;.
+g++ -I ~/project/my_headers main.cpp Now you can #include any files from my_headers in the source code of main.cpp.
+GCC Link Library Flags The -l flag is new to us. Let&amp;rsquo;s explain it before moving on.</description>
+    </item>
+    
+    <item>
+      <title>5c - MSVC Paths</title>
+      <link>https://cpp-doge.github.io/guides/building-software/msvc-paths/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/guides/building-software/msvc-paths/</guid>
+      <description>MSVC Paths STOP
+Be sure you are using the Developer Tools PowerShell
+THIS IS CRITICALLY IMPORTANT
+Include File Search Directories Say you want your includes to live in their own separate directory like my_headers.
+You can add more folders to be searched for header include files with the -I flag, where -I stands for &amp;ldquo;include&amp;rdquo;.
+cl -I&amp;#34;C:\project\my_headers&amp;#34; main.cpp Now you can #include any files from my_headers in the source code of main.</description>
+    </item>
+    
+  </channel>
+</rss>

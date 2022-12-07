@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/guides/building-software/gcc-libs/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>3b - GCC Libraries</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">3b - GCC Libraries</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#static-libraries">Static Libraries</a>
+      <ul>
+        <li><a href="#compile-object-files">Compile Object Files</a></li>
+        <li><a href="#create-the-static-library">Create The Static Library</a></li>
+        <li><a href="#use-a-static-library">Use A Static Library</a></li>
+      </ul>
+    </li>
+    <li><a href="#shared-libraries">Shared Libraries</a>
+      <ul>
+        <li><a href="#compile-object-files-1">Compile Object Files</a></li>
+        <li><a href="#create-the-shared-library">Create The Shared Library</a></li>
+        <li><a href="#use-a-shared-library">Use A Shared Library</a></li>
+        <li><a href="#run-the-program">Run The Program</a></li>
+      </ul>
+    </li>
+    <li><a href="#more-information">More Information</a></li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><h2 id="static-libraries">Static Libraries</h2>
+<h3 id="compile-object-files">Compile Object Files</h3>
+<p>First compile your <code>.cpp</code> source files into
+individual object files as you would normally do.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">g++ -c algebra.cpp -o algebra.o
+</span></span><span class="line"><span class="cl">g++ -c calculus.cpp -o calculus.o
+</span></span><span class="line"><span class="cl">g++ -c physics.cpp -o physics.o
+</span></span><span class="line"><span class="cl">g++ -c graphics.cpp -o graphics.o
+</span></span></code></pre></div><h3 id="create-the-static-library">Create The Static Library</h3>
+<p>Now link your object files into a final resulting static library.</p>
+<p>We will name our library VGM, which stands for &ldquo;Video Game Math&rdquo;.</p>
+<p>Run this command to create the static library.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">ar rcs libvgm.a algebra.o calculus.o physics.o graphics.o
+</span></span></code></pre></div><p>The program for creating a static library is called <code>ar</code> also known
+as the &ldquo;archiver&rdquo;, so named because libraries in real life are
+sometimes known as archives.</p>
+<p>This command creates the static library</p>
+<ul>
+<li><code>r</code> means replace</li>
+<li><code>c</code> means create</li>
+<li><code>s</code> means index</li>
+</ul>
+<aside class="post-note info"><p>INFO</p><p>
+<p>The file name for our VGM library is <code>libvgm.a</code> because</p>
+<p><code>lib</code> means &ldquo;Library&rdquo;</p>
+<p><code>vmg</code> means &ldquo;Video Game Math&rdquo;</p>
+<p>and <code>.a</code> is short for &ldquo;Archive&rdquo; which means static library</p>
+</p></aside>
+<aside class="post-note warn"><p>WARNING</p><p>
+<p>Notice that the name of our final library file is actually
+<code>libvgm.a</code> and not just <code>vgm.a</code>. This is important as you
+will see later. Always name your libraries beginning with <code>lib</code>
+on Linux.</p>
+</p></aside>
+<h3 id="use-a-static-library">Use A Static Library</h3>
+<p>Now that you have built your static library, you can
+use it in your programs by adding it to your compile
+and or link commands, for example.</p>
+<p>First compile your main object file.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">g++ -c main.cpp -o main.o
+</span></span></code></pre></div><p>Then link your main object and your new static library
+together into your final runnable program.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">g++ -o coolgame main.o libvgm.a
+</span></span></code></pre></div><p>We can now run our game as we would run any other program</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">./coolgame
+</span></span><span class="line"><span class="cl">Hello This Is My Game!
+</span></span></code></pre></div><p>There should be nothing else we need to do, our static
+library has become part of our final program, our library
+code now lives inside the <code>./coolgame</code> file, as opposed
+to anywhere else.</p>
+<h2 id="shared-libraries">Shared Libraries</h2>
+<h3 id="compile-object-files-1">Compile Object Files</h3>
+<p>First compile each of your object files mostly the same as you did before.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">g++ -fPIC -c algebra.cpp -o algebra.o
+</span></span><span class="line"><span class="cl">g++ -fPIC -c calculus.cpp -o calculus.o
+</span></span><span class="line"><span class="cl">g++ -fPIC -c physics.cpp -o physics.o
+</span></span><span class="line"><span class="cl">g++ -fPIC -c graphics.cpp -o graphics.o
+</span></span></code></pre></div><aside class="post-note stop"><p><p>STOP</p>
+<p>It is critically important to include the <code>-fPIC</code>
+flag during compile, otherwise you won&rsquo;t be able to
+create your shared library.</p>
+<p>This tells the compiler to create <strong>Position Independent Code</strong>.
+This is required when working with shared libraries.</p>
+</p></aside>
+<h3 id="create-the-shared-library">Create The Shared Library</h3>
+<p>Now we create our shared library from the object files
+we just compiled. This is reasonably simple as we only
+need to add the <code>-shared</code> flag to create a shared library.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">g++ -shared -o libvgm.so algebra.o calculus.o physics.o graphics.o
+</span></span></code></pre></div><aside class="post-note warn"><p>WARNING</p><p>
+<p>Notice that the name of our new shared library is very
+similar to before, except it is named with the <code>.so</code>
+extension and not the <code>.a</code> extension.</p>
+<p>The <code>.so</code> extension refers to a shared library, otherwise
+known as a shared object file, as opposed to a static library otherwise
+known as an archive file.</p>
+</p></aside>
+<aside class="post-note stop"><p><p>STOP</p>
+<p>There are limitations on what you can do with C++ libraries.</p>
+<p>See: <a href="http://www.trolltech.com/developer/faq/tech.html#bincomp">Trolltech FAQ</a></p>
+</p></aside>
+<h4 id="version-information">Version Information</h4>
+<p>Shared libraries on Linux follow some general conventions related
+to versioning and version information. You should probably adopt
+and use this convention.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">g++ -shared -Wl,-soname,libvgm.so.1 -o libvgm.so.1.0.1 algebra.o calculus.o physics.o graphics.o
+</span></span></code></pre></div><p>The <code>-Wl</code> flag allows you pass options to the linker. In this case we will provide
+a specific shared object name. We do this by passing the <code>-soname</code> flag to the linker
+with just the major version number.</p>
+<p>We then provide a full <a href="https://semver.org/">semantic version</a> name for our resulting
+output library file, in this case we pretend our version is <code>1.0.1</code></p>
+<p>See also: <a href="https://semver.org/">Semantic Versioning</a></p>
+<aside class="post-note info"><p>INFO</p><p>
+<p>In our hypothetical example, this probably means we created
+version <code>1.0.0</code> at some point, and then made some bug fixes or updates, so now
+we are on a slightly newer version <code>1.0.1</code> which is compatible with version <code>1.0</code>
+but contains some additional bug fixes.</p>
+<p>Doing it this way means that if we ask for library version <code>1</code> we will get
+the most up to date library corresponding to version <code>1</code>.</p>
+<p>We can keep going like this, and if we adhere to semantic versioning
+standards, then version <code>1.0.57</code> should work just as well as <code>1.0.42</code>
+for example.</p>
+</p></aside>
+<h3 id="use-a-shared-library">Use A Shared Library</h3>
+<p>We can now compile our program as we did for the static library example
+but we specify the name of the <strong>shared</strong> library file instead.</p>
+<p>First compile your main object file as usual.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">g++ -c main.cpp -o main.o
+</span></span></code></pre></div><p>Then link your main object and your VGM shared library file
+into the final program.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">g++ main.o libvgm.so -o coolgame
+</span></span></code></pre></div><aside class="post-note info"><p>INFO</p><p>
+<p>We use <code>libgvm.so</code> instead of <code>libgvm.a</code></p>
+</p></aside>
+<h3 id="run-the-program">Run The Program</h3>
+<p>If we try to run our program now we will receive an error.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">elmo@doge:~/project$ ./coolgame
+</span></span><span class="line"><span class="cl">./coolgame: error while loading shared libraries: libfoo.so: cannot open shared object file: No such file or directory
+</span></span></code></pre></div><p>That&rsquo;s no fun!</p>
+<h4 id="the-library-loader">The Library Loader</h4>
+<p>To fix this, we must tell Linux where to look for our shared library.</p>
+<p>We can do this by setting the <code>LD_LIBRARY_PATH</code> environment variable.</p>
+<p>In our example, the new shared library happens to simply be in our
+current project directory so we use that to set <code>LD_LIBRARY_PATH</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">LD_LIBRARY_PATH=~/project ./coolgame
+</span></span><span class="line"><span class="cl">Hello This Is My Game!
+</span></span></code></pre></div><p>Hooray!</p>
+<aside class="post-note info"><p>INFO</p><p>
+<p>Whatever we set <code>LD_LIBRARY_PATH</code> to, it must be a directory
+that contains our <code>libfoo.so</code> shared library, or the program
+won&rsquo;t work.</p>
+<p>You could put your shared library somewhere else if you like
+but the library loader must be able to find it. There are several
+other ways to handle this, left as an exercise for the reader.</p>
+</p></aside>
+<h2 id="more-information">More Information</h2>
+<ul>
+<li><a href="https://tldp.org/HOWTO/Program-Library-HOWTO/static-libraries.html">TLDP Static Libraries</a></li>
+<li><a href="https://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html">TLDP Shared Libraries</a></li>
+</ul>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 <a href="/pages/about/">Phone Doggo</a>
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

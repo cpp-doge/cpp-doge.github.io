@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/guides/building-software/libs-basics/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>3a - Libraries Basics</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">3a - Libraries Basics</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#motivation">Motivation</a></li>
+        <li><a href="#what-are-libraries">What Are Libraries</a></li>
+      </ul>
+    </li>
+    <li><a href="#link-libraries">Link Libraries</a>
+      <ul>
+        <li><a href="#static-or-shared">Static Or Shared</a></li>
+        <li><a href="#static-libraries">Static Libraries</a></li>
+        <li><a href="#shared-libraries">Shared Libraries</a></li>
+      </ul>
+    </li>
+    <li><a href="#about-the-examples">About The Examples</a>
+      <ul>
+        <li><a href="#building-libraries">Building Libraries</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><h2 id="introduction">Introduction</h2>
+<p>There is too much to cover in this guide. This guide
+presents most of the bare bones basics of working
+with libraries on your own, by hand, from the command
+line.</p>
+<p>Expect that you will need to continue learning, researching
+and studying as you grow your skills and career as a
+programmer.</p>
+<h3 id="motivation">Motivation</h3>
+<p>It is critically important to understand the basics
+of creating and using your own libraries so that
+you are better and more able to use other people&rsquo;s
+libraries with less pain.</p>
+<h3 id="what-are-libraries">What Are Libraries</h3>
+<p>Libraries are convenient reusable collections of
+code. Some libraries do not require compilation
+but many do.</p>
+<p>Organizing your program into multiple separate
+libraries has advantages such as better reusability,
+better modularity, less coupling, better unit
+testability and probably faster compile times.</p>
+<p>If you want to use other people&rsquo;s libraries, it
+will help greatly to understand what libraries
+are and how to write, build and use them yourself.</p>
+<p>Using libraries in your program on Linux for example
+is usually quite easy for you and your users by using your
+Linux package manager such as <code>apt</code> or <code>yum</code>.</p>
+<p>Learning how to use libraries is mandatory if you want to
+be successful in general C++ programming, or at
+least if you prefer to avoid pain.</p>
+<h2 id="link-libraries">Link Libraries</h2>
+<p>Regardless of type, your compiler needs
+to know how to make a library part of your
+program. When referring to any library that
+needs to become part of your program during
+compilation, we will refer specifically to
+&ldquo;Link Libraries&rdquo;, meaning special files
+that your compiler needs to know about when
+you build your program.</p>
+<p>You have already seen the separate linking
+phase for simple programs. You can link
+multiple object files into a single program.</p>
+<p>You can also link libraries into your program
+including your own libraries or libraries
+written by other people.</p>
+<h3 id="static-or-shared">Static Or Shared</h3>
+<p>Libraries come in two basic flavors</p>
+<ul>
+<li>Static libraries</li>
+<li>Shared libraries</li>
+</ul>
+<h3 id="static-libraries">Static Libraries</h3>
+<p>Static libraries become part of your final program
+and so your program can be more self contained.</p>
+<p>Static libraries are often easier and simpler to
+work with and involve less pain.</p>
+<p>Static libraries also make your program larger and
+may not be suitable for every program.</p>
+<p>Using the static C++ standard library is possible
+but generally not recommended.</p>
+<h3 id="shared-libraries">Shared Libraries</h3>
+<p>Shared libraries live as separate independent
+files, not part of your main program.</p>
+<p>Your program must be able to find and load
+these shared libraries when you run your program.</p>
+<p>Shared libraries have some advantages like allowing
+users to upgrade some library used by your program
+without recompiling your program.</p>
+<p>Shared libraries facilitate features such as
+video game mods. Many popular games allow mods
+such as Skyrim and Minecraft. Mods often come
+in the form of shared libraries.</p>
+<p>For example the <a href="http://enbdev.com/">ENB Mod for Skyrim</a>
+adds cool graphical effects such as richer shadows
+and more intense light rays. ENB is a shared library.</p>
+<p>Unlike static libraries, shared libraries
+must be installed and available on a user&rsquo;s
+computer, otherwise your program will not run.</p>
+<p>This may involve more complexity for you when
+creating installers, or more complexity for
+your users when they install your program.</p>
+<p>Like static libraries, shared libraries may not
+be suitable for every situation.</p>
+<h2 id="about-the-examples">About The Examples</h2>
+<p>The further examples in this guide make some
+simple assumptions.</p>
+<p>Let&rsquo;s begin by supposing that you have some
+code for doing video game math that you want
+to reuse in multiple different video games
+you are making.</p>
+<p>These hypothetical files are variously named</p>
+<ul>
+<li><code>algebra.cpp</code></li>
+<li><code>calculus.cpp</code></li>
+<li><code>physics.cpp</code></li>
+<li><code>graphics.cpp</code></li>
+</ul>
+<p>and together they (hypothetically) contain common,
+convenient useful math functions that we use often
+for video game related purposes.</p>
+<p>The goal is to turn these files into a single
+library file that we can use in all our video
+game projects.</p>
+<p>You are expected to be creative here, you probably
+have different files with different names and
+different functions, but this example demonstrates
+the basic idea.</p>
+<p>Use your imagination. You can then apply this information
+to your project.</p>
+<p>You will see how to do this in the next chapters.</p>
+<h3 id="building-libraries">Building Libraries</h3>
+<p>To build a library, the steps are
+similar to the discrete build from earlier
+in this guide where you compile and link
+separately.</p>
+<p>The main difference is that instead of turning
+your object files into a runnable program, you
+turn your object files in to a library that can
+then be used in all the video games you work on.</p>
+<p>This is convenient for many reasons. For example
+if you add a new function to your library, you
+can simply recompile all your video games and
+they will all have the new function available.</p>
+<p>You can also test your library in isolation,
+apart from your actual video game projects to
+be sure that the library works correctly. This
+gives you confidence that all your games will
+work correctly, or at least the math parts will
+work correctly.</p>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 <a href="/pages/about/">Phone Doggo</a>
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

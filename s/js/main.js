@@ -19,7 +19,21 @@ window.addEventListener('DOMContentLoaded', function() {
 
   if ($links) {
     $links.forEach(function($link) {
-      $link.target = '_blank';
+      var linkUrl = $link.getAttribute('href');
+
+      if (!linkUrl) {
+        return;
+      }
+
+      linkUrl = String(linkUrl);
+
+      if (linkUrl.length <= 0) {
+        return;
+      }
+
+      if (linkUrl[0] !== '#') {
+        $link.target = '_blank';
+      }
     });
   }
 });

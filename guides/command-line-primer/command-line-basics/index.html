@@ -95,13 +95,25 @@
         <li><a href="#doing-basic-math">Doing Basic Math</a></li>
       </ul>
     </li>
+    <li><a href="#flags--arguments">Flags &amp; Arguments</a>
+      <ul>
+        <li><a href="#arguments">Arguments</a></li>
+        <li><a href="#flags">Flags</a></li>
+        <li><a href="#short-flags">Short Flags</a></li>
+      </ul>
+    </li>
+    <li><a href="#getting-help">Getting Help</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#getting-around">Getting Around</a>
       <ul>
         <li><a href="#where-am-i-now">Where Am I Now?</a></li>
         <li><a href="#changing-directory">Changing Directory</a></li>
       </ul>
     </li>
-    <li><a href="#managing-files--directories">Managing Files &amp; Directories</a>
+    <li><a href="#managing-your-files">Managing Your Files</a>
       <ul>
         <li><a href="#listing-files">Listing Files</a></li>
         <li><a href="#looking-inside-files">Looking Inside Files</a></li>
@@ -202,17 +214,68 @@ then you will need to escape it.</p>
 information about why this works, but probably save that for later
 and finish this guide first.</p>
 </p></aside>
-<h2 id="getting-around">Getting Around</h2>
+<h2 id="flags--arguments">Flags &amp; Arguments</h2>
+<p>Most commands accept one or more arguments or flags. These are options
+that control how the command behaves.</p>
+<h3 id="arguments">Arguments</h3>
+<p>For example in the command</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;foo&#34;</span>
+</span></span></code></pre></div><p>The command is <code>echo</code> and it is given a single argument of <code>&quot;foo&quot;</code>.</p>
+<h3 id="flags">Flags</h3>
+<p>Flags are just special arguments, usually beginning with one
+or more dash <code>-</code> characters.</p>
+<p>For example, the <code>-n</code> argument here is known as a flag or also sometimes
+called a parameter or a switch because the flag changes or &ldquo;switches&rdquo; the
+behavior of the command.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> -n <span class="s2">&#34;foo&#34;</span>
+</span></span></code></pre></div><h3 id="short-flags">Short Flags</h3>
+<p>Flags often come in short and long variations. Short variations
+are faster to type, but long variations are more descriptive.</p>
+<p>For example, you may be able to run either of these variations</p>
+<ul>
+<li><code>blarg --output-file=hello.txt</code> this is the long variation</li>
+<li><code>blarg -o hello.txt</code> this is the short variation</li>
+</ul>
+<p>These both do the same thing, but the long
+varition is more obvious as to what it does because
+the flag itself is descriptive.</p>
+<aside class="post-note info"><p>INFO</p><p>
+<p>I recommend always using long flags as you learn and in
+your shell scripts. Only use short flags when it is
+personally convenient to do so as you directly enter
+commands by hand.</p>
+</p></aside>
+<h2 id="getting-help">Getting Help</h2>
+<p>Both Bash and PowerShell have common ways to find information
+about commands.</p>
+<h4 id="bash-5">Bash</h4>
+<p>Most Bash commands respond to the <code>--help</code> option.</p>
+<p>For example, to get some helpful information about the <code>ls</code> or list
+command in Bash, simply run the <code>ls</code> command and add <code>--help</code> like
+this.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">elmo@doge:~$ ls --help
+</span></span></code></pre></div><p>Alternatively you can also check the Manual Pages or Info Pages
+for a command with the <code>man</code> or <code>info</code> commands respectively.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">elmo@doge:~$ man ls
+</span></span><span class="line"><span class="cl">elmo@doge:~$ info ls
+</span></span></code></pre></div><h4 id="powershell-5">PowerShell</h4>
+<p>Similar to Bash, PowerShell has standard ways to get
+help and documentation for commands.</p>
+<p>Usually this is done with the <code>-?</code> flag, where <code>?</code> represents
+that you have a question about the command, hence the question
+mark.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">PS C:\&gt; Get-ChildItem -?
+</span></span></code></pre></div><h2 id="getting-around">Getting Around</h2>
 <p>You will want to be able to move around into different
 folders on your computer so you can more easily work
 with your projects and better manage your files.</p>
 <h3 id="where-am-i-now">Where Am I Now?</h3>
 <p>You can check which directory you&rsquo;re in right now.</p>
-<h4 id="bash-5">Bash</h4>
+<h4 id="bash-6">Bash</h4>
 <p>In Bash use <code>pwd</code> which stands for &ldquo;print workding directory&rdquo;.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">pwd
 </span></span><span class="line"><span class="cl">/home/elmo
-</span></span></code></pre></div><h4 id="powershell-5">PowerShell</h4>
+</span></span></code></pre></div><h4 id="powershell-6">PowerShell</h4>
 <p>In PowerShell use <code>Get-Location</code>, the name is hopefully self explanatory.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Get-Location
 </span></span><span class="line"><span class="cl">
@@ -221,11 +284,11 @@ with your projects and better manage your files.</p>
 </span></span><span class="line"><span class="cl">C:\Users\elmo
 </span></span></code></pre></div><h3 id="changing-directory">Changing Directory</h3>
 <p>Your current working directory can be changed.</p>
-<h4 id="bash-6">Bash</h4>
+<h4 id="bash-7">Bash</h4>
 <p>In Bash use the <code>cd</code> command which stands for &ldquo;change directory&rdquo;.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">elmo@doge:~$ cd projects
 </span></span><span class="line"><span class="cl">elmo@doge:~/projects$ pwd
-</span></span></code></pre></div><h4 id="powershell-6">PowerShell</h4>
+</span></span></code></pre></div><h4 id="powershell-7">PowerShell</h4>
 <p>In PowerShell use the <code>Set-Location</code> command, the name is hopefully self explanatory.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Users\elmo&gt; Set-Location projects
 </span></span><span class="line"><span class="cl">C:\Users\elmo\projects&gt;
@@ -233,10 +296,10 @@ with your projects and better manage your files.</p>
 that we are in the new different directory.</p>
 <p>If your prompt doesn&rsquo;t show this, use the technique above
 to see where you are right now.</p>
-<h2 id="managing-files--directories">Managing Files &amp; Directories</h2>
+<h2 id="managing-your-files">Managing Your Files</h2>
 <h3 id="listing-files">Listing Files</h3>
 <p>Your can print out a list of files in the current directory</p>
-<h4 id="bash-7">Bash</h4>
+<h4 id="bash-8">Bash</h4>
 <p>In Bash use the <code>ls</code> command which stands for &ldquo;list&rdquo;. Doing so
 should look something like this.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">elmo@doge:~$ ls
@@ -250,7 +313,7 @@ should look something like this.</p>
 </span></span><span class="line"><span class="cl">drwxr-xr-x 1 elmo elmo 20480 Nov 28 2020 MyFile.txt
 </span></span><span class="line"><span class="cl">drwxr-xr-x 1 elmo elmo 20480 Nov 28 2020 MyPhoto.png
 </span></span><span class="line"><span class="cl">elmo@doge:~$
-</span></span></code></pre></div><h4 id="powershell-7">PowerShell</h4>
+</span></span></code></pre></div><h4 id="powershell-8">PowerShell</h4>
 <p>In PowerShell use the <code>Get-ChildItem</code> command. Doing so should look
 something like this.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Users\elmo&gt; Get-ChildItem
@@ -269,42 +332,42 @@ mean, you can deal with that when you want to.</p>
 <p>You can print the contents of a file.</p>
 <p>Let&rsquo;s say you have a file named <code>Surprise.txt</code> in your
 current folder.</p>
-<h4 id="bash-8">Bash</h4>
+<h4 id="bash-9">Bash</h4>
 <p>In Bash, use the <code>cat</code> command to print it out.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cat ./Surprise.txt
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">elmo@doge:~$ cat ./Surprise.txt
 </span></span><span class="line"><span class="cl">Happy Birthday!
-</span></span></code></pre></div><h4 id="powershell-8">PowerShell</h4>
+</span></span></code></pre></div><h4 id="powershell-9">PowerShell</h4>
 <p>In PowerShell, use the <code>Get-Content</code> command to print it out.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Get-Content .\Surprise.txt
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">PS C:\Users\elmos&gt; Get-Content .\Surprise.txt
 </span></span><span class="line"><span class="cl">Happy Birthday!
 </span></span></code></pre></div><h3 id="creating-directories">Creating Directories</h3>
 <p>You can create new folders.</p>
-<h4 id="bash-9">Bash</h4>
+<h4 id="bash-10">Bash</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">mkdir MyNewFolder
-</span></span></code></pre></div><h4 id="powershell-9">PowerShell</h4>
+</span></span></code></pre></div><h4 id="powershell-10">PowerShell</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">New-Item -Path MyNewFolder -ItemType Directory
 </span></span></code></pre></div><h3 id="creating-files">Creating Files</h3>
 <p>You can create new files.</p>
-<h4 id="bash-10">Bash</h4>
+<h4 id="bash-11">Bash</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">touch SecretRecipes.txt
-</span></span></code></pre></div><h4 id="powershell-10">PowerShell</h4>
+</span></span></code></pre></div><h4 id="powershell-11">PowerShell</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">New-Item -Path SecretRecipes.txt -ItemType File
 </span></span></code></pre></div><h3 id="copying-files">Copying Files</h3>
 <p>You can copy files.</p>
-<h4 id="bash-11">Bash</h4>
+<h4 id="bash-12">Bash</h4>
 <p>In Bash, <code>cp</code> stands for &ldquo;copy&rdquo;</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cp SecretRecipes.txt NotSoSecret.txt
-</span></span></code></pre></div><h4 id="powershell-11">PowerShell</h4>
+</span></span></code></pre></div><h4 id="powershell-12">PowerShell</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Copy-Item -Path SecretRecipes.txt -Destination NotSoSecret.txt
 </span></span></code></pre></div><p>This will make a new file, the new file will be a copy
 of the old file and the old file will remain.</p>
 <h3 id="moving--renaming-files">Moving &amp; Renaming Files</h3>
 <p>You can move files. Moving a file is basically the
 same as renaming it.</p>
-<h4 id="bash-12">Bash</h4>
+<h4 id="bash-13">Bash</h4>
 <p>In Bash, <code>mv</code> stands for &ldquo;move&rdquo;</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">mv ./locked/SecretRecipes.txt ./open/NotSoSecret.txt
-</span></span></code></pre></div><h4 id="powershell-12">PowerShell</h4>
+</span></span></code></pre></div><h4 id="powershell-13">PowerShell</h4>
 <p>In PowerShell</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Move-Item -Path .\locked\SecretRecipes.txt -Destination .\open\NotSoSecret.txt
 </span></span></code></pre></div><p>This will rename the old file. The file will remain but
@@ -314,10 +377,10 @@ original file still exists.</p>
 into the <code>open</code> folder.</p>
 <h3 id="deleting-files">Deleting Files</h3>
 <p>You can delete files.</p>
-<h4 id="bash-13">Bash</h4>
+<h4 id="bash-14">Bash</h4>
 <p>In Bash, <code>rm</code> stands for &ldquo;remove&rdquo;</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">rm ./some_file_i_dont_want.jpg
-</span></span></code></pre></div><h4 id="powershell-13">PowerShell</h4>
+</span></span></code></pre></div><h4 id="powershell-14">PowerShell</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Remove-Item .\some_file_i_dont_want.jpg
 </span></span></code></pre></div><aside class="post-note ok"><p><p>OK!</p>
 <p>You may notice it is much faster to use the command
@@ -327,27 +390,27 @@ or Trash bins.</p>
 <h3 id="deleting-folders">Deleting Folders</h3>
 <p>You can delete folders, but if you want to remove an entire
 directory and everything it, you must do it recursively.</p>
-<h4 id="bash-14">Bash</h4>
+<h4 id="bash-15">Bash</h4>
 <p>In Bash, <code>-r</code> means &ldquo;recursive&rdquo; and <code>-f</code> stands for &ldquo;force&rdquo;.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">rm -r -f ./some_folder_i_dont_want
-</span></span></code></pre></div><h4 id="powershell-14">PowerShell</h4>
+</span></span></code></pre></div><h4 id="powershell-15">PowerShell</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Remove-Item -Recurse -Force .\some_folder_i_dont_want
 </span></span></code></pre></div><h2 id="running-programs">Running Programs</h2>
 <p>You can run a program by typing a fully qualified path to the
 program.</p>
 <p>For example&hellip;</p>
-<h4 id="bash-15">Bash</h4>
+<h4 id="bash-16">Bash</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">/usr/bin/uptime
-</span></span></code></pre></div><h4 id="powershell-15">PowerShell</h4>
+</span></span></code></pre></div><h4 id="powershell-16">PowerShell</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\Windows\System32\notepad.exe
 </span></span></code></pre></div><h3 id="running-relative-programs">Running Relative Programs</h3>
 <p>You can also run a program using a relative path. You will probably
 want to <code>cd</code> into the program directory first.</p>
 <p>For example</p>
-<h4 id="bash-16">Bash</h4>
+<h4 id="bash-17">Bash</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">elmo@doge:~$ cd /usr/bin
 </span></span><span class="line"><span class="cl">elmo@doge:/usr/bin$ ./uptime
-</span></span></code></pre></div><h4 id="powershell-16">PowerShell</h4>
+</span></span></code></pre></div><h4 id="powershell-17">PowerShell</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">C:\&gt; cd C:\Windows\System32
 </span></span><span class="line"><span class="cl">C:\Windows\System32&gt; .\notepad.exe
 </span></span></code></pre></div><h2 id="what-else">What Else?</h2>
@@ -368,7 +431,7 @@ want to <code>cd</code> into the program directory first.</p>
 <div class="layout-footer">
 
   <div class="copyright">
-    &copy; 2022 Phone Doggo
+    &copy; 2022 <a href="/pages/about/">Phone Doggo</a>
   </div>
 
   <div class="center">&nbsp;</div>

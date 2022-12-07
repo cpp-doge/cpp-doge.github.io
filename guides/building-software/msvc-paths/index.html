@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/guides/building-software/msvc-paths/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>5c - MSVC Paths</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">5c - MSVC Paths</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#msvc-paths">MSVC Paths</a>
+      <ul>
+        <li><a href="#include-file-search-directories">Include File Search Directories</a></li>
+        <li><a href="#library-file-search-directories">Library File Search Directories</a></li>
+        <li><a href="#binary-search-directories">Binary Search Directories</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><h2 id="msvc-paths">MSVC Paths</h2>
+<aside class="post-note stop"><p><p>STOP</p>
+<p>Be sure you are using the <a href="/guides/building-sofware/introduction/#devtools-powershell">Developer Tools PowerShell</a></p>
+<p><strong>THIS IS CRITICALLY IMPORTANT</strong></p>
+</p></aside>
+<h3 id="include-file-search-directories">Include File Search Directories</h3>
+<p>Say you want your includes to live in their own
+separate directory like <code>my_headers</code>.</p>
+<p>You can add more folders to be searched for header
+include files with the <code>-I</code> flag, where <code>-I</code> stands
+for &ldquo;include&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -I&#34;C:\project\my_headers&#34; main.cpp
+</span></span></code></pre></div><p>Now you can <code>#include</code> any files from <code>my_headers</code> in
+the source code of <code>main.cpp</code>.</p>
+<h3 id="library-file-search-directories">Library File Search Directories</h3>
+<p>Say you want your library files to live in their own
+separate directory like <code>my_libs</code>.</p>
+<p>You can add more folders to be searched for link
+library files with the <code>-libpath</code> flag.</p>
+<p>From the previous example, let&rsquo;s say you put
+your static library in the <code>my_libs</code> folder
+instead of in the current folder.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">link -lib -out:C:\project\my_libs\vgm_static.lib algebra.obj calculus.obj physics.obj graphics.obj
+</span></span></code></pre></div><p>Now if you try to compile your main program with your VGM library.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">link main.obj vgm_static.lib -out:mygame.exe
+</span></span></code></pre></div><p>you&rsquo;ll receive an error like this</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">LINK : fatal error LNK1181: cannot open input file &#39;vgm_static.lib&#39;
+</span></span><span class="line"><span class="cl">NMAKE : fatal error U1077: &#39;&#34;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\bin\HostX64\x64\link.EXE&#34;&#39; : return code &#39;0x49d&#39;
+</span></span><span class="line"><span class="cl">Stop.
+</span></span></code></pre></div><p>The solution is to add your separate <code>my_libs</code> folder to
+the list of folders your compiler will search when
+looking for link libraries.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">link -libpath:C:\project\my_libs main.obj vgm_static.lib -out:mygame.exe
+</span></span></code></pre></div><p>Now your program should compile and run as you expect.</p>
+<aside class="post-note info"><p>INFO</p><p>
+<p>Knowing this is important when you want to use libraries
+from other people including things like SDL2, GLFW, OpenCV,
+JSON, Boost and more.</p>
+</p></aside>
+<h3 id="binary-search-directories">Binary Search Directories</h3>
+<p>The situation is slightly more complicated if you want your Windows
+shared library in a different folder.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">link -dll -out:C:\project\my_libs\vgm.dll -implib:C:\project\my_libs\vgm.lib -export:derivative -export:quadraticFormula -export:collision -export:viewProjection algebra.obj calculus.obj physics.obj graphics.obj
+</span></span></code></pre></div><p>Now that your <code>.lib</code> file is in a different folder you will need
+to add library directories during the link phase for your main
+program, as you did before.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">link -libpath:C:\project\my_libs main.obj vgm.lib
+</span></span></code></pre></div><p>When you run your program, your <code>.dll</code> file will <strong>NOT</strong> be in the
+same folder as your main <code>.exe</code> program. This will cause problems
+and your program won&rsquo;t behave nicely!</p>
+<p>To fix this add the <code>my_libs</code> folder to your system <code>PATH</code> environment
+variable before running your program.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">$env:PATH = &#34;C:\project\my_libs;$env:PATH&#34;
+</span></span><span class="line"><span class="cl">.\mygame
+</span></span><span class="line"><span class="cl">Hello This Is My Game!
+</span></span></code></pre></div><p>See also <a href="https://learn.microsoft.com/en-us/windows/win32/dlls/dynamic-link-library-search-order">DLL Search Path</a></p>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 <a href="/pages/about/">Phone Doggo</a>
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

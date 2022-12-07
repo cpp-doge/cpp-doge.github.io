@@ -7,6 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://cpp-doge.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>About PowerShell</title>
+      <link>https://cpp-doge.github.io/posts/powershell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/posts/powershell/</guid>
+      <description>PowerShell PowerShell is a shell from Microsoft.
+You should use PowerShell 7 if you are on Windows.
+Download: PowerShell 7
+PowerShell is greatly superior to the ancient and outdated legacy DOS batch shell named cmd.exe or simply named &amp;ldquo;Command Prompt&amp;rdquo; in your Windows Start Menu.
+Add A Better Terminal You should also use Windows Terminal. It has more and better features including tabs and integration with WSL.
+Alternatively try ConEmu instead.</description>
+    </item>
+    
+    <item>
       <title>C Compatibility Headers</title>
       <link>https://cpp-doge.github.io/posts/c-compatibility-headers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -48,12 +62,11 @@ This means for example that if you cin &amp;gt;&amp;gt; up to the end of the lin
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cpp-doge.github.io/posts/how-binary-works/</guid>
-      <description>Binary Numbers How do they work!?
-What Is A Number System What Is A Base The base of your number system is how many digits you have.
+      <description>What Is A Number System What Is A Base The base of your number system is how many digits you have.
 We doggos use a beef hotdog number system.
 No, wait&amp;hellip; we use a base ten number system.
 What does that actually mean though?
-I&amp;rsquo;m The Only Tigger We have been using base ten for so long in our normal lives, like at the grocery store or when talking about footbal scores, that it just feels natural and normal to most people.</description>
+I&amp;rsquo;m The Only Tigger We have been using base ten for so long in our normal lives, like at the grocery store or when talking about football scores, that it just feels natural and normal to most people.</description>
     </item>
     
     <item>
@@ -65,6 +78,20 @@ I&amp;rsquo;m The Only Tigger We have been using base ten for so long in our nor
       <description>A Matter Of Style What Is Style Style consists of the subjective choices you make like how you name your variables, how you organize your files, how much whitespace you use and where you put that whitespace.
 Automatic Tools You can use tools to automatically format your code.
 Clang Format Clang Tidy These tools do a lot but they don&amp;rsquo;t do everything. You still need to observe some guidelines by hand.</description>
+    </item>
+    
+    <item>
+      <title>Use An IDE</title>
+      <link>https://cpp-doge.github.io/posts/use-an-ide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/posts/use-an-ide/</guid>
+      <description>In 60 Seconds Use Visual Studio for Windows. It&amp;rsquo;s FREE! It does everything you want.
+Download: Visual Studio
+Visual Studio is not VSCode, they are different products. Visual Studio comes with a compiler, no need for MinGW. See also I Am Not Using Windows
+See also I Want To Use Something Else
+INFO
+Using and IDE like Visual Studio may not be a direct solution to your current problem, which is to say simply using Visual Studio may not immediately solve your current issue.</description>
     </item>
     
     <item>
@@ -90,14 +117,28 @@ The information in your computer is managed by a bunch of transitors. You can th
     </item>
     
     <item>
+      <title>Where Do I Start</title>
+      <link>https://cpp-doge.github.io/posts/where-do-i-start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/posts/where-do-i-start/</guid>
+      <description>Where Do I Start Begin by reading your textbook.
+But I Don&amp;rsquo;t Have A Textbook Use the one from your syllabus.
+But I Don&amp;rsquo;t Have A Syllabus You probably do. Ask your TAs or your professor for book recommendations.
+Anyway, you could try a free one like this
+Free CompSci Curriculum But I Don&amp;rsquo;t Have A Syllabus Textbook Then get yourself a book, there are free books available.
+Paid books are still generally better.</description>
+    </item>
+    
+    <item>
       <title>Which C&#43;&#43; Book?</title>
       <link>https://cpp-doge.github.io/posts/which-cpp-book/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cpp-doge.github.io/posts/which-cpp-book/</guid>
       <description>What Should I Choose? These are pretty good, though I haven&amp;rsquo;t read them all, some may be better or worse. Some may be better for your skill level than others.
-You agree to not hold me liable if any of these books eats your first born child, kicks your puppy or is otherwise nasty to you.
-I&amp;rsquo;m Literally Broke LearnCPP CppLang Tutorial I Want Something Easy And Fun For Children MIT Scratch FREE Roblox Studio I&amp;rsquo;m Scared Of C++ Code Academy - Learn Python FREE I Am A Beginner Programming: Principles and Practice Using C++ I Have Programming Experience A Tour of C++ Murach&amp;rsquo;s C++ Programming Professional C++ I Want To Know More Scott Meyers C++ Concurrency In Action High Performance C++ I Am Extremely Motivated And I Like Pain The C++ Programming Language I Actually Just Want To Play Video Games Ok, sure, try one of these.</description>
+As you&amp;rsquo;ll see, not all of these are books, but you should probably get a book.
+You agree to not hold me liable if any of these eats your first born child, kicks your puppy or is otherwise nasty to you.</description>
     </item>
     
   </channel>
