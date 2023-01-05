@@ -111,7 +111,7 @@
     </section>
 
     <section class="post-content"><h2 id="before-you-begin">Before You Begin</h2>
-<aside class="post-note stop"><p><p>STOP</p>
+<aside class="post-note stop"><p><img src="/s/img/tango/stop.png"></p><p>
 <p>Be sure you are using the <a href="/guides/building-sofware/introduction/#devtools-powershell">Developer Tools PowerShell</a></p>
 <p><strong>THIS IS CRITICALLY IMPORTANT</strong></p>
 </p></aside>
@@ -123,7 +123,7 @@ individual object files as you would normally do.</p>
 </span></span><span class="line"><span class="cl">cl -EHsc -c calculus.cpp -Fo&#34;calculus.obj&#34;
 </span></span><span class="line"><span class="cl">cl -EHsc -c physics.cpp -Fo&#34;physics.obj&#34;
 </span></span><span class="line"><span class="cl">cl -EHsc -c graphics.cpp -Fo&#34;graphics.obj&#34;
-</span></span></code></pre></div><aside class="post-note warn"><p>WARNING</p><p>
+</span></span></code></pre></div><aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
 <p>You need the <code>-EHsc</code> flag or you will probably get some
 warnings relating to exceptions.</p>
 </p></aside>
@@ -133,14 +133,14 @@ warnings relating to exceptions.</p>
 <p>Run this command to create the static library.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">link -lib -out:vgm_static.lib algebra.obj calculus.obj physics.obj graphics.obj
 </span></span></code></pre></div><p>Pretty simple huh?</p>
-<aside class="post-note info"><p>INFO</p><p>
+<aside class="post-note info"><p><img src="/s/img/tango/info.png"></p><p>
 <p>The file name for our VGM library is <code>vgm_static.lib</code> because</p>
 <p><code>.lib</code> means &ldquo;Library&rdquo;</p>
 <p><code>vmg</code> means &ldquo;Video Game Math&rdquo;</p>
 <p>and <code>_static</code> tells us that this is the static version of
 our library.</p>
 </p></aside>
-<aside class="post-note warn"><p>WARNING</p><p>
+<aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
 <p>We could just name this library <code>vgm.lib</code> but we also
 need a <code>.lib</code> file for our shared library, so by naming
 this one <code>vgm_static.lib</code> we can have both the
@@ -179,11 +179,11 @@ flag instead of the <code>-lib</code> flag. DLL stands for Dynamic Link Library.
 and the <code>-implib</code> flag for the <code>.lib</code> link library file. A static
 library is only a single <code>.lib</code> file but a shared library is
 both a <code>.dll</code> and a <code>.lib</code> file.</p>
-<aside class="post-note stop"><p><p>STOP</p>
+<aside class="post-note stop"><p><img src="/s/img/tango/stop.png"></p><p>
 <p>There are limitations on what you can do with C++ libraries.</p>
 <p>See: <a href="http://www.trolltech.com/developer/faq/tech.html#bincomp">Trolltech FAQ</a></p>
 </p></aside>
-<aside class="post-note warn"><p>WARNING</p><p>
+<aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
 <p>We named this new shared library file <code>vgm_shared.lib</code> simply
 to differentiate and distinguish it from the static library.</p>
 <p>Hopefully this avoids confusion for this example, however many
@@ -202,7 +202,7 @@ into the final program.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">PS C:\project&gt; .\coolgame
 </span></span><span class="line"><span class="cl">LINK : fatal error LNK1181: cannot open input file &#39;vgm_shared.lib&#39;
 </span></span></code></pre></div><p>That&rsquo;s no fun! Uh oh! Time to learn about DLL Exports&hellip;</p>
-<aside class="post-note info"><p>INFO</p><p>
+<aside class="post-note info"><p><img src="/s/img/tango/info.png"></p><p>
 <p>We are making some further hypothetical assumptions here that, for
 example you have some functions in these files and you want to
 use those functions in your main program. I mean, you probably do, right?</p>

@@ -107,7 +107,7 @@
     <section class="post-content"><h2 id="msvc-flags">MSVC Flags</h2>
 <p>For more information on all of this stuff&hellip;</p>
 <p>See <a href="https://learn.microsoft.com/en-us/cpp/build/reference/compiler-options">MSVC Compiler Options</a></p>
-<aside class="post-note stop"><p><p>STOP</p>
+<aside class="post-note stop"><p><img src="/s/img/tango/stop.png"></p><p>
 <p>Be sure you are using the <a href="/guides/building-sofware/introduction/#devtools-powershell">Developer Tools PowerShell</a></p>
 <p><strong>THIS IS CRITICALLY IMPORTANT</strong></p>
 </p></aside>
@@ -155,7 +155,7 @@ compile your programs with optimizations enabled.</p>
 program is optimized and how much.</p>
 <p>The <code>-O2</code> flag is a common default choice and should be
 close to as fast as you usually need or want.</p>
-<aside class="post-note warn"><p>WARNING</p><p>
+<aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
 <p>You should probably define <code>NDEBUG</code> (which means &ldquo;No Debug&rdquo;) when
 building programs with performance optimization.</p>
 </p></aside>
@@ -174,7 +174,7 @@ to your program.</p>
 <p>See <a href="https://learn.microsoft.com/en-us/cpp/build/reference/z7-zi-zi-debug-information-format">MSVC Debug Options</a></p>
 <h4 id="no-optimization">No Optimization</h4>
 <p>Disable optimization with the <code>-Od</code> flag.</p>
-<aside class="post-note warn"><p>WARNING</p><p>
+<aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
 <p>You should probably disable optimization because
 optimization may sometimes delete some of your code.</p>
 <p>This is called being &ldquo;optimized away&rdquo; when some code is deleted by the compiler
@@ -183,14 +183,14 @@ for performance reasons.</p>
 </p></aside>
 <h4 id="debug-defines">Debug Defines</h4>
 <p>Add the standard <code>_DEBUG</code> define with <code>-D</code>.</p>
-<aside class="post-note warn"><p>WARNING</p><p>
+<aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
 <p>You should probably define <code>_DEBUG</code> which indicates that this
 is in fact a program intended for debugging.</p>
 </p></aside>
 <h4 id="debug-build">Debug Build</h4>
 <p>Here is an example compile command for a debuggable build.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -D_DEBUG -Od -Z7 main.cpp
-</span></span></code></pre></div><aside class="post-note warn"><p>WARNING</p><p>
+</span></span></code></pre></div><aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
 <p>Be sure you use <code>-Od</code> with MSVC and <strong>NOT</strong> <code>-Og</code> as you would in GCC!</p>
 <p>The <code>-Og</code> flag is <strong>NOT THE SAME</strong> in MSVC as it is in GCC.</p>
 </p></aside>

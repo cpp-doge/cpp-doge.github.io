@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/limbo/minimal-reproducible-example/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>Creating An MCVE</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">Creating An MCVE</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#basics">Basics</a>
+      <ul>
+        <li><a href="#tldr">TLDR</a></li>
+        <li><a href="#what-is-it">What Is It?</a></li>
+        <li><a href="#how-do-i-make-one">How Do I Make One?</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-do-i-show">What Do I Show?</a>
+      <ul>
+        <li><a href="#it-needs-to-be-minimal">It Needs To Be Minimal</a></li>
+        <li><a href="#it-needs-to-be-complete">It Needs To Be Complete</a></li>
+        <li><a href="#describe-the-problem">Describe The Problem</a></li>
+        <li><a href="#it-needs-to-be-both-minimal-and-complete">It Needs To Be BOTH Minimal AND Complete</a></li>
+        <li><a href="#it-should-compile-and-run">It Should Compile And Run</a></li>
+        <li><a href="#it-should-be-nicely-formatted">It Should Be Nicely Formatted</a></li>
+        <li><a href="#why-should-i-do-this">Why Should I Do This?</a></li>
+      </ul>
+    </li>
+    <li><a href="#really-tho-why">Really Tho Why?</a>
+      <ul>
+        <li><a href="#why-do-i-need-to-show-code">Why Do I Need To Show Code?</a></li>
+        <li><a href="#defining-the-problem">Defining The Problem</a></li>
+        <li><a href="#why-does-it-need-to-be-minimal">Why Does It Need To Be Minimal?</a></li>
+        <li><a href="#why-does-it-need-to-be-complete">Why Does It Need To Be Complete?</a></li>
+        <li><a href="#why-should-it-compile-and-run">Why Should It Compile And Run?</a></li>
+        <li><a href="#why-both-minimal-and-complete">Why BOTH Minimal AND Complete?</a></li>
+        <li><a href="#why-should-it-be-nicely-formatted">Why Should It Be Nicely Formatted?</a></li>
+        <li><a href="#for-every-question">For Every Question?</a></li>
+        <li><a href="#really-tho-every-question">Really Tho Every Question?</a></li>
+      </ul>
+    </li>
+    <li><a href="#an-example">An Example</a>
+      <ul>
+        <li><a href="#bad">Bad</a></li>
+        <li><a href="#good">Good</a></li>
+      </ul>
+    </li>
+    <li><a href="#another-example">Another Example</a>
+      <ul>
+        <li><a href="#bad-1">Bad</a></li>
+        <li><a href="#good-1">Good</a></li>
+      </ul>
+    </li>
+    <li><a href="#complaining-time">Complaining Time</a>
+      <ul>
+        <li><a href="#why-do-i-have-to-do-all-this">Why Do I Have To Do All This?</a></li>
+        <li><a href="#but-i-cant-split-it-up">But I Can&rsquo;t Split It Up!</a></li>
+        <li><a href="#but-i-really-cant-split-it-up">But I Really Can&rsquo;t Split It Up!</a></li>
+        <li><a href="#but-i-really-really-cant-split-it-up">But I Really REALLY Can&rsquo;t Split It Up!</a></li>
+        <li><a href="#large-or-advanced-projects">Large Or Advanced Projects</a></li>
+        <li><a href="#wandbox-doesnt-have">Wandbox Doesn&rsquo;t Have</a></li>
+        <li><a href="#your-job">Your Job</a></li>
+        <li><a href="#a-last-resort">A Last Resort</a></li>
+        <li><a href="#my-deadline-is-in-20-minutes">My Deadline Is In 20 Minutes!</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><h2 id="basics">Basics</h2>
+<h3 id="tldr">TLDR</h3>
+<p>Shorten your code and post it to <a href="/posts/using-wandbox/">Wandbox.org</a></p>
+<p>See also: <a href="/posts/using-wandbox/">Howto Use Wandbox Video</a></p>
+<h3 id="what-is-it">What Is It?</h3>
+<p>A <em>Minimal Reproducible Example</em> is exactly enough code to demonstrate
+your problem, but no more and no less.</p>
+<p>Sometimes also known as a <em>Minimal Complete and Viable Example</em>
+or <em>MCVE</em>.</p>
+<h3 id="how-do-i-make-one">How Do I Make One?</h3>
+<p>See: <a href="/posts/using-wandbox/">Howto Use Wandbox Video</a></p>
+<p>Use an online compiler website that can compile
+and run your code like</p>
+<ul>
+<li><a href="https://wandbox.org/">Wandbox</a></li>
+<li><a href="https://godbolt.org/">Godbolt</a></li>
+</ul>
+<p>For smaller examples you can also use the
+discord bot to compile and run your code.</p>
+<p>I advise using an online paste site for your examples.</p>
+<aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
+<p>There is no syntax highlighting on Discord mobile and long
+lines are very difficult to read on mobile. Online compiler websites
+have syntax highlighting. Websites also usually allow
+pinch zooming for mobile users.</p>
+</p></aside>
+<h2 id="what-do-i-show">What Do I Show?</h2>
+<h3 id="it-needs-to-be-minimal">It Needs To Be Minimal</h3>
+<p>If you have too much code then start over from scratch.</p>
+<p>Copy paste some of your old code if you like.</p>
+<p>Strive to make your example fewer than about 50-100 lines.</p>
+<p>See Also: <a href="#but-i-cant-split-it-up">But I Can&rsquo;t Split It Up!</a></p>
+<h3 id="it-needs-to-be-complete">It Needs To Be Complete</h3>
+<p>We need all the details.</p>
+<p>Maybe you made a typo we can&rsquo;t see?</p>
+<p>See also: <a href="#why-do-i-need-to-show-code">Why Do I Need To Show Code</a></p>
+<h3 id="describe-the-problem">Describe The Problem</h3>
+<p>This is part of being complete.</p>
+<p>Explain in regular English language what the problem is.</p>
+<p>Posting code is good, but it&rsquo;s only one of the first steps.</p>
+<p>If you have a problem description, like from a leetcode
+challenge or a homework assignment, then post the
+full problem description.</p>
+<p>Show the input and expected output. Explain how what
+you get is different from what you want.</p>
+<h4 id="it-doesnt-work">It Doesn&rsquo;t Work</h4>
+<p>Then post the full error message.</p>
+<p>Simply saying &ldquo;it doesn&rsquo;t work&rdquo; is generally insufficient.</p>
+<h4 id="there-is-no-error-message">There Is No Error Message</h4>
+<p>Then show the input and expected output. Explain how what
+you get is different from what you want.</p>
+<p>I somewhat doubt there is no error, but either way do your
+best to describe how it is failing.</p>
+<aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
+<p>Saying something like &ldquo;expected output is a full working
+video game&rdquo; is not adequate and arguably a bit disingenuous.
+It is overly general, it is not specific, it does not help us help you.
+Of course everyone wants their code to create a working program, it would
+be extremely rare that a programmer wants their code to NOT result in
+a working program.</p>
+</p></aside>
+<p>Saying something like &ldquo;When I run it, it pauses and then
+immediately exits with no output&rdquo;, while vague, is still
+better and more descriptive than saying &ldquo;it doesn&rsquo;t work&rdquo;.</p>
+<h3 id="it-needs-to-be-both-minimal-and-complete">It Needs To Be BOTH Minimal AND Complete</h3>
+<p>We need to understand the full problem, but
+most of us don&rsquo;t want to analyze thousands of lines.</p>
+<p>Creating a good minimal example is an art and a delicate balancing act.
+It&rsquo;s also a valuable skill to have.</p>
+<p>Not too much, not too little.</p>
+<h3 id="it-should-compile-and-run">It Should Compile And Run</h3>
+<p>The example you provide should compile and run.</p>
+<p>Your example should include all your headers and
+your <code>main()</code> function.</p>
+<h3 id="it-should-be-nicely-formatted">It Should Be Nicely Formatted</h3>
+<p>You can easily format your code automatically on Discord.</p>
+<p>You can also use automatic formatting tools like
+<a href="https://clang.llvm.org/docs/ClangFormat.html">Clang Format</a>
+and <a href="https://clang.llvm.org/extra/clang-tidy/">Clang Tidy</a>.</p>
+<p>I advise using an online paste site for your examples.</p>
+<aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
+<p>There is no syntax highlighting on Discord mobile and long
+lines are very difficult to read on mobile. Online compiler websites
+have syntax highlighting. Websites also usually allow
+pinch zooming for mobile users.</p>
+</p></aside>
+<h3 id="why-should-i-do-this">Why Should I Do This?</h3>
+<p>In the best case:</p>
+<ul>
+<li>You will often discover and fix your own problems by doing this</li>
+</ul>
+<p>In the worst case, if you still haven&rsquo;t fixed it:</p>
+<ul>
+<li>We are better and more quickly able to help</li>
+<li>You are more likely to get more and better help</li>
+<li>You are being kind to your fellow community members</li>
+</ul>
+<h2 id="really-tho-why">Really Tho Why?</h2>
+<p>Ok, you&rsquo;re still not convinced&hellip;</p>
+<h3 id="why-do-i-need-to-show-code">Why Do I Need To Show Code?</h3>
+<p>I shouldn&rsquo;t really need to explain why we need to see code, but here goes.</p>
+<p>Showing code is basically the bare minimum entry point for getting
+help on a programming help server.</p>
+<p>For starters, doing so <a href="#bad-1">probably</a> demonstrates that you are not lazy and you are not asking for
+someone to just hand you a solution, asking for which would be academic dishonesty.
+Most people are loathe to help the lazy and or the academically dishonest,
+not to mention that academic dishonesty is against the rules.</p>
+<p>Code is precise and generally unambiguous. Without seeing at least some
+code we are left only to guess what your code might look like, what
+the problem might be, and what the best solution might be.</p>
+<p>By showing code, your situation is much more immediately and abundantly clear.
+We can eliminate all kinds of potential ambiguities, miscommunications and
+infinite other blocking issues that could be inherent in your current
+endeavor and prevent you from getting help.</p>
+<p>Showing code doesn&rsquo;t necessarily illuminate your situation perfectly,
+but it&rsquo;s generally the bare minimum place you need to start.</p>
+<p>For example you could fail to show enough code, or you could make
+the mistake of showing too much, or your code could be just bad,
+poorly formatted, with bad variable names and difficult to understand.
+Plenty of other problems can still exist even when you show code, but
+showing code is still thousands of times better than not showing code.</p>
+<p>We can&rsquo;t advise how to fix or improve code we can&rsquo;t see.</p>
+<p>See also: <a href="#it-needs-to-be-complete">It Needs To Be Complete</a></p>
+<h3 id="defining-the-problem">Defining The Problem</h3>
+<p>If you need to show more than 100 lines then you have not
+isolated and defined the problem very well.</p>
+<p>If you can&rsquo;t isolate and define the problem, then you don&rsquo;t understand
+the problem; this is bad. It&rsquo;s not reasonable to ask for help with
+something we don&rsquo;t understand, much less something you don&rsquo;t understand.
+In a case like this you may have <a href="https://pm.stackexchange.com/questions/33711/what-techniques-can-identify-missing-requirements">Hidden Requirements</a>
+that are not obvious, maybe that you weren&rsquo;t even aware of.</p>
+<h3 id="why-does-it-need-to-be-minimal">Why Does It Need To Be Minimal?</h3>
+<p>Even a few lines of code is unintelligable when using Discord
+mobile. RIP anyone considering helping you on mobile when your
+code is even 50 lines long.</p>
+<p>There is some wiggle room, 100 lines is a grey area. It is not a crime
+to post a 101 line example. Some people are willing to help with
+large examples. However, at some point too much is too much.</p>
+<p>The more code you have, the more work you&rsquo;ll need to do to
+ensure your example is relatively easy to work with. At least
+if you want a decent chance at getting good help.</p>
+<h3 id="why-does-it-need-to-be-complete">Why Does It Need To Be Complete?</h3>
+<p>What is wrong with the following code?</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">foo</span><span class="p">(</span><span class="n">qux</span> <span class="n">q</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">bar</span><span class="p">(</span><span class="n">q</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Who knows? We don&rsquo;t know what <code>qux</code> is and we don&rsquo;t
+know what <code>bar</code> is.</p>
+<p>I believe that you may believe that you have provided all the necessary
+information, but maybe you have not?</p>
+<p>It&rsquo;s an easy mistake to make because you know your code but we do not.</p>
+<h3 id="why-should-it-compile-and-run">Why Should It Compile And Run?</h3>
+<p>This way we can easily and quickly run it, see what&rsquo;s wrong, make changes and
+give it back to you showing how to fix it, and you can
+see that it compiles and runs and that it is fixed.</p>
+<p>If it doesn&rsquo;t compile then we want the <strong>FULL ERROR MESSAGE</strong> and a complete
+<strong>BUT MINIMAL</strong> example that demonstrates the error, and it should
+be complete enough to compile and run when the error is fixed.</p>
+<h3 id="why-both-minimal-and-complete">Why BOTH Minimal AND Complete?</h3>
+<p>We need enough info to help, but we also probably don&rsquo;t want
+to read hundreds or thousands of lines. We do this for free.</p>
+<p>If adding enough code for us to understand the problem means
+adding too much code then you probably have not done a very
+good job of isolating and describing the actual problem.</p>
+<p>If the problem is not well isolated and well defined then it
+will be difficult to provide good help, or maybe any help at all.</p>
+<p>Start over from scratch and try again until you have something
+small enough to be reasonable for a normal human but that still
+shows the full problem.</p>
+<p>You may not always have the luxury of readily available free
+support. Being able to investigate and solve your own problems
+in a pragmatic, evidence based way is then the only option and
+is therefor a critical skill to have.</p>
+<h3 id="why-should-it-be-nicely-formatted">Why Should It Be Nicely Formatted?</h3>
+<p>First of all, it&rsquo;s easy to do. You can use automatic
+formatting tools like <a href="https://clang.llvm.org/docs/ClangFormat.html">Clang Format</a>
+so there is no good reason not to do this.</p>
+<p>Second. If it makes my eyes bleed, am I going to be motivated to help?</p>
+<p><img src="https://media.tenor.com/I3C9wDN_ZDkAAAAC/my-eyes.gif" alt="My Eyes"></p>
+<h3 id="for-every-question">For Every Question?</h3>
+<p>Yes, most programming questions probably do warrant a
+minimal complete and viable example.</p>
+<p>You should assume you need to post code.</p>
+<h3 id="really-tho-every-question">Really Tho Every Question?</h3>
+<p>Not every question requires an example.</p>
+<p>Like: &ldquo;How many bytes are there in an <code>int</code>?&rdquo;</p>
+<p>This can be easily answered and does not depend on your other code.</p>
+<aside class="post-note ok"><p><img src="/s/img/tango/ok.png"></p><p>
+<p>Even if a minimal example is less warranted, it will
+always still be beneficial and productive and will
+more effectively communicate your question.</p>
+<p>And you will always still get better help.</p>
+</p></aside>
+<h2 id="an-example">An Example</h2>
+<h3 id="bad">Bad</h3>
+<p>Question: &ldquo;Why is this throwing an error?&rdquo;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></div><p>This is bad because there is a lot of code we cannot see
+and this code isn&rsquo;t well formed anyway, this won&rsquo;t compile
+as written.</p>
+<p>What is <code>s</code>, what is <code>arr</code>, where is <code>main()</code>, is that all
+the headers? Is this code from different files? I have
+a thousand more questions.</p>
+<h3 id="good">Good</h3>
+<p>Question: &ldquo;Why is this throwing an error?&rdquo;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;My Example&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&#34;hello&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">arr</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><aside class="post-note info"><p><img src="/s/img/tango/info.png"></p><p>
+<p>There are several problems with this code, can you spot them all?</p>
+</p></aside>
+<p>This is good because now we can see a bunch of relevant details
+that help us understand where the problems are.</p>
+<p>This is also good because someone can easily make a couple small
+changes to fix the code and send it back to you.</p>
+<p>Then you have a full, thorough and complete solution to your problem
+because you provided a full, thorough and complete, yet <strong>minimal</strong>
+example.</p>
+<h2 id="another-example">Another Example</h2>
+<h3 id="bad-1">Bad</h3>
+<p>Question &ldquo;I have six files, three <code>.cpp</code> and three
+<code>.h</code> files. I am supposed to write functions for
+a linked list.&rdquo;</p>
+<p>First of all, this isn&rsquo;t a question, but let&rsquo;s
+pretend the following code accompanies the post.</p>
+<p><strong>node.h</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Node</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Node</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p><strong>list.h</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;node.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">List</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Node</span><span class="o">*</span> <span class="n">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">List</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">void</span> <span class="nf">append</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">void</span> <span class="nf">insert</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">void</span> <span class="nf">remove</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">void</span> <span class="nf">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="nf">length</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>There are a several problems with this</p>
+<ul>
+<li>This is not a specific question, nor really a question at all</li>
+<li>We are not going to write it for you</li>
+<li>Only two of the claimed six files are shown</li>
+<li>It would seem you are implicitly asking someone to do it for you</li>
+</ul>
+<p>This is better than nothing, but it&rsquo;s still less than
+the bare minimum. Posting any code at all is only the first
+step. The code you post still needs to resemble a minimal
+viable example as described in this document.</p>
+<p>The code in this example shows no implementation, so it&rsquo;s near
+impossible to ask a specific question in the first place.</p>
+<p>Please post more relevant code and ask a specific question. Even if
+you ask a specific question you need to show that you have at least
+tried to write some of these functions yourself.</p>
+<ul>
+<li>See Also: <a href="/limbo/where-do-i-start">I Don&rsquo;t Know Where To Start</a></li>
+<li>See Also: <a href="/inferno/objections/#will-you-do-it-for-me">We Won&rsquo;t Do It For You</a></li>
+</ul>
+<h4 id="but-mine-isnt-a-linked-list">But Mine Isn&rsquo;t A Linked List</h4>
+<p>Being a linked list is not the point, the point is that you need to post
+enough code and ask a specific question, or at least any question at all.</p>
+<h3 id="good-1">Good</h3>
+<p>What would be good is to show all six files mentioned in the
+description.</p>
+<p>What would be good is to ask any question at all, and better to
+ask a more specific question.</p>
+<p>What would be good is to show that you have at least tried it
+yourself first.</p>
+<p>The main point is that we won&rsquo;t do it for you. This is an illustrative
+example. There are many reasons I won&rsquo;t show a complete linked list
+implementation for you here.</p>
+<ul>
+<li>See Also: <a href="/limbo/where-do-i-start">I Don&rsquo;t Know Where To Start</a></li>
+<li>See Also: <a href="/inferno/objections/#will-you-do-it-for-me">We Won&rsquo;t Do It For You</a></li>
+</ul>
+<h2 id="complaining-time">Complaining Time</h2>
+<p><img src="https://media.tenor.com/vY4LNhypxKIAAAAC/edna-mode-too-much-darling.gif" alt="Too Much"></p>
+<h3 id="why-do-i-have-to-do-all-this">Why Do I Have To Do All This?</h3>
+<p>Strictly speaking, you don&rsquo;t.</p>
+<p>However&hellip;</p>
+<ul>
+<li>You will get more and better help when your examples are good</li>
+<li>People respect hard work, dedication and study</li>
+<li>People are more likely to help you when you show that you have put in effort</li>
+<li>If you show me that you care about programming, then I care to help you</li>
+<li>People are providing help to you for free, usually in their spare time</li>
+<li>Many of us have stressful full time programming jobs already</li>
+<li>We probably don&rsquo;t want to analyze hundreds or thousands of lines of code</li>
+</ul>
+<h3 id="but-i-cant-split-it-up">But I Can&rsquo;t Split It Up!</h3>
+<p>Yes you can.</p>
+<h4 id="but-thats-more-work-for-me">But That&rsquo;s More Work For Me!</h4>
+<p>Yes, it is.</p>
+<h3 id="but-i-really-cant-split-it-up">But I Really Can&rsquo;t Split It Up!</h3>
+<p>Yes, you probably can. This is probably just for lack of creativity
+on your part. Maybe also for lack of trying?</p>
+<p>I claim literally any and every problem is in fact reducible to
+say about a hundred lines of code or so. Otherwise you haven&rsquo;t
+well isolated and defined the actual problem.</p>
+<p>See also <a href="#defining-the-problem">Defining The Problem</a></p>
+<p>Isolating and defining the problem well is important for
+getting good help, much less any help at all. If we can&rsquo;t understand
+the problem (or if it takes too much effort to do so), we will
+be unable (or unwilling) to well advise on what the solution should
+look like.</p>
+<p>Show what you are trying to achieve in isolation. Surely most of
+your code is not required to be shown to fully demonstrate the key issue
+at hand. Surely we also need enough code to understand the problem,
+hence needing to be at the same time minimal yet also complete.</p>
+<h3 id="but-i-really-really-cant-split-it-up">But I Really REALLY Can&rsquo;t Split It Up!</h3>
+<p>Yes you can. Get creative.</p>
+<h4 id="but-thats-more-work-for-me-1">But That&rsquo;s More Work For Me!</h4>
+<p>Yes, it is.</p>
+<h4 id="thats-way-too-much-work-for-me">That&rsquo;s WAY Too Much Work For Me!</h4>
+<p>Then that&rsquo;s probably unreasonable to ask of someone else too, no?</p>
+<h3 id="large-or-advanced-projects">Large Or Advanced Projects</h3>
+<p>The nature of online help forums is that they have limits. Online
+help forums are not fully suitable to help with large or advanced
+projects.</p>
+<p>They are here to provide general guidance, facilitate intuition,
+help you with common problems, soften sharp corners, illuminate best
+practices, and provide further resources to supplement your study.</p>
+<p>See Also: <a href="#your-job">Your Job</a></p>
+<h3 id="wandbox-doesnt-have">Wandbox Doesn&rsquo;t Have</h3>
+<p>SFML, SDL2, GLFW, etc</p>
+<p>Sadly this is true. However&hellip;</p>
+<p>At some point when you get past beginner phase, you need
+to learn to solve your own problems.</p>
+<p>See Also: <a href="#your-job">Your Job</a></p>
+<p>If you still need help you then do your best to make a minimal
+reproducible example anyway, following the instructions
+in this guide.</p>
+<p>It&rsquo;s ok if it doesn&rsquo;t compile and run in a case like this
+but we still need enough information, and not too much
+information.</p>
+<p>See Also: <a href="#a-last-resort">A Last Resort</a></p>
+<h3 id="your-job">Your Job</h3>
+<p>At some point in your programming career you need to learn to solve your
+own problems. At some point, when you get a lot of code and or code
+that is well beyond beginner level (like a 2D/3D game), then dealing with
+it becomes your job, and we probably don&rsquo;t want to deal with what likely
+has been a full time job worth of effort on your part.</p>
+<p>I&rsquo;m sorry that this is the case, but this is the case. At some point,
+to deal with this much code, you usually need to pay someone. This is
+part of why we get paid at our own jobs in the first place.</p>
+<p>If no one is helping then consider doing your best to create a minimal
+complete and viable example anyway.</p>
+<h3 id="a-last-resort">A Last Resort</h3>
+<p>As a last resort you could try just putting all your code in a GitHub repo
+and giving us the link. Will someone want to read that much code? Probably
+not, which is why you should still probably make an MCVE, but maybe someone
+will, idk.</p>
+<p>Good luck.</p>
+<h3 id="my-deadline-is-in-20-minutes">My Deadline Is In 20 Minutes!</h3>
+<p>See: <a href="/inferno/objections/#but-its-urgent">But It&rsquo;s Urgent</a></p>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 <a href="/pages/about/">Phone Doggo</a>
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

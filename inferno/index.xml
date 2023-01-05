@@ -7,30 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://cpp-doge.github.io/inferno/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Attention To Detail</title>
-      <link>https://cpp-doge.github.io/inferno/style/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cpp-doge.github.io/inferno/style/</guid>
-      <description>Why It Matters If it makes my eyes bleed, am I going to be motivated to help?
-Attention To Detail Is Important Programming is a detail oriented art. If you neglect details you will make lots of mistakes, your code will be bad, your programs will have errors, you will cause yourself (and others) much undue pain debugging problems you could have easily avoided.
-Caring is important If you don&amp;rsquo;t care about something then you won&amp;rsquo;t do a good job.</description>
-    </item>
-    
-    <item>
-      <title>Creating An MCVE</title>
-      <link>https://cpp-doge.github.io/inferno/minimal-reproducible-example/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cpp-doge.github.io/inferno/minimal-reproducible-example/</guid>
-      <description>Basics A Minimal Reproducible Example is exactly enough code to demonstrate your problem, but no more and no less.
-Sometimes also known as a Minimal Complete and Viable Example or MCVE.
-How Do I Make One? See: Howto Use Wandbox Video
-Use an online compiler website that can compile and run your code like
-Wandbox Godbolt For smaller examples you can also use the discord bot to compile and run your code.</description>
-    </item>
-    
-    <item>
       <title>Objections</title>
       <link>https://cpp-doge.github.io/inferno/objections/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -41,19 +17,6 @@ Please be sure your seat backs and tray tables are in their fully upright and lo
 Your Honor I Object! We regret to inform you that your programming help insurance has been cancelled.
 Your supervisor will be with you shortly.
 Why Am I Here People have been wondering this for thousands of years and we still don&amp;rsquo;t have many good answers.</description>
-    </item>
-    
-    <item>
-      <title>Why C&#43;&#43; Instead of C</title>
-      <link>https://cpp-doge.github.io/inferno/why-cpp-instead-of-c/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cpp-doge.github.io/inferno/why-cpp-instead-of-c/</guid>
-      <description>What Is The Difference? The difference between C++ and C is very large.
-Most C++ code is not valid C code.
-Most idiomatic C code is very poor C++ code.
-Why Should I Use C++? C++ has many features in both the language and its standard library including, in no particular order
-Metaprogramming Variadic Templates Lambdas Concurrency and Parellelism Atomics Structured Bindings Regular Expressions Strings, Arrays &amp;amp; Dictionaries Unicode Support Date &amp;amp; Time Functions File And Directory Management Random Number Generation Function Overloads Operator Overloads Classes Inheritance Polymorphism Iterators Ranges Concepts Views &amp;amp; Spans Exceptions Variant Plus there exist many other common useful libraries for things like</description>
     </item>
     
     <item>

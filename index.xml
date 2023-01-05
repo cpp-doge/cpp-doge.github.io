@@ -48,11 +48,10 @@ Your files are organized in folders, much like a traditional old school filing c
       
       <guid>https://cpp-doge.github.io/guides/building-software/gcc-basics/</guid>
       <description>Using GCC Here&amp;rsquo;s how to use g++ on the command line to build and run a simple C++ program consisting of a single main.cpp source file.
-elmo@doge:~$ cd project elmo@doge:~/project$ g++ main.cpp elmo@doge:~/project$ ./a.out Hello World! STOP
-Be sure to use g++ and NOT gcc when you compile your C++ programs.
+elmo@doge:~$ cd project elmo@doge:~/project$ g++ main.cpp elmo@doge:~/project$ ./a.out Hello World! Be sure to use g++ and NOT gcc when you compile your C++ programs.
 See G++ And Clang++
-WARNING
-The ./ is important, you must use a fully qualified path to run your program.</description>
+The ./ is important, you must use a fully qualified path to run your program.
+Notice also that the resulting program is oddly named a.</description>
     </item>
     
     <item>
@@ -61,11 +60,9 @@ The ./ is important, you must use a fully qualified path to run your program.</d
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cpp-doge.github.io/guides/building-software/msvc-basics/</guid>
-      <description>Before You Begin STOP
-Be sure you are using the Developer Tools PowerShell
+      <description>Before You Begin Be sure you are using the Developer Tools PowerShell
 THIS IS CRITICALLY IMPORTANT
 About The Compiler The Microsoft command line compiler program is named cl.exe and the command line linker program is named link.exe.
-INFO
 We can omit the .exe when running these, so to run the compiler we simply run the cl command or to run the linker we simply run the link command.
 Using Visual Studio Here&amp;rsquo;s how to use cl on the command line to build and run a simple C++ program consisting of a single main.</description>
     </item>
@@ -79,8 +76,7 @@ Using Visual Studio Here&amp;rsquo;s how to use cl on the command line to build 
       <description>Photo Sai Kiran Anagani
 The Command Prompt When you open your terminal, you will be greeted with your shell prompt.
 Bash In Bash it looks something like this
-elmo@doge:~$ INFO
-The little squiggle ~ is special, it is short for your local user directory.
+elmo@doge:~$ The little squiggle ~ is special, it is short for your local user directory.
 PowerShell In PowerShell it looks something like this
 C:\Users\elmo&amp;gt; The prompt usually shows you some information about your computer and where you are, like your username and the path to the current working directory.</description>
     </item>
@@ -114,12 +110,10 @@ Run this command to create the static library.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cpp-doge.github.io/guides/building-software/msvc-libs/</guid>
-      <description>Before You Begin STOP
-Be sure you are using the Developer Tools PowerShell
+      <description>Before You Begin Be sure you are using the Developer Tools PowerShell
 THIS IS CRITICALLY IMPORTANT
 Static Libraries Compile Object Files First compile your .cpp source files into individual object files as you would normally do.
-cl -EHsc -c algebra.cpp -Fo&amp;#34;algebra.obj&amp;#34; cl -EHsc -c calculus.cpp -Fo&amp;#34;calculus.obj&amp;#34; cl -EHsc -c physics.cpp -Fo&amp;#34;physics.obj&amp;#34; cl -EHsc -c graphics.cpp -Fo&amp;#34;graphics.obj&amp;#34; WARNING
-You need the -EHsc flag or you will probably get some warnings relating to exceptions.</description>
+cl -EHsc -c algebra.cpp -Fo&amp;#34;algebra.obj&amp;#34; cl -EHsc -c calculus.cpp -Fo&amp;#34;calculus.obj&amp;#34; cl -EHsc -c physics.cpp -Fo&amp;#34;physics.obj&amp;#34; cl -EHsc -c graphics.cpp -Fo&amp;#34;graphics.obj&amp;#34; You need the -EHsc flag or you will probably get some warnings relating to exceptions.</description>
     </item>
     
     <item>
@@ -155,11 +149,10 @@ C++ Language Version C++ Standard Library Warning &amp;amp; Error Levels Perform
       <guid>https://cpp-doge.github.io/guides/building-software/gcc-flags/</guid>
       <description>GCC Flags For more information on all of this stuff&amp;hellip;
 See GCC Options
-INFO
 Most of this should work the same between Clang and GCC.
 C++ Language Version C++ like many things has versions. You can be sure you&amp;rsquo;re using a specific version of C++ with the latest features by adding a compiler flag to control the so called language standard.
 Use the -std flag to configure this.
-g++ -std=c++20 main.</description>
+g++ -std=c++20 main.cpp I always recommend setting the language standard explicitly.</description>
     </item>
     
     <item>
@@ -170,7 +163,6 @@ g++ -std=c++20 main.</description>
       <guid>https://cpp-doge.github.io/guides/building-software/msvc-flags/</guid>
       <description>MSVC Flags For more information on all of this stuff&amp;hellip;
 See MSVC Compiler Options
-STOP
 Be sure you are using the Developer Tools PowerShell
 THIS IS CRITICALLY IMPORTANT
 C++ Language Version C++ like many things has versions. You can be sure you&amp;rsquo;re using a specific version of C++ with the latest features by adding a compiler flag to control the so called language standard.
@@ -220,8 +212,7 @@ GCC Link Library Flags The -l flag is new to us. Let&amp;rsquo;s explain it befo
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cpp-doge.github.io/guides/building-software/msvc-paths/</guid>
-      <description>MSVC Paths STOP
-Be sure you are using the Developer Tools PowerShell
+      <description>MSVC Paths Be sure you are using the Developer Tools PowerShell
 THIS IS CRITICALLY IMPORTANT
 Include File Search Directories Say you want your includes to live in their own separate directory like my_headers.
 You can add more folders to be searched for header include files with the -I flag, where -I stands for &amp;ldquo;include&amp;rdquo;.
@@ -272,20 +263,21 @@ Reduced cognitive load and reduced barriers to entry are paramount here Deals fr
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cpp-doge.github.io/posts/powershell/</guid>
-      <description>PowerShell PowerShell is a shell from Microsoft.
+      <description>Before You Begin You should understand the basics of what the command line is.
+See: Command Line Primer
+PowerShell PowerShell is a shell from Microsoft.
 You should use PowerShell 7 if you are on Windows.
 Download: PowerShell 7
 PowerShell is greatly superior to the ancient and outdated legacy DOS batch shell named cmd.exe or simply named &amp;ldquo;Command Prompt&amp;rdquo; in your Windows Start Menu.
-Add A Better Terminal You should also use Windows Terminal. It has more and better features including tabs and integration with WSL.
-Alternatively try ConEmu instead.</description>
+Add A Better Terminal You should also use Windows Terminal.</description>
     </item>
     
     <item>
       <title>Attention To Detail</title>
-      <link>https://cpp-doge.github.io/inferno/style/</link>
+      <link>https://cpp-doge.github.io/limbo/style/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cpp-doge.github.io/inferno/style/</guid>
+      <guid>https://cpp-doge.github.io/limbo/style/</guid>
       <description>Why It Matters If it makes my eyes bleed, am I going to be motivated to help?
 Attention To Detail Is Important Programming is a detail oriented art. If you neglect details you will make lots of mistakes, your code will be bad, your programs will have errors, you will cause yourself (and others) much undue pain debugging problems you could have easily avoided.
 Caring is important If you don&amp;rsquo;t care about something then you won&amp;rsquo;t do a good job.</description>
@@ -305,15 +297,16 @@ Do This Instead Put the letter c in front, remove the .h and add the std namespa
     
     <item>
       <title>Creating An MCVE</title>
-      <link>https://cpp-doge.github.io/inferno/minimal-reproducible-example/</link>
+      <link>https://cpp-doge.github.io/limbo/minimal-reproducible-example/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cpp-doge.github.io/inferno/minimal-reproducible-example/</guid>
-      <description>Basics A Minimal Reproducible Example is exactly enough code to demonstrate your problem, but no more and no less.
+      <guid>https://cpp-doge.github.io/limbo/minimal-reproducible-example/</guid>
+      <description>Basics TLDR Shorten your code and post it to Wandbox.org
+See also: Howto Use Wandbox Video
+What Is It? A Minimal Reproducible Example is exactly enough code to demonstrate your problem, but no more and no less.
 Sometimes also known as a Minimal Complete and Viable Example or MCVE.
 How Do I Make One? See: Howto Use Wandbox Video
-Use an online compiler website that can compile and run your code like
-Wandbox Godbolt For smaller examples you can also use the discord bot to compile and run your code.</description>
+Use an online compiler website that can compile and run your code like</description>
     </item>
     
     <item>
@@ -394,16 +387,15 @@ Clang Format Clang Tidy These tools do a lot but they don&amp;rsquo;t do everyth
     
     <item>
       <title>Use An IDE</title>
-      <link>https://cpp-doge.github.io/posts/use-an-ide/</link>
+      <link>https://cpp-doge.github.io/limbo/use-an-ide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cpp-doge.github.io/posts/use-an-ide/</guid>
+      <guid>https://cpp-doge.github.io/limbo/use-an-ide/</guid>
       <description>In 60 Seconds Use Visual Studio for Windows. It&amp;rsquo;s FREE! It does everything you want.
 Download: Visual Studio
 Visual Studio is not VSCode, they are different products. Visual Studio comes with a compiler, no need for MinGW. See also I Am Not Using Windows
 See also I Want To Use Something Else
-INFO
-Using and IDE like Visual Studio may not be a direct solution to your current problem, which is to say simply using Visual Studio may not immediately solve your current issue.</description>
+Visual Studio doesn&amp;rsquo;t configure itself, you still have to do that, but doing so should be much easier for beginners as compared to VSCode.</description>
     </item>
     
     <item>
@@ -430,10 +422,10 @@ The information in your computer is managed by a bunch of transitors. You can th
     
     <item>
       <title>Where Do I Start</title>
-      <link>https://cpp-doge.github.io/posts/where-do-i-start/</link>
+      <link>https://cpp-doge.github.io/limbo/where-do-i-start/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cpp-doge.github.io/posts/where-do-i-start/</guid>
+      <guid>https://cpp-doge.github.io/limbo/where-do-i-start/</guid>
       <description>Where Do I Start Begin by reading your textbook.
 But I Don&amp;rsquo;t Have A Textbook Use the one from your syllabus.
 But I Don&amp;rsquo;t Have A Syllabus You probably do. Ask your TAs or your professor for book recommendations.
@@ -455,11 +447,11 @@ You agree to not hold me liable if any of these eats your first born child, kick
     
     <item>
       <title>Why C&#43;&#43; Instead of C</title>
-      <link>https://cpp-doge.github.io/inferno/why-cpp-instead-of-c/</link>
+      <link>https://cpp-doge.github.io/limbo/why-cpp-instead-of-c/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cpp-doge.github.io/inferno/why-cpp-instead-of-c/</guid>
-      <description>What Is The Difference? The difference between C++ and C is very large.
+      <guid>https://cpp-doge.github.io/limbo/why-cpp-instead-of-c/</guid>
+      <description>What Is The Difference? The difference from C to C++ is very great.
 Most C++ code is not valid C code.
 Most idiomatic C code is very poor C++ code.
 Why Should I Use C++? C++ has many features in both the language and its standard library including, in no particular order

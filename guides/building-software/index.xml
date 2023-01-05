@@ -24,11 +24,10 @@ The goal is for this to be short and to the point, an efficient and worthwhile i
       
       <guid>https://cpp-doge.github.io/guides/building-software/gcc-basics/</guid>
       <description>Using GCC Here&amp;rsquo;s how to use g++ on the command line to build and run a simple C++ program consisting of a single main.cpp source file.
-elmo@doge:~$ cd project elmo@doge:~/project$ g++ main.cpp elmo@doge:~/project$ ./a.out Hello World! STOP
-Be sure to use g++ and NOT gcc when you compile your C++ programs.
+elmo@doge:~$ cd project elmo@doge:~/project$ g++ main.cpp elmo@doge:~/project$ ./a.out Hello World! Be sure to use g++ and NOT gcc when you compile your C++ programs.
 See G++ And Clang++
-WARNING
-The ./ is important, you must use a fully qualified path to run your program.</description>
+The ./ is important, you must use a fully qualified path to run your program.
+Notice also that the resulting program is oddly named a.</description>
     </item>
     
     <item>
@@ -37,11 +36,9 @@ The ./ is important, you must use a fully qualified path to run your program.</d
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cpp-doge.github.io/guides/building-software/msvc-basics/</guid>
-      <description>Before You Begin STOP
-Be sure you are using the Developer Tools PowerShell
+      <description>Before You Begin Be sure you are using the Developer Tools PowerShell
 THIS IS CRITICALLY IMPORTANT
 About The Compiler The Microsoft command line compiler program is named cl.exe and the command line linker program is named link.exe.
-INFO
 We can omit the .exe when running these, so to run the compiler we simply run the cl command or to run the linker we simply run the link command.
 Using Visual Studio Here&amp;rsquo;s how to use cl on the command line to build and run a simple C++ program consisting of a single main.</description>
     </item>
@@ -75,12 +72,10 @@ Run this command to create the static library.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cpp-doge.github.io/guides/building-software/msvc-libs/</guid>
-      <description>Before You Begin STOP
-Be sure you are using the Developer Tools PowerShell
+      <description>Before You Begin Be sure you are using the Developer Tools PowerShell
 THIS IS CRITICALLY IMPORTANT
 Static Libraries Compile Object Files First compile your .cpp source files into individual object files as you would normally do.
-cl -EHsc -c algebra.cpp -Fo&amp;#34;algebra.obj&amp;#34; cl -EHsc -c calculus.cpp -Fo&amp;#34;calculus.obj&amp;#34; cl -EHsc -c physics.cpp -Fo&amp;#34;physics.obj&amp;#34; cl -EHsc -c graphics.cpp -Fo&amp;#34;graphics.obj&amp;#34; WARNING
-You need the -EHsc flag or you will probably get some warnings relating to exceptions.</description>
+cl -EHsc -c algebra.cpp -Fo&amp;#34;algebra.obj&amp;#34; cl -EHsc -c calculus.cpp -Fo&amp;#34;calculus.obj&amp;#34; cl -EHsc -c physics.cpp -Fo&amp;#34;physics.obj&amp;#34; cl -EHsc -c graphics.cpp -Fo&amp;#34;graphics.obj&amp;#34; You need the -EHsc flag or you will probably get some warnings relating to exceptions.</description>
     </item>
     
     <item>
@@ -103,11 +98,10 @@ C++ Language Version C++ Standard Library Warning &amp;amp; Error Levels Perform
       <guid>https://cpp-doge.github.io/guides/building-software/gcc-flags/</guid>
       <description>GCC Flags For more information on all of this stuff&amp;hellip;
 See GCC Options
-INFO
 Most of this should work the same between Clang and GCC.
 C++ Language Version C++ like many things has versions. You can be sure you&amp;rsquo;re using a specific version of C++ with the latest features by adding a compiler flag to control the so called language standard.
 Use the -std flag to configure this.
-g++ -std=c++20 main.</description>
+g++ -std=c++20 main.cpp I always recommend setting the language standard explicitly.</description>
     </item>
     
     <item>
@@ -118,7 +112,6 @@ g++ -std=c++20 main.</description>
       <guid>https://cpp-doge.github.io/guides/building-software/msvc-flags/</guid>
       <description>MSVC Flags For more information on all of this stuff&amp;hellip;
 See MSVC Compiler Options
-STOP
 Be sure you are using the Developer Tools PowerShell
 THIS IS CRITICALLY IMPORTANT
 C++ Language Version C++ like many things has versions. You can be sure you&amp;rsquo;re using a specific version of C++ with the latest features by adding a compiler flag to control the so called language standard.
@@ -155,8 +148,7 @@ GCC Link Library Flags The -l flag is new to us. Let&amp;rsquo;s explain it befo
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cpp-doge.github.io/guides/building-software/msvc-paths/</guid>
-      <description>MSVC Paths STOP
-Be sure you are using the Developer Tools PowerShell
+      <description>MSVC Paths Be sure you are using the Developer Tools PowerShell
 THIS IS CRITICALLY IMPORTANT
 Include File Search Directories Say you want your includes to live in their own separate directory like my_headers.
 You can add more folders to be searched for header include files with the -I flag, where -I stands for &amp;ldquo;include&amp;rdquo;.

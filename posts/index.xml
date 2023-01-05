@@ -12,12 +12,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cpp-doge.github.io/posts/powershell/</guid>
-      <description>PowerShell PowerShell is a shell from Microsoft.
+      <description>Before You Begin You should understand the basics of what the command line is.
+See: Command Line Primer
+PowerShell PowerShell is a shell from Microsoft.
 You should use PowerShell 7 if you are on Windows.
 Download: PowerShell 7
 PowerShell is greatly superior to the ancient and outdated legacy DOS batch shell named cmd.exe or simply named &amp;ldquo;Command Prompt&amp;rdquo; in your Windows Start Menu.
-Add A Better Terminal You should also use Windows Terminal. It has more and better features including tabs and integration with WSL.
-Alternatively try ConEmu instead.</description>
+Add A Better Terminal You should also use Windows Terminal.</description>
     </item>
     
     <item>
@@ -81,20 +82,6 @@ Clang Format Clang Tidy These tools do a lot but they don&amp;rsquo;t do everyth
     </item>
     
     <item>
-      <title>Use An IDE</title>
-      <link>https://cpp-doge.github.io/posts/use-an-ide/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cpp-doge.github.io/posts/use-an-ide/</guid>
-      <description>In 60 Seconds Use Visual Studio for Windows. It&amp;rsquo;s FREE! It does everything you want.
-Download: Visual Studio
-Visual Studio is not VSCode, they are different products. Visual Studio comes with a compiler, no need for MinGW. See also I Am Not Using Windows
-See also I Want To Use Something Else
-INFO
-Using and IDE like Visual Studio may not be a direct solution to your current problem, which is to say simply using Visual Studio may not immediately solve your current issue.</description>
-    </item>
-    
-    <item>
       <title>Wandbox Example Video</title>
       <link>https://cpp-doge.github.io/posts/using-wandbox/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -114,20 +101,6 @@ NOVIDEO </description>
 Computer Memory Computers store information in memory as binary numbers.
 Transistors Transistors are good at turning on and off. This can easily be used represent a one or a zero.
 The information in your computer is managed by a bunch of transitors. You can think of it like being one bit per transistor, meaning each transistor can represent either a zero or a one.</description>
-    </item>
-    
-    <item>
-      <title>Where Do I Start</title>
-      <link>https://cpp-doge.github.io/posts/where-do-i-start/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://cpp-doge.github.io/posts/where-do-i-start/</guid>
-      <description>Where Do I Start Begin by reading your textbook.
-But I Don&amp;rsquo;t Have A Textbook Use the one from your syllabus.
-But I Don&amp;rsquo;t Have A Syllabus You probably do. Ask your TAs or your professor for book recommendations.
-Anyway, you could try a free one like this
-Free CompSci Curriculum But I Don&amp;rsquo;t Have A Syllabus Textbook Then get yourself a book, there are free books available.
-Paid books are still generally better.</description>
     </item>
     
     <item>

@@ -105,7 +105,7 @@
     <section class="post-content"><h2 id="gcc-flags">GCC Flags</h2>
 <p>For more information on all of this stuff&hellip;</p>
 <p>See <a href="https://gcc.gnu.org/onlinedocs/gcc/Invoking-GCC.html">GCC Options</a></p>
-<aside class="post-note info"><p>INFO</p><p>
+<aside class="post-note info"><p><img src="/s/img/tango/info.png"></p><p>
 <p>Most of this should work the same between Clang and GCC.</p>
 </p></aside>
 <h3 id="c-language-version">C++ Language Version</h3>
@@ -132,9 +132,9 @@ strict warning level.</p>
 <p>This will warn you of many possible bad mistakes you might
 make and will help you write better code, faster with
 fewer mistakes and less pain.</p>
-<p>Default to using <code>-Wall -Wextra -Wpedantic</code> for all your
+<p>Default to using <code>-Wall -Wextra -Wpedantic -Wshadow -Waddress -Wdangling-pointer=2</code> for all your
 programs. You can customize this in other ways later.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">g++ -Wall -Wextra -Wpedantic main.cpp
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">g++ -Wall -Wextra -Wpedantic -Wshadow -Waddress -Wdangling-pointer=2 main.cpp
 </span></span></code></pre></div><p>See <a href="https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html">GCC Warning Options</a></p>
 <h3 id="performance-optimization">Performance Optimization</h3>
 <p>We all know that C++ is fast, but it&rsquo;s only fast if you
@@ -143,7 +143,7 @@ compile your programs with optimizations enabled.</p>
 program is optimized and how much.</p>
 <p>The <code>-O2</code> flag is a common default choice and should be
 close to as fast as you usually need or want.</p>
-<aside class="post-note warn"><p>WARNING</p><p>
+<aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
 <p>You should probably define <code>NDEBUG</code> (which means &ldquo;No Debug&rdquo;) when
 building programs with performance optimization.</p>
 </p></aside>
@@ -162,7 +162,7 @@ to your program.</p>
 <p>Add debugging information with the <code>-g</code> flag.</p>
 <h4 id="disable-optimization">Disable Optimization</h4>
 <p>Disable optimization with the <code>-Og</code> flag.</p>
-<aside class="post-note warn"><p>WARNING</p><p>
+<aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
 <p>You should probably disable optimization because
 optimization may sometimes delete some of your code.</p>
 <p>This is called being &ldquo;optimized away&rdquo; when some code is deleted by the compiler
@@ -171,7 +171,7 @@ for performance reasons.</p>
 </p></aside>
 <h4 id="debug-defines">Debug Defines</h4>
 <p>Add the standard <code>_DEBUG</code> define with <code>-D</code>.</p>
-<aside class="post-note warn"><p>WARNING</p><p>
+<aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
 <p>You should probably define <code>_DEBUG</code> which indicates that this
 is in fact a program intended for debugging.</p>
 </p></aside>
@@ -182,9 +182,9 @@ is in fact a program intended for debugging.</p>
 <p>With all of the above in mind, your compile commands for GCC should
 all probably look something like this</p>
 <h4 id="for-debug-builds">For Debug Builds</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">g++ -std=c++20 -Wall -Wextra -Wpedantic -D_DEBUG -Og -g main.cpp
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">g++ -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Waddress -Wdangling-pointer=2 -D_DEBUG -Og -g main.cpp
 </span></span></code></pre></div><h4 id="for-release-builds">For Release Builds</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">g++ -std=c++20 -Wall -Wextra -Wpedantic -DNDEBUG -O2 main.cpp
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">g++ -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Waddress -Wdangling-pointer=2 -DNDEBUG -O2 main.cpp
 </span></span></code></pre></div><h2 id="exercise-for-the-reader">Exercise For The Reader</h2>
 <p>As you can see, our build commands are becoming quite long
 and cumbersome to type.</p>

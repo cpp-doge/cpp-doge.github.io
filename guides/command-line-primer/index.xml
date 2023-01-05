@@ -39,8 +39,7 @@ Your files are organized in folders, much like a traditional old school filing c
       <description>Photo Sai Kiran Anagani
 The Command Prompt When you open your terminal, you will be greeted with your shell prompt.
 Bash In Bash it looks something like this
-elmo@doge:~$ INFO
-The little squiggle ~ is special, it is short for your local user directory.
+elmo@doge:~$ The little squiggle ~ is special, it is short for your local user directory.
 PowerShell In PowerShell it looks something like this
 C:\Users\elmo&amp;gt; The prompt usually shows you some information about your computer and where you are, like your username and the path to the current working directory.</description>
     </item>

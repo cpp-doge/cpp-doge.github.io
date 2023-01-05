@@ -140,7 +140,7 @@ is true or not.</p>
 mostly familiar expressions and ends with <code>]</code>, like this</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span> <span class="s2">&#34;hello&#34;</span> <span class="o">==</span> <span class="s2">&#34;world&#34;</span> <span class="o">]</span>
 </span></span></code></pre></div><p>This checks to see if <code>hello</code> is the same as <code>world</code>.</p>
-<aside class="post-note stop"><p><p>STOP</p>
+<aside class="post-note stop"><p><img src="/s/img/tango/stop.png"></p><p>
 <p>Be sure to leave space after <code>[</code> and before <code>]</code>.</p>
 </p></aside>
 <h4 id="powershell">PowerShell</h4>
@@ -159,7 +159,7 @@ if statements.</p>
 </span></span><span class="line"><span class="cl"><span class="k">else</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;NO they are equal&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
-</span></span></code></pre></div><aside class="post-note stop"><p><p>STOP</p>
+</span></span></code></pre></div><aside class="post-note stop"><p><img src="/s/img/tango/stop.png"></p><p>
 <p>The semi-colon <code>;</code> after <code>]</code> and before <code>then</code> is important,
 don&rsquo;t forget!</p>
 </p></aside>
@@ -276,7 +276,7 @@ symobl. This is called redirection.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Hello this is going into the file&#34;</span> &gt; myfile.txt
 </span></span></code></pre></div><h4 id="powershell-5">PowerShell</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Write-Output</span> <span class="s2">&#34;Hello this is going into the file&#34;</span> <span class="p">&gt;</span> <span class="n">myfile</span><span class="p">.</span><span class="n">txt</span>
-</span></span></code></pre></div><aside class="post-note warn"><p>WARNING</p><p>
+</span></span></code></pre></div><aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
 <p>This will normally output <a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">UTF-16</a> when using the default Windows PowerShell 5.</p>
 <p>This will likely cause problems with Linux like tools such as GCC, Perl, Grep Sed and Awk.</p>
 <p>Use <a href="https://github.com/PowerShell/PowerShell/releases">PowerShell 7</a> for better interoperation with Linux tools.</p>
@@ -316,7 +316,7 @@ with each one.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">for</span> f in ./myfolder/*.mp3<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&#34;The File Is </span><span class="nv">$f</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">done</span>
 </span></span></code></pre></div><p>You can also use find exec</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find ./myfolder -iname <span class="s2">&#34;*.mp3&#34;</span> -exec <span class="s2">&#34;The File Is {}&#34;</span><span class="se">\;</span>
-</span></span></code></pre></div><aside class="post-note warn"><p>WARNING</p><p>
+</span></span></code></pre></div><aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
 <p>The <code>\;</code> may seem odd, but it&rsquo;s important. This is too much
 to cover here, see the
 <a href="https://www.gnu.org/software/findutils/manual/html_mono/find.html">find command</a>

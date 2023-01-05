@@ -103,14 +103,14 @@
     </section>
 
     <section class="post-content"><h2 id="before-you-begin">Before You Begin</h2>
-<aside class="post-note stop"><p><p>STOP</p>
+<aside class="post-note stop"><p><img src="/s/img/tango/stop.png"></p><p>
 <p>Be sure you are using the <a href="/guides/building-sofware/introduction/#devtools-powershell">Developer Tools PowerShell</a></p>
 <p><strong>THIS IS CRITICALLY IMPORTANT</strong></p>
 </p></aside>
 <h2 id="about-the-compiler">About The Compiler</h2>
 <p>The Microsoft command line compiler program is named <code>cl.exe</code>
 and the command line linker program is named <code>link.exe</code>.</p>
-<aside class="post-note info"><p>INFO</p><p>
+<aside class="post-note info"><p><img src="/s/img/tango/info.png"></p><p>
 <p>We can omit the <code>.exe</code> when running these, so to run the
 compiler we simply run the <code>cl</code> command or to run the
 linker we simply run the <code>link</code> command.</p>
@@ -122,11 +122,11 @@ a simple C++ program consisting of a single <code>main.cpp</code> source file.</
 </span></span><span class="line"><span class="cl">C:\project&gt; cl -EHsc main.cpp
 </span></span><span class="line"><span class="cl">C:\project&gt; .\main
 </span></span><span class="line"><span class="cl">Hello World!
-</span></span></code></pre></div><aside class="post-note warn"><p>WARNING</p><p>
+</span></span></code></pre></div><aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
 <p>You need the <code>-EHsc</code> flag or you will probably get some
 warnings relating to exceptions.</p>
 </p></aside>
-<aside class="post-note warn"><p>WARNING</p><p>
+<aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
 <p>The <code>.\</code> is important, you must use a
 <a href="/guides/command-line-primer/about-file-paths/#fully-qualified-paths">fully qualified path</a>
 to run your program.</p>
@@ -167,7 +167,7 @@ compile only.</p>
 </span></span><span class="line"><span class="cl">cl -EHsc -c main.cpp -Fo&#34;main.obj&#34;
 </span></span></code></pre></div><p>The <code>-Fo</code> flag is similar to the <code>-Fe</code> flag, it gives a name to the
 resulting object file.</p>
-<aside class="post-note info"><p>INFO</p><p>
+<aside class="post-note info"><p><img src="/s/img/tango/info.png"></p><p>
 <p>The <code>.o</code> means Object File for GCC but <code>.obj</code> means
 object file for MSVC.</p>
 </p></aside>
