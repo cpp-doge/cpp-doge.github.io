@@ -68,7 +68,7 @@ Paid books are still generally better.</description>
 Most C++ code is not valid C code.
 Most idiomatic C code is very poor C++ code.
 Why Should I Use C++? C++ has many features in both the language and its standard library including, in no particular order
-Metaprogramming Variadic Templates Lambdas Concurrency and Parellelism Atomics Structured Bindings Regular Expressions Strings, Arrays &amp;amp; Dictionaries Unicode Support Date &amp;amp; Time Functions File And Directory Management Random Number Generation Function Overloads Operator Overloads Classes Inheritance Polymorphism Iterators Ranges Concepts Views &amp;amp; Spans Exceptions Variant Plus there exist many other common useful libraries for things like</description>
+Metaprogramming Variadic Templates Lambdas Concurrency and Parellelism Atomics Constexpr Structured Bindings Regular Expressions Strings, Arrays &amp;amp; Dictionaries Unicode Support Date &amp;amp; Time Functions File And Directory Management Random Number Generation Function Overloads Operator Overloads Classes Inheritance Polymorphism Iterators Ranges Concepts Views &amp;amp; Spans Exceptions Variant Plus there exist many other common useful libraries for things like</description>
     </item>
     
   </channel>
