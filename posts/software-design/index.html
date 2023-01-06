@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/posts/software-design/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>Software Design</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">Software Design</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#tldr">TLDR</a>
+      <ul>
+        <li><a href="#about-this-page">About This Page</a></li>
+        <li><a href="#on-software-structure--design">On Software Structure &amp; Design</a></li>
+        <li><a href="#how-to-design-programs">How To Design Programs</a></li>
+        <li><a href="#on-testability">On Testability</a></li>
+        <li><a href="#learn-from-the-greats">Learn From The Greats</a></li>
+        <li><a href="#a-note-on-fp-and-ideals">A Note On FP And Ideals</a></li>
+      </ul>
+    </li>
+    <li><a href="#touyubes">TouYubes!</a>
+      <ul>
+        <li><a href="#four-languages">Four Languages</a></li>
+        <li><a href="#alan-kay-on-simplicity">Alan Kay On Simplicity</a></li>
+        <li><a href="#turtle">Turtle</a></li>
+        <li><a href="#richard-hickey-on-simplicity">Richard Hickey On Simplicity</a></li>
+        <li><a href="#bjarne-on-simplicity">Bjarne On Simplicity</a></li>
+        <li><a href="#herb-on-simplicity-2022">Herb On Simplicity 2022</a></li>
+        <li><a href="#herb-on-simplicity-2018">Herb On Simplicity 2018</a></li>
+        <li><a href="#values">Values</a></li>
+        <li><a href="#composability">Composability</a></li>
+        <li><a href="#test-driven-development">Test Driven Development</a></li>
+        <li><a href="#unit-tests">Unit Tests</a></li>
+        <li><a href="#test-driven-c">Test Driven C++</a></li>
+        <li><a href="#the-mess">The Mess</a></li>
+        <li><a href="#joe-interviews-alan">Joe Interviews Alan</a></li>
+        <li><a href="#how-to-compute">How To Compute</a></li>
+        <li><a href="#fault-tolerance">Fault Tolerance</a></li>
+        <li><a href="#category-theory">Category Theory</a></li>
+        <li><a href="#practical-idris">Practical Idris</a></li>
+        <li><a href="#idris-2">Idris 2</a></li>
+        <li><a href="#data-oriented-design-2014">Data Oriented Design 2014</a></li>
+        <li><a href="#data-oriented-design-2018">Data Oriented Design 2018</a></li>
+        <li><a href="#data-oriented-design-2021">Data Oriented Design 2021</a></li>
+        <li><a href="#database-normalization">Database Normalization</a></li>
+      </ul>
+    </li>
+    <li><a href="#c-basics">C++ Basics</a>
+      <ul>
+        <li><a href="#online-tools">Online Tools</a></li>
+        <li><a href="#raii">RAII</a></li>
+        <li><a href="#templates">Templates</a></li>
+        <li><a href="#constexpr">Constexpr</a></li>
+        <li><a href="#const--constexpr">Const &amp; Constexpr</a></li>
+        <li><a href="#value-categories">Value Categories</a></li>
+        <li><a href="#move-semantics">Move Semantics</a></li>
+        <li><a href="#exceptions">Exceptions</a></li>
+        <li><a href="#exception-safety">Exception Safety</a></li>
+        <li><a href="#lambdas">Lambdas</a></li>
+        <li><a href="#concepts">Concepts</a></li>
+        <li><a href="#coroutines">Coroutines</a></li>
+        <li><a href="#why-modules">Why Modules</a></li>
+        <li><a href="#modules">Modules</a></li>
+        <li><a href="#pointers">Pointers</a></li>
+        <li><a href="#abi">ABI</a></li>
+        <li><a href="#stl">STL</a></li>
+        <li><a href="#ranges-in-practice">Ranges In Practice</a></li>
+        <li><a href="#ranges-2015">Ranges 2015</a></li>
+        <li><a href="#compiling--linking">Compiling &amp; Linking</a></li>
+        <li><a href="#debugging">Debugging</a></li>
+        <li><a href="#applied-best-practices">Applied Best Practices</a></li>
+        <li><a href="#the-best-parts-of-c">The Best Parts of C++</a></li>
+      </ul>
+    </li>
+    <li><a href="#more-c">More C++</a>
+      <ul>
+        <li><a href="#perf">Perf</a></li>
+        <li><a href="#vtune">VTune</a></li>
+        <li><a href="#practical-performance">Practical Performance</a></li>
+        <li><a href="#dlls">DLLs</a></li>
+        <li><a href="#c-in-games">C++ In Games</a></li>
+        <li><a href="#virtual-dispatch">Virtual Dispatch</a></li>
+        <li><a href="#gdb">GDB</a></li>
+        <li><a href="#tmp">TMP</a></li>
+        <li><a href="#rvo">RVO</a></li>
+        <li><a href="#copy-elision">Copy Elision</a></li>
+        <li><a href="#singleton-alternatives">Singleton Alternatives</a></li>
+        <li><a href="#eliminate-virtual-functions">Eliminate Virtual Functions</a></li>
+        <li><a href="#stack-unwinding">Stack Unwinding</a></li>
+        <li><a href="#lock-free-queue">Lock Free Queue</a></li>
+        <li><a href="#a-better-hashmap">A Better Hashmap</a></li>
+        <li><a href="#googles-custom-hashmap">Google&rsquo;s Custom Hashmap</a></li>
+        <li><a href="#networking-ts">Networking TS</a></li>
+        <li><a href="#memory-allocation">Memory Allocation</a></li>
+        <li><a href="#allocators">Allocators</a></li>
+        <li><a href="#practical-allocators">Practical Allocators</a></li>
+        <li><a href="#pool-allocators">Pool Allocators</a></li>
+        <li><a href="#arena-allocators">Arena Allocators</a></li>
+        <li><a href="#allocator-impact">Allocator Impact</a></li>
+      </ul>
+    </li>
+    <li><a href="#generalist-books">Generalist Books</a></li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><h2 id="tldr">TLDR</h2>
+<p>Put more tools in your proverbial toolbox, especially FP tools.</p>
+<p>The more tools you have at your disposal the better choices you can
+make and the better software you will write.</p>
+<h3 id="about-this-page">About This Page</h3>
+<p>This is mostly (but not entirely) a collection of YouTube videos,
+generally from well renowned programmers, covering a wide range
+of topics.</p>
+<p>I claim that this constitutes, effectively, a mini course on
+software design and architecture, regardless of language.</p>
+<h3 id="on-software-structure--design">On Software Structure &amp; Design</h3>
+<p>The topic of how you should structure your code is a difficult topic
+to teach. There are not many books or courses on this topic. Largely
+the topic is arguably subjective or not amazingly concrete.</p>
+<p>If you emphasize the following general principles in your software
+design (many of which come from the FP world), then you will be
+more likely to create good software the first time, without needing
+to radically refactor your code, or worse, throw away your code
+entirely.</p>
+<p><strong>Important Software Design Goals</strong></p>
+<ul>
+<li>Simplicity</li>
+<li>Testability</li>
+<li>Modularity</li>
+<li>Decoupling</li>
+<li>Composability</li>
+<li>Immutability</li>
+</ul>
+<h3 id="how-to-design-programs">How To Design Programs</h3>
+<p>Learning Functional Programming languages and
+techniques is, I claim, the best way to learn the topic of
+software design, structure and architecture.</p>
+<p>To this end, I recommend:</p>
+<p><a href="https://htdp.org/2022-8-7/Book/index.html">How To Design Programs</a> <strong>FREE</strong></p>
+<p>HTDP is a spiritual successor to <a href="https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs">SICP</a>,
+widely considered one of the most important programming books of all time.</p>
+<p>HTDP is a fully free course including a free IDE and everything you need
+to follow along.</p>
+<p>If you are unfamiliar with FP, this video should help illuminate the difference.</p>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/sqV3pL5x8PI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<p>There&rsquo;s no great way to learn what FP is other than to simply learn
+an FP language.</p>
+<p>Some FP (or FP leaning) languages include</p>
+<ul>
+<li>Lisp</li>
+<li>Haskell</li>
+<li>Erlang</li>
+<li>Scala</li>
+<li>Objective Caml</li>
+</ul>
+<h3 id="on-testability">On Testability</h3>
+<p>If there&rsquo;s one primary goal you can strive for to write
+better software, then that goal is testability.</p>
+<p>Simplicity is probably the most important, but testability
+does the most to inform how you structure your programs.</p>
+<p>Ask yourself, how easy is it to write tests for your code.</p>
+<p>State, and particularly mutable state is very difficult to test for.</p>
+<p>Tightly coupled code is difficult to test, and near impossible
+to write unit tests for because it necessarily requires a large
+amount of your code present in the test at the same time.</p>
+<p>If your code has clear, immutable inputs and outputs, then it
+is easy to test. Immutability is a core premise of FP.</p>
+<p>When striving to write testable code, you will naturally arrive
+at nearly all of the ideal software goals listed above.</p>
+<p>Learning Functional Programming can help you get a good grasp
+of how to achieve those goals, such that your code is
+more and more easily testable.</p>
+<h3 id="learn-from-the-greats">Learn From The Greats</h3>
+<p>Famous renowned programmers are excellent resources from which to learn.</p>
+<p>When you&rsquo;ve exhausted my lists of stuff here, you should do some more
+exploration on Google and YouTube.</p>
+<p>Some great engineers (programmers and otherwise) to search for and learn
+from, an incomplete list, in no particular order.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=275FQ9koAw8">Alan Kay</a></li>
+<li><a href="https://www.youtube.com/watch?v=xrIjfIjssLE">Joe Armstrong</a></li>
+<li><a href="https://www.youtube.com/watch?v=nD-QHbRWcoM">Rich Hickey</a></li>
+<li><a href="https://www.youtube.com/watch?v=re96UgMk6GQ">Simon Peyton Jones</a></li>
+<li><a href="https://www.youtube.com/watch?v=uTxRF5ag27A">Bjarne Stroustrup</a></li>
+<li><a href="https://www.agner.org/">Agner Fog</a></li>
+<li><a href="https://www.youtube.com/watch?v=2BdBfsXbST8">Donald Knuth</a></li>
+<li><a href="https://www.youtube.com/watch?v=Nb2tebYAaOA">Jim Keller</a></li>
+<li><a href="https://www.youtube.com/watch?v=L5EyOokcl7s">Edsger Dijkstra</a></li>
+<li><a href="https://www.youtube.com/watch?v=rkZzg7Vowao">Leslie Lamport</a></li>
+</ul>
+<p>Some programming and engineering channels to put on your play list, in
+no particular order.</p>
+<ul>
+<li><a href="https://www.youtube.com/@Computerphile">Computerphile</a></li>
+<li><a href="https://www.youtube.com/@CppCon">CppCon</a></li>
+<li><a href="https://www.youtube.com/@BoostCon">BoostCon</a></li>
+<li><a href="https://www.youtube.com/@NDC">NDC Conferences</a></li>
+<li><a href="https://www.youtube.com/@Gdconf">Game Developer Conference</a></li>
+<li><a href="https://www.youtube.com/@cppweekly">C++ Weekly With Jason Turner</a></li>
+<li><a href="https://www.youtube.com/@Intermation">Intermation</a></li>
+<li><a href="https://www.youtube.com/@WhatsACreel">Creel</a></li>
+<li><a href="https://www.youtube.com/@BenEater">Ben Eater</a></li>
+<li><a href="https://www.youtube.com/@LambdaWorld">Lambda World</a></li>
+<li><a href="https://www.youtube.com/@_wearedevs">We Are Developers</a></li>
+</ul>
+<p>The astute observer will notice that many of these are already
+present on this page, but there are so many more to discover.</p>
+<h3 id="a-note-on-fp-and-ideals">A Note On FP And Ideals</h3>
+<p>Functional Programming is not perfectly well defined. FP embodies a set of
+ideals to strive for. Not all FP languages pursue every FP ideal, some
+languages are more pure or more strict than others.</p>
+<p>For example, it&rsquo;s difficult to get much done in the real world without
+changing things and without state. Databases are a fundamental piece
+of technology, they aren&rsquo;t going away any time soon, and maintaining
+and updating state is pretty fundamental to many applications. A standard
+SQL database is pretty much the definition of mutable state, and this
+is fine. Though you could also look at some more FP leaning
+alternatives like <a href="https://www.datomic.com/">Datomic</a>.</p>
+<p>The point is you should consider these ideals, strive for them, and then
+use your brain to figure out when it might make sense to depart from
+those ideals, provided you have a valid reason to do so.</p>
+<h2 id="touyubes">TouYubes!</h2>
+<p>Here are some videos mostly about software design and architecture.</p>
+<p>These videos aim to inspire and give you new ideas,
+new ways of looking at things, and put new tools in your toolbox.</p>
+<p>If you have more tools in your proverbial toolbox, you will be
+better able to choose the right tool for the job.</p>
+<p>Without further ado, in no particular order&hellip;</p>
+<h3 id="four-languages">Four Languages</h3>
+<p>This is one of my favorites of all time, so it goes first.</p>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/mRwHZTNGdoY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="alan-kay-on-simplicity">Alan Kay On Simplicity</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/ubaX1Smg6pY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="turtle">Turtle</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/g06igkxbF78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="richard-hickey-on-simplicity">Richard Hickey On Simplicity</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/SxdOUGdseq4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="bjarne-on-simplicity">Bjarne On Simplicity</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/nesCaocNjtQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="herb-on-simplicity-2022">Herb On Simplicity 2022</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/ELeZAKCN4tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="herb-on-simplicity-2018">Herb On Simplicity 2018</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/80BZxujhY38" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="values">Values</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/-6BsiVyC1kM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="composability">Composability</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/rCKPgu4DvcE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="test-driven-development">Test Driven Development</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/RoYljVOj2H8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="unit-tests">Unit Tests</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/_OHE33s7EKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="test-driven-c">Test Driven C++</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/N2gTxeIHMP0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="the-mess">The Mess</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/lKXe3HUG2l4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="joe-interviews-alan">Joe Interviews Alan</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/fhOHn9TClXY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="how-to-compute">How To Compute</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/HB5TrK7A4pI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="fault-tolerance">Fault Tolerance</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/cNICGEwmXLU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="category-theory">Category Theory</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/V10hzjgoklA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="practical-idris">Practical Idris</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/4i7KrG1Afbk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="idris-2">Idris 2</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/DRq2NgeFcO0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="data-oriented-design-2014">Data Oriented Design 2014</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/rX0ItVEVjHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="data-oriented-design-2018">Data Oriented Design 2018</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/yy8jQgmhbAU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="data-oriented-design-2021">Data Oriented Design 2021</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/QbffGSgsCcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="database-normalization">Database Normalization</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/GFQaEYEc8_8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h2 id="c-basics">C++ Basics</h2>
+<p>This section contains common need to know information about C++,
+often these are some of the most common topics that beginners
+don&rsquo;t yet know that they probably should know, or topics that
+are just very commonly asked about, or topics that are maybe
+not so commonly asked about but very important to know about.</p>
+<p>Without further ado, in no particular order&hellip;</p>
+<h3 id="online-tools">Online Tools</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/UztsWf7F_Sc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="raii">RAII</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/7Qgd9B1KuMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="templates">Templates</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/XN319NYEOcE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="constexpr">Constexpr</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/MdrfPSUtMVM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="const--constexpr">Const &amp; Constexpr</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/tA6LbPyYdco" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="value-categories">Value Categories</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/XS2JddPq7GQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="move-semantics">Move Semantics</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/ZG59Bqo7qX4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="exceptions">Exceptions</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/0ojB8c0xUd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="exception-safety">Exception Safety</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/W6jZKibuJpU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="lambdas">Lambdas</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/IgNUBw3vcO4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="concepts">Concepts</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/ZeU6OPaGxwM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="coroutines">Coroutines</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/8sEe-4tig_A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="why-modules">Why Modules</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/xi2lTaC5p0I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="modules">Modules</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/nP8QcvPpGeM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="pointers">Pointers</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/rqVWj0aVSxg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="abi">ABI</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/7RoTDjLLXJQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="stl">STL</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/2olsGf6JIkU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="ranges-in-practice">Ranges In Practice</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/d_E-VLyUnzc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="ranges-2015">Ranges 2015</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/mFUXNMfaciE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="compiling--linking">Compiling &amp; Linking</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/cpkDQaYttR4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="debugging">Debugging</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/YzIBwqWC6EM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="applied-best-practices">Applied Best Practices</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/DHOlsEd0eDE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="the-best-parts-of-c">The Best Parts of C++</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/iz5Qx18H6lg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h2 id="more-c">More C++</h2>
+<p>This section contains less critical, less fundamental,
+more optional, but still important topics related to C++.</p>
+<p>There&rsquo;s a good chance you should know most of this eventually
+but it may be less applicable to most general situations.</p>
+<p>You may never need to write your own custom allocator, but
+it&rsquo;s a good tool to have in your proverbial toolbox.</p>
+<p>Without further ado, in no particular order&hellip;</p>
+<h3 id="perf">Perf</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/nXaxk27zwlk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="vtune">VTune</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/zWxSZcpeS8Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="practical-performance">Practical Performance</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/uzF4u9KgUWI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="dlls">DLLs</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/JPQWQfDhICA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="c-in-games">C++ In Games</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/6hC9IxqdDDw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="virtual-dispatch">Virtual Dispatch</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/jBnIMEb2GhA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="gdb">GDB</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/-n9Fkq1e6sg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="tmp">TMP</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/tiAVWcjIF6o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="rvo">RVO</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/hA1WNtNyNbo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="copy-elision">Copy Elision</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/IZbL-RGr_mk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="singleton-alternatives">Singleton Alternatives</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/K5c7uvWe_hw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="eliminate-virtual-functions">Eliminate Virtual Functions</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/gTNJXVmuRRA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="stack-unwinding">Stack Unwinding</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/_Ivd3qzgT7U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="lock-free-queue">Lock Free Queue</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/HP2InVqgBFM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="a-better-hashmap">A Better Hashmap</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/M2fKMP47slQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="googles-custom-hashmap">Google&rsquo;s Custom Hashmap</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/ncHmEUmJZf4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="networking-ts">Networking TS</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/3wy1OPqNZZ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="memory-allocation">Memory Allocation</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/gYfd25Bdmws" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="allocators">Allocators</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/kSWfushlvB8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="practical-allocators">Practical Allocators</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/LIb3L4vKZ7U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="pool-allocators">Pool Allocators</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/l14Zkx5OXr4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="arena-allocators">Arena Allocators</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/nZNd5FjSquk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h3 id="allocator-impact">Allocator Impact</h3>
+<div style="padding-left:40px;padding-bottom:30px;"><iframe width="560" height="315" src="https://www.youtube.com/embed/Ctfbs6UVJ9Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h2 id="generalist-books">Generalist Books</h2>
+<p><a href="https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959">The Mythical Man Month</a></p>
+<p><a href="https://www.amazon.com/Refactoring-Improving-Existing-Addison-Wesley-Signature/dp/0134757599">Refactoring</a></p>
+<p><a href="https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary/dp/0135957052">The Pragmatic Programmer</a></p>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 <a href="/pages/about/">Phone Doggo</a>
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

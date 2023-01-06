@@ -71,6 +71,18 @@ I&amp;rsquo;m The Only Tigger We have been using base ten for so long in our nor
     </item>
     
     <item>
+      <title>Software Design</title>
+      <link>https://cpp-doge.github.io/posts/software-design/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cpp-doge.github.io/posts/software-design/</guid>
+      <description>TLDR Put more tools in your proverbial toolbox, especially FP tools.
+The more tools you have at your disposal the better choices you can make and the better software you will write.
+About This Page This is mostly (but not entirely) a collection of YouTube videos, generally from well renowned programmers, covering a wide range of topics.
+I claim that this constitutes, effectively, a mini course on software design and architecture, regardless of language.</description>
+    </item>
+    
+    <item>
       <title>Styling Your Code</title>
       <link>https://cpp-doge.github.io/posts/style/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

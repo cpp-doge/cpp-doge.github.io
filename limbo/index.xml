@@ -64,11 +64,10 @@ Paid books are still generally better.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://cpp-doge.github.io/limbo/why-cpp-instead-of-c/</guid>
-      <description>What Is The Difference? The difference from C to C++ is very great.
-Most C++ code is not valid C code.
-Most idiomatic C code is very poor C++ code.
-Why Should I Use C++? C++ has many features in both the language and its standard library including, in no particular order
-Metaprogramming Variadic Templates Lambdas Concurrency and Parellelism Atomics Constexpr Structured Bindings Regular Expressions Strings, Arrays &amp;amp; Dictionaries Unicode Support Date &amp;amp; Time Functions File And Directory Management Random Number Generation Function Overloads Operator Overloads Classes Inheritance Polymorphism Iterators Ranges Concepts Views &amp;amp; Spans Exceptions Variant Plus there exist many other common useful libraries for things like</description>
+      <description>What Is The Point? I&amp;rsquo;m not here to change your mind if you&amp;rsquo;re a C programmer and you like C and you wish to continue using C.
+To the end that C++ programmers may wish to advocate C++ to their C programmer friends, this is a mandatory video to watch.
+If you want more perspective on how some C++ programmers feel about C, then this video may be illuminating.
+If you, for whatever reason, have an interest in C++ or you want more explanations as to the differences between C and C++, why I like C++, and what makes C++ good, then read on.</description>
     </item>
     
   </channel>
