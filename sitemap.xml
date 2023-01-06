@@ -2,39 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://cpp-doge.github.io/guides/building-software/introduction/</loc>
+    <loc>https://cpp-doge.github.io/guides/building-cpp-programs/introduction/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/guides/command-line-primer/what-is-the-command-line/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/guides/command-line-primer/about-file-paths/</loc>
   </url><url>
-    <loc>https://cpp-doge.github.io/guides/building-software/gcc-basics/</loc>
+    <loc>https://cpp-doge.github.io/guides/building-cpp-programs/gcc-basics/</loc>
   </url><url>
-    <loc>https://cpp-doge.github.io/guides/building-software/msvc-basics/</loc>
+    <loc>https://cpp-doge.github.io/guides/building-cpp-programs/msvc-basics/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/guides/command-line-primer/command-line-basics/</loc>
   </url><url>
-    <loc>https://cpp-doge.github.io/guides/building-software/libs-basics/</loc>
+    <loc>https://cpp-doge.github.io/guides/building-cpp-programs/libs-basics/</loc>
   </url><url>
-    <loc>https://cpp-doge.github.io/guides/building-software/gcc-libs/</loc>
+    <loc>https://cpp-doge.github.io/guides/building-cpp-programs/gcc-libs/</loc>
   </url><url>
-    <loc>https://cpp-doge.github.io/guides/building-software/msvc-libs/</loc>
+    <loc>https://cpp-doge.github.io/guides/building-cpp-programs/msvc-libs/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/guides/command-line-primer/command-line-intermediate/</loc>
   </url><url>
-    <loc>https://cpp-doge.github.io/guides/building-software/flags-basics/</loc>
+    <loc>https://cpp-doge.github.io/guides/building-cpp-programs/flags-basics/</loc>
   </url><url>
-    <loc>https://cpp-doge.github.io/guides/building-software/gcc-flags/</loc>
+    <loc>https://cpp-doge.github.io/guides/building-cpp-programs/gcc-flags/</loc>
   </url><url>
-    <loc>https://cpp-doge.github.io/guides/building-software/msvc-flags/</loc>
+    <loc>https://cpp-doge.github.io/guides/building-cpp-programs/msvc-flags/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/guides/command-line-primer/about-environment-variables/</loc>
   </url><url>
-    <loc>https://cpp-doge.github.io/guides/building-software/dirpath-basics/</loc>
+    <loc>https://cpp-doge.github.io/guides/building-cpp-programs/dirpath-basics/</loc>
   </url><url>
-    <loc>https://cpp-doge.github.io/guides/building-software/gcc-paths/</loc>
+    <loc>https://cpp-doge.github.io/guides/building-cpp-programs/gcc-paths/</loc>
   </url><url>
-    <loc>https://cpp-doge.github.io/guides/building-software/msvc-paths/</loc>
+    <loc>https://cpp-doge.github.io/guides/building-cpp-programs/msvc-paths/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/guides/command-line-primer/command-line-advanced/</loc>
   </url><url>
@@ -48,7 +48,7 @@
   </url><url>
     <loc>https://cpp-doge.github.io/posts/</loc>
   </url><url>
-    <loc>https://cpp-doge.github.io/guides/building-software/</loc>
+    <loc>https://cpp-doge.github.io/guides/building-cpp-programs/</loc>
   </url><url>
     <loc>https://cpp-doge.github.io/posts/c-compatibility-headers/</loc>
   </url><url>

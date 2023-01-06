@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/guides/building-cpp-programs/dirpath-basics/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>5a - Dirpath Basics</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">5a - Dirpath Basics</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#directory-paths">Directory Paths</a>
+      <ul>
+        <li><a href="#file-search-directories">File Search Directories</a></li>
+        <li><a href="#binary-directories">Binary Directories</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><h2 id="directory-paths">Directory Paths</h2>
+<p>When you compile a program your compiler will search in a large
+number of different directories for things like header include
+files and link library files.</p>
+<p>Depending on your OS and file structure, you may need to
+observe some other considerations around the files and folders
+of your project including your programs and libraries.</p>
+<p>Concepts Overview</p>
+<ul>
+<li>Include File Search Directories</li>
+<li>Library File Search Directories</li>
+<li>Binary Search Directories</li>
+<li>Library Loader Directories</li>
+</ul>
+<h3 id="file-search-directories">File Search Directories</h3>
+<p>Most C++ programs will use so called header include files
+or just headers for short.</p>
+<p>You typically see a lot of this kind of thing in most
+C++ code.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;my_program.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;my_wrappers.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;my_utilities.hpp&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span></span></span></code></pre></div><p>You will inevitably end up needing a way to tell the
+compiler about other directories that contain headers,</p>
+<p>If the compiler cannot find your header includes you will
+get compile errors.</p>
+<p>This is also true of libraries. When you link a library
+to your program by name, the compiler searches a set
+of directories for library files.</p>
+<p>If the compiler cannot find your library files you will
+get compile errors.</p>
+<h3 id="binary-directories">Binary Directories</h3>
+<p>When running a program that uses shared libraries, your
+program needs to know how to find those libraries.</p>
+<h4 id="linux">Linux</h4>
+<p>The <code>LD_LIBRARY_PATH</code> variable has already been described
+for GCC, but there are other ways including the use of <code>-rpath</code>.</p>
+<p>More on this later.</p>
+<h4 id="windows">Windows</h4>
+<p>When working with DLLs on windows, all your DLLs need to be
+findable by your program. A simple way to ensure your program
+has what it needs is to make sure you always put your <code>.dll</code>
+files in the same directory as your <code>.exe</code> files.</p>
+<p>However, this may be confounded based several factors. It
+is a common need to configure your build to copy your <code>.dll</code>
+files to the same directory as your <code>.exe </code>files.</p>
+<p>More on this later.</p>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 <a href="/pages/about/">Phone Doggo</a>
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>

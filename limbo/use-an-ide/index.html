@@ -257,7 +257,8 @@ because Visual Studio for C++ is not available on Mac or Linux.</p>
 <h3 id="why-not-other-ides">Why Not Other IDEs</h3>
 <p>Code::Blocks and DevC++ are extremely out of date and not very good.
 There are many other better options to choose from.</p>
-<p>These products also rely on MinGW on Windows. See <a href="#why-not-mingw">Why Not MinGW</a>.</p>
+<p>These products also rely on an outdated MinGW on Windows.</p>
+<p>See <a href="#why-not-mingw">Why Not MinGW</a>.</p>
 <aside class="post-note info"><p><img src="/s/img/tango/info.png"></p><p>
 <p>No one will stop you from using these, but you will probably
 be mostly on your own in learning how to use them, largely
@@ -320,8 +321,10 @@ don&rsquo;t have and don&rsquo;t need.</p>
 <ul>
 <li>Visual Studio is also free and much better and easier for beginners</li>
 <li>MinGW has a history of being incomplete or even bad</li>
-<li>For example: MinGW was lacking a random device for a very long time</li>
+<li>For example: MinGW was lacking a random device for a very long time.</li>
+<li>The outdated versions of MinGW shipped with Code::Blocks and DevC++ still suffer from this problem.</li>
 <li>MinGW will probably always have less than 100% parity with native Windows</li>
+<li>Dependence on the MinGW GCC runtime DLL frequently results in pain and confusion for beginners</li>
 <li>MinGW systems typically use Bash which may cause confusion and pain when dealing with Linux vs Windows differences like file paths and more</li>
 <li>MinGW receives updates, but why use MinGW when it&rsquo;s incomplete, sometimes bad, and VS is better and also free?</li>
 <li>MinGW LLVM is not an appropriate solution either, especially when you could just use native <a href="#clang-for-windows">Clang For Windows</a> instead</li>

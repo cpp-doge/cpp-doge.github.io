@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="canonical" href="https://cpp-doge.github.io/guides/building-cpp-programs/msvc-libs/" />
+
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Serif|Zen+Antique|Libre+Baskerville|Rubik+Bubbles|Permanent+Marker|Orbitron|Press+Start+2P|Monoton|Chewy|Creepster|Rubik+Moonrocks|Lora|EB+Garamond|Anton|Teko|Russo+One">
+
+    <link rel="stylesheet" href="/s/css/syntax.css">
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="https://cpp-doge.github.io/s/scss/main.css">
+
+    <title>3c - MSVC Libraries</title>
+</head>
+<body>
+    <div id="body"><div class="layout-header">
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+
+  <div class="center">
+    <div class="menu-center">
+      <div class="menu-home">
+        <a href="/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOME</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/posts/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>BLOG</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/guides/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>HOWTO</span>
+        </a>
+      </div>
+      <div class="menu-home">
+        <a href="/pages/links/" class="home-link">
+          <img src="/s/img/cameronsworld.net/globe-spin2.gif">
+          <br>
+          <span>LINKS</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="edge">
+    <img src="/s/img/cameronsworld.net/flame-gif1.gif">
+  </div>
+</div>
+<div class="main">
+
+  <article class="post">
+
+    <header class="post-header">
+      <h1 class="post-title">3c - MSVC Libraries</h1>
+    </header>
+
+    <section class="post-toc" id="post-toc">
+      <p>
+        <a href="../">TOC Home</a>
+      </p>
+      
+          <h1>Table Of Contents</h1>
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#before-you-begin">Before You Begin</a></li>
+    <li><a href="#static-libraries">Static Libraries</a>
+      <ul>
+        <li><a href="#compile-object-files">Compile Object Files</a></li>
+        <li><a href="#create-the-static-library">Create The Static Library</a></li>
+        <li><a href="#use-a-static-library">Use A Static Library</a></li>
+      </ul>
+    </li>
+    <li><a href="#shared-libraries">Shared Libraries</a>
+      <ul>
+        <li><a href="#compile-object-files-1">Compile Object Files</a></li>
+        <li><a href="#create-the-shared-library">Create The Shared Library</a></li>
+        <li><a href="#use-a-shared-library">Use A Shared Library</a></li>
+        <li><a href="#run-the-program">Run The Program</a></li>
+      </ul>
+    </li>
+    <li><a href="#dll-exports">DLL Exports</a>
+      <ul>
+        <li><a href="#function-visibility">Function Visibility</a></li>
+        <li><a href="#exporting-functions">Exporting Functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#more-information">More Information</a></li>
+  </ul>
+</nav>
+      
+    </section>
+
+    <section class="post-content"><h2 id="before-you-begin">Before You Begin</h2>
+<aside class="post-note stop"><p><img src="/s/img/tango/stop.png"></p><p>
+<p>Be sure you are using the <a href="/guides/building-sofware/introduction/#devtools-powershell">Developer Tools PowerShell</a></p>
+<p><strong>THIS IS CRITICALLY IMPORTANT</strong></p>
+</p></aside>
+<h2 id="static-libraries">Static Libraries</h2>
+<h3 id="compile-object-files">Compile Object Files</h3>
+<p>First compile your <code>.cpp</code> source files into
+individual object files as you would normally do.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -EHsc -c algebra.cpp -Fo&#34;algebra.obj&#34;
+</span></span><span class="line"><span class="cl">cl -EHsc -c calculus.cpp -Fo&#34;calculus.obj&#34;
+</span></span><span class="line"><span class="cl">cl -EHsc -c physics.cpp -Fo&#34;physics.obj&#34;
+</span></span><span class="line"><span class="cl">cl -EHsc -c graphics.cpp -Fo&#34;graphics.obj&#34;
+</span></span></code></pre></div><aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
+<p>You need the <code>-EHsc</code> flag or you will probably get some
+warnings relating to exceptions.</p>
+</p></aside>
+<h3 id="create-the-static-library">Create The Static Library</h3>
+<p>Now link your object files into a final resulting static library.</p>
+<p>We want to call our library VGM, which stands for &ldquo;Video Game Math&rdquo;.</p>
+<p>Run this command to create the static library.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">link -lib -out:vgm_static.lib algebra.obj calculus.obj physics.obj graphics.obj
+</span></span></code></pre></div><p>Pretty simple huh?</p>
+<aside class="post-note info"><p><img src="/s/img/tango/info.png"></p><p>
+<p>The file name for our VGM library is <code>vgm_static.lib</code> because</p>
+<p><code>.lib</code> means &ldquo;Library&rdquo;</p>
+<p><code>vmg</code> means &ldquo;Video Game Math&rdquo;</p>
+<p>and <code>_static</code> tells us that this is the static version of
+our library.</p>
+</p></aside>
+<aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
+<p>We could just name this library <code>vgm.lib</code> but we also
+need a <code>.lib</code> file for our shared library, so by naming
+this one <code>vgm_static.lib</code> we can have both the
+static and shared versions in the same folder.</p>
+</p></aside>
+<h3 id="use-a-static-library">Use A Static Library</h3>
+<p>Now that you have built your static library, you can
+use it in your programs by adding it to your compile
+and or link commands, for example.</p>
+<p>First compile your main object file.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -EHsc -c main.cpp -Fo&#34;main.obj&#34;
+</span></span></code></pre></div><p>Then link your main object and your new static library
+together into your final runnable program.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">link -out:coolgame.exe main.obj vgm_static.lib
+</span></span></code></pre></div><p>We can now run our game as we would run any other program</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">.\coolgame
+</span></span><span class="line"><span class="cl">Hello This Is My Game!
+</span></span></code></pre></div><p>There should be nothing else we need to do, our static
+library has become part of our final program, our library
+code now lives inside the <code>.\coolgame.exe</code> file, as opposed
+to anywhere else.</p>
+<h2 id="shared-libraries">Shared Libraries</h2>
+<h3 id="compile-object-files-1">Compile Object Files</h3>
+<p>First compile each of your object files mostly the same as you did before.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -EHsc -c algebra.cpp -Fo&#34;algebra.obj&#34;
+</span></span><span class="line"><span class="cl">cl -EHsc -c calculus.cpp -Fo&#34;calculus.obj&#34;
+</span></span><span class="line"><span class="cl">cl -EHsc -c physics.cpp -Fo&#34;physics.obj&#34;
+</span></span><span class="line"><span class="cl">cl -EHsc -c graphics.cpp -Fo&#34;graphics.obj&#34;
+</span></span></code></pre></div><h3 id="create-the-shared-library">Create The Shared Library</h3>
+<p>Now we create our shared library from the object files
+we just compiled.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">link -dll -out:vgm_shared.dll -implib:vgm_shared.lib algebra.obj calculus.obj physics.obj graphics.obj
+</span></span></code></pre></div><p>Pretty simple huh? This is just like the static lib but we use the <code>-dll</code>
+flag instead of the <code>-lib</code> flag. DLL stands for Dynamic Link Library.</p>
+<p>Additionally we provide the <code>-out</code> flag for the binary <code>.dll</code> file
+and the <code>-implib</code> flag for the <code>.lib</code> link library file. A static
+library is only a single <code>.lib</code> file but a shared library is
+both a <code>.dll</code> and a <code>.lib</code> file.</p>
+<aside class="post-note stop"><p><img src="/s/img/tango/stop.png"></p><p>
+<p>There are limitations on what you can do with C++ libraries.</p>
+<p>See: <a href="http://www.trolltech.com/developer/faq/tech.html#bincomp">Trolltech FAQ</a></p>
+</p></aside>
+<aside class="post-note warn"><p><img src="/s/img/tango/warn.png"></p><p>
+<p>We named this new shared library file <code>vgm_shared.lib</code> simply
+to differentiate and distinguish it from the static library.</p>
+<p>Hopefully this avoids confusion for this example, however many
+3rd party libraries you encounter may do this differently.</p>
+</p></aside>
+<h3 id="use-a-shared-library">Use A Shared Library</h3>
+<p>We can now compile our program as we did for the static library example
+but we specify the name of the <strong>shared</strong> library file instead.</p>
+<p>First compile your main object file as usual.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cl -EHsc -c main.cpp -Fo&#34;main.obj&#34;
+</span></span></code></pre></div><p>Then link your main object and your VGM shared library file
+into the final program.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">link main.o vgm_shared.lib -Fe&#34;coolgame.exe&#34;
+</span></span></code></pre></div><h3 id="run-the-program">Run The Program</h3>
+<p>If we try to run our program now we will receive an error.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">PS C:\project&gt; .\coolgame
+</span></span><span class="line"><span class="cl">LINK : fatal error LNK1181: cannot open input file &#39;vgm_shared.lib&#39;
+</span></span></code></pre></div><p>That&rsquo;s no fun! Uh oh! Time to learn about DLL Exports&hellip;</p>
+<aside class="post-note info"><p><img src="/s/img/tango/info.png"></p><p>
+<p>We are making some further hypothetical assumptions here that, for
+example you have some functions in these files and you want to
+use those functions in your main program. I mean, you probably do, right?</p>
+<p>This is an example, your project is almost certainly different.</p>
+<p>What are your functions called? I don&rsquo;t know, but chances are
+good you will encounter this problem. So&hellip; onwards!</p>
+</p></aside>
+<h2 id="dll-exports">DLL Exports</h2>
+<p><em>This only generally applies to Windows and DLLs.</em></p>
+<h3 id="function-visibility">Function Visibility</h3>
+<p>To allow a function from your shared library to be used, you must first
+export that function.</p>
+<p>This useful because it means you can hide some of your functions from other
+users but still use them inside your library. All functions are hidden by default.</p>
+<p>The problem is that, maybe you are one of those other users! How do you
+unhide the functions you want to use?</p>
+<h3 id="exporting-functions">Exporting Functions</h3>
+<p>A simple naive solution is to just do this on the command line
+but other better and more automatic solutions exist.</p>
+<p>See <a href="https://stackoverflow.com/questions/225432/export-all-symbols-when-creating-a-dll">Exporting DLL Symbols</a></p>
+<p>Let&rsquo;s pretend we have functions we would like to use from
+our video game math library.</p>
+<p>Say we want to use</p>
+<ul>
+<li>The <code>derivative()</code> function from <code>calculus.cpp</code></li>
+<li>The <code>quadraticFormula()</code> function from <code>algebra.cpp</code></li>
+<li>The <code>collision()</code> function from <code>physics.cpp</code></li>
+<li>The <code>viewProjection()</code> function from <code>graphics.cpp</code></li>
+</ul>
+<p>We can add the <code>-export</code> flag for each of the functions we
+want when we create the DLL with the <code>link</code> command like this</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">link -dll -out:vgm_shared.dll -implib:vgm_shared.lib -export:derivative -export:quadraticFormula -export:collision -export:viewProjection algebra.obj calculus.obj physics.obj graphics.obj
+</span></span></code></pre></div><p>Now when we run compile the program it should run as expected.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">PS C:\project&gt; .\coolgame
+</span></span><span class="line"><span class="cl">Hello This Is My Game!
+</span></span></code></pre></div><p>Hooray!</p>
+<p>Exporting like this is admittedly tedious and cumbersome, however there are other and more automatic ways handle it.</p>
+<p>See <a href="https://stackoverflow.com/questions/225432/export-all-symbols-when-creating-a-dll">Exporting DLL Symbols</a></p>
+<h4 id="troubleshooting">Troubleshooting</h4>
+<p>If you are still having problems, try making sure that all your functions (including
+all the functions in your classes) use the <code>__cdecl</code> calling convention.</p>
+<p>See <a href="https://learn.microsoft.com/en-us/cpp/cpp/cdecl">MSVC Calling Conventions</a></p>
+<h2 id="more-information">More Information</h2>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/cpp/build/walkthrough-creating-and-using-a-dynamic-link-library-cpp">Visual Studio Shared Library</a></li>
+<li><a href="https://learn.microsoft.com/en-us/cpp/build/walkthrough-creating-and-using-a-static-library-cpp">Visual Studio Static Library</a></li>
+</ul>
+</section>
+
+    <script
+      type="text/javascript"
+      src="/s/js/main.js"
+    ></script>
+
+  </article>
+
+<div class="layout-footer">
+
+  <div class="copyright">
+    &copy; 2022 <a href="/pages/about/">Phone Doggo</a>
+  </div>
+
+  <div class="center">&nbsp;</div>
+
+  <div class="credits">
+    Jank 90s Images &copy;
+
+    <a href="https://www.cameronsworld.net/"
+      target="_blank">Cameron's World.net</a>
+
+    &lt;3
+  </div>
+
+</div>
+</div>
+      <div class="fairy-toadstool">
+        <img src="/s/img/cameronsworld.net/fairy-toadstool.gif">
+      </div>
+    </div>
+    <div class="purple-dragon">
+      <img src="/s/img/cameronsworld.net/purple-dragon.gif">
+    </div>
+  </body>
+</html>
